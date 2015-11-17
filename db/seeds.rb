@@ -10,23 +10,24 @@ ror_course = Course.create(name: 'ROR')
 
 groups = []
 groups.push Group.create(name: 'GR#1',
-                         course: ror_course
-            )
+                         course: ror_course)
 groups.push Group.create(name: 'GR#2',
-                         course: ror_course
-            )
+                         course: ror_course)
 students = []
 40.times do
   student_name = Faker::Name.name
   students.push Student.create(name: student_name,
                                phone: Faker::PhoneNumber.cell_phone,
-                               email: Faker::Internet.email(student_name),
-                )
+                               email: Faker::Internet.email(student_name))
 end
 
 group_memberships = []
+
+counter = 0
+
 40.times do
-  group_memberships.push GroupMembership.create(student: students.sample,
+  group_memberships.push GroupMembership.create(student: students[counter],
                                                 group: groups.sample,
                                                 active: true)
+  counter += 1
 end
