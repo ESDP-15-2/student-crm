@@ -21,6 +21,21 @@ class ContactListsController < ApplicationController
     end
   end
 
+  def edit
+    @contact_list = ContactList.find(params[:id])
+  end
+
+  def update
+    @contact_list = ContactList.find(params[:id])
+
+    if @contact_list.update(contact_list_params)
+      flash[:success] = 'Список получателей успешно обновлен'
+      redirect_to contact_lists_url
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @contact_list = ContactList.find(params[:id])
     @contact_list.destroy
