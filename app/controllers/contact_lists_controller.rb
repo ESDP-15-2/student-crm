@@ -15,7 +15,7 @@ class ContactListsController < ApplicationController
     @contact_list = ContactList.new(contact_list_params)
     if @contact_list.save
       redirect_to contact_lists_path
-      flash[:success] = '?????? ??????????? ??????? ??????'
+      flash[:success] = 'Список получателей успешно создан'
     else
       render 'new'
     end
@@ -24,7 +24,7 @@ class ContactListsController < ApplicationController
   def destroy
     @contact_list = ContactList.find(params[:id])
     @contact_list.destroy
-    flash[:success] = '?????? ??????????? ??????'
+    flash[:success] = 'Список получателей удален'
 
     redirect_to contact_lists_path
   end
