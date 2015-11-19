@@ -1,7 +1,13 @@
 class SmsDeliveriesController < ApplicationController
 
   def index
+    @sms_deliveries = SmsDelivery.all
   end
+
+    def show
+      @sms_delivery = SmsDelivery.find(params[:id])
+    end
+
 
   def new
     @sms_delivery = SmsDelivery.new

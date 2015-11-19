@@ -1,0 +1,76 @@
+<h1>Просмотр сообщения <%= link_to 'Новое сообщение', new_sms_delivery_path, class: 'btn btn-primary' %></h1>
+
+<div class="form-group col-sm-12">
+  <div class="col-sm-8">
+    <div class="col-sm-2">
+      <%= link_to 'Редактировать', edit_sms_delivery_path(@sms_delivery), class: 'btn btn-default' %>
+    </div>
+
+    <div class="col-sm-2">
+      <%= link_to 'Удалить', sms_delivery_path(@sms_delivery), method: :delete, class: 'btn btn-default',
+                  data: {confirm: 'Вы действительно хотите удалить это сообщение?'} %>
+    </div>
+
+  </div>
+
+
+
+
+</div>
+
+<div class="form-group col-sm-12">
+  <div class="col-sm-2">
+    <span>Заголовок:</span>
+  </div>
+
+  <div class="col-sm-3">
+    <p class="list-group-item list-group-item-info">
+      <%= @sms_delivery.title %>
+    </p>
+  </div>
+</div>
+
+
+<div class="form-group col-sm-12">
+  <div class="col-sm-2">
+    <span>Список получателей:</span>
+  </div>
+
+  <div class="col-sm-3">
+    <p class="list-group-item list-group-item-info">
+      <%= @sms_delivery.contact_list.title %>
+    </p>
+  </div>
+</div>
+
+<div class="form-group col-sm-12">
+  <div class="col-sm-2">
+    <span>Имя отправителя:</span>
+  </div>
+
+  <div class="col-sm-3">
+    <p class="list-group-item list-group-item-info">
+      <%= @sms_delivery.author %>
+    </p>
+  </div>
+</div>
+
+<div class="form-group col-sm-12">
+  <div class="col-sm-2">
+    <span>Сообщение:</span>
+  </div>
+
+  <div class="col-sm-5">
+    <p class="list-group-item list-group-item-info">
+      <%= @sms_delivery.content %>
+    </p>
+  </div>
+</div>
+<div class="form-group col-sm-12">
+
+  <div class="form-group col-sm-12">
+    <div class="col-sm-offset-2 col-sm-8">
+      <h5><%= link_to 'Все сообщения', sms_deliveries_path %></h5>
+    </div>
+  </div>
+</div>
