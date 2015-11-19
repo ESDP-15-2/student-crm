@@ -20,8 +20,30 @@ class SmsDeliveriesController < ApplicationController
       redirect_to sms_deliveries_url
     else
       flash[:danger] = 'Вы ввели некоректные данные, проверьте и попробуйте снова'
-      render new_sms_delivery_path
+      render 'new'
     end
+  end
+
+  def edit
+    @sms_delivery = SmsDelivery.find(params[:id])
+  end
+
+  def update
+    @sms_delivery = SmsDelivery.find(params[:id])
+    if @sms_delivery.update(sms_delivery_params)
+      redirect_to sms_deliveries_url
+      flash[:success] = 'Сообщение успешно отредактированно'
+    else
+      flash[:success] = 'Вы ввели не корректные данные, попробуйте снова'
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @sms_delivery = SmsDelivery.find(params[:id])
+    @sms_delivery.destroy
+    flash[:success] = 'Сообщение успешно удалено'
+    redirect_to sms_deliveries_url
   end
 
   private
