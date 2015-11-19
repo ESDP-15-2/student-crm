@@ -1,5 +1,3 @@
 Rails.application.routes.draw do
-
-  resources :contact_lists, :sms_deliveries
-
+  resources :contact_lists, :sms_deliveries, :students
 end
