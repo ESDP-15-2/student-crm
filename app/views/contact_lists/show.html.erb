@@ -19,12 +19,12 @@
       <td><%= student.phone %></td>
       <td><%= student.email %></td>
       <td>
-        <%= link_to 'Редактировать', edit_student_url(student) %>
-        <%= link_to 'Удалить', student_url(student), method: :delete,
+        <%= link_to 'Редактировать', edit_student_path(student) %>
+        <%= link_to 'Удалить', student_path(student), method: :delete,
                     data: {confirm: 'Вы действительно хотите удалить данные студента?'} %>
       </td>
     </tr>
   <% end %>
 </table>
 
-<h5><%= link_to 'Назад', contact_lists_url %></h5>
+<h5><%= link_to 'Назад', contact_lists_path %></h5>
