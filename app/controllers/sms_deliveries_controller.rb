@@ -1,5 +1,9 @@
 class SmsDeliveriesController < ApplicationController
 
+  def root
+  end
+
+
   def index
     @sms_deliveries = SmsDelivery.all
   end
