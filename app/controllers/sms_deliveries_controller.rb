@@ -8,9 +8,9 @@ class SmsDeliveriesController < ApplicationController
     @sms_deliveries = SmsDelivery.all
   end
 
-    def show
-      @sms_delivery = SmsDelivery.find(params[:id])
-    end
+    # def show
+      # @sms_delivery = SmsDelivery.find(params[:id])
+    # end
 
 
   def new
@@ -23,7 +23,7 @@ class SmsDeliveriesController < ApplicationController
       flash[:success] = 'СМС рассылка будет отправлена через 3 минуты'
       redirect_to sms_deliveries_url
     else
-      flash[:danger] = 'Вы ввели некоректные данные, проверьте и попробуйте снова'
+      flash[:danger] = 'Вы ввели некорректные данные, проверьте и попробуйте снова'
       render 'new'
     end
   end
@@ -38,7 +38,7 @@ class SmsDeliveriesController < ApplicationController
       redirect_to sms_deliveries_url
       flash[:success] = 'Сообщение успешно отредактированно'
     else
-      flash[:success] = 'Вы ввели не корректные данные, попробуйте снова'
+      flash[:danger] = 'Вы ввели некорректные данные, проверьте и попробуйте снова'
       render 'edit'
     end
   end

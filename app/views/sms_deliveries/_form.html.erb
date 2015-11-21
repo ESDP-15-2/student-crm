@@ -2,15 +2,15 @@
 
     <div class="form-group col-sm-12">
       <%= f.label :contact_list, value: 'Список рассылки', class: 'col-sm-2 control-label'  %>
-      <div class="col-sm-8">
+      <div class="col-sm-6">
         <%= f.collection_select :contact_list_id,  ContactList.all, :id, :title, {}, autofocus: true,  class: 'form-control'  %>
       </div>
     </div>
 
     <div class="form-group col-sm-12">
       <%= f.label :title, value: 'Название', class: 'col-sm-2 control-label' %>
-      <div class="col-sm-8">
-        <%= f.text_field :title, autofocus: true, class: 'form-control' %>
+      <div class="col-sm-6">
+        <%= f.text_field :title, class: 'form-control' %>
         <%= render 'field_errors', object: @sms_delivery, field_name: :title %>
       </div>
     </div>
@@ -18,23 +18,23 @@
     <div class="form-group col-sm-12">
       <%= f.label :author, value: 'Автор', class: 'col-sm-2 control-label' %>
 
-      <div class="col-sm-8">
-        <%= f.text_field :author, autofocus: true, class: 'form-control' %>
+      <div class="col-sm-6">
+        <%= f.text_field :author, class: 'form-control' %>
         <%= render 'field_errors', object: @sms_delivery, field_name: :author %>
       </div>
     </div>
 
     <div class="form-group col-sm-12">
       <%= f.label :content, value: 'Сообщение', class: 'col-sm-2 control-label' %>
-      <div class="col-sm-8">
-        <%= f.text_area :content, autofocus: true, class: 'form-control' %>
+      <div class="col-sm-6">
+        <%= f.text_area :content, class: 'form-control' %>
         <%= render 'field_errors', object: @sms_delivery, field_name: :content %>
       </div>
     </div>
 
 
     <div class="form-group col-sm-12">
-      <div class="col-sm-offset-2 col-sm-8">
+      <div class="col-sm-offset-2 col-sm-6">
         <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
         <h5><%= link_to 'Все сообщения', sms_deliveries_path %></h5>
       </div>
