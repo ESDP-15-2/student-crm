@@ -9,4 +9,5 @@ class SmsDelivery < ActiveRecord::Base
 
   validates :content, presence: true
 
+  validates :contact_list, presence: true
 end

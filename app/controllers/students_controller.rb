@@ -8,8 +8,9 @@ class StudentsController < ApplicationController
 
     if @student.update(student_params)
       flash[:success] = 'Данные успешно обновлены'
-      redirect_to student_url
+      redirect_to contact_lists_url
     else
+      flash[:danger] = 'Вы ввели некорректные данные, проверьте и попробуйте снова'
       render 'edit'
     end
   end
@@ -25,6 +26,6 @@ class StudentsController < ApplicationController
   private
 
   def student_params
-    params.require(:student).permit(:name, :phone, :email, :group_ids[])
+    params.require(:student).permit(:name, :phone, :email)
   end
 end

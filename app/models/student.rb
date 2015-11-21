@@ -7,4 +7,8 @@ class Student < ActiveRecord::Base
 
   has_many :recipient_depositories
   has_many :contact_lists, through: :recipient_depositories
+
+  validates :name, presence: true
+  validates :phone, presence: true
+  validates :email, presence: true
 end

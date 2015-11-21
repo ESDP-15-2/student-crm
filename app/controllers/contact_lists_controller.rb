@@ -17,6 +17,7 @@ class ContactListsController < ApplicationController
       redirect_to contact_lists_url
       flash[:success] = 'Список получателей успешно создан'
     else
+      flash[:danger] = 'Вы ввели некорректные данные, проверьте и попробуйте снова'
       render 'new'
     end
   end
@@ -32,6 +33,7 @@ class ContactListsController < ApplicationController
       flash[:success] = 'Список получателей успешно обновлен'
       redirect_to contact_lists_url
     else
+      flash[:danger] = 'Вы ввели некорректные данные, проверьте и попробуйте снова'
       render 'edit'
     end
   end
