@@ -4,7 +4,7 @@
       <%= f.label 'Название', class: 'col-sm-2 control-label' %>
       <div class="col-sm-6">
         <%= f.text_field :title, autofocus: true, class: 'form-control' %>
-        <%= render 'field_errors', object: @contact_list, field_name: :title %>
+        <%= render 'shared/field_errors', object: @contact_list, field_name: :title %>
       </div>
     </div>
 
@@ -12,13 +12,14 @@
       <%= f.label 'Контакты', class: 'col-sm-2 control-label' %>
       <div class="col-sm-6">
         <%= f.collection_check_boxes(:student_ids, Student.all, :id, :name) do |student| %>
-            <ul class="checkbox">
-              <li>
-                <%= student.check_box %>
-                <%= student.label %><br/>
-              </li>
-            </ul>
+          <ul class="checkbox">
+            <li>
+              <%= student.check_box %>
+              <%= student.label %><br/>
+            </li>
+          </ul>
         <% end %>
+        <%= render 'shared/field_errors', object: @contact_list, field_name: :students %>
       </div>
     </div>
 
