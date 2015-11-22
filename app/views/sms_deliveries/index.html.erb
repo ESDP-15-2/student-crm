@@ -10,15 +10,17 @@
   </tr>
   <% @sms_deliveries.each do |sms| %>
       <tr>
+        <td><%= link_to sms.title, sms_delivery_url(sms) %></td>
         <td><%= sms.contact_list.title %></td>
-        <td><%= sms.title %></td>
         <td><%= sms.author %></td>
         <td><%= sms.content %></td>
         <td>
-          <!--<%= link_to 'Просмотреть', sms_delivery_path(sms), class: 'btn btn-default btn-xs' %>-->
-          <%= link_to 'Редактировать', edit_sms_delivery_path(sms), class: 'btn btn-success btn-xs' %>
+          <%= form_for sms, url: sms_send_message_path(sms), method: :post do |f| %>
+              <%= f.submit 'Отправить', class: 'btn btn-success btn-xs' %>
+          <%= link_to 'Редактировать', edit_sms_delivery_path(sms), class: 'btn btn-primary btn-xs' %>
           <%= link_to 'Удалить', sms_delivery_path(sms), method: :delete,
                       data: {confirm: 'Вы действительно хотите удалить это сообщение?'}, class: 'btn btn-danger btn-xs'  %>
+          <% end %>
         </td>
       </tr>
   <% end %>
