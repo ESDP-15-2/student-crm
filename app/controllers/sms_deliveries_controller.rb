@@ -8,9 +8,9 @@ class SmsDeliveriesController < ApplicationController
     @sms_deliveries = SmsDelivery.all
   end
 
-    # def show
-      # @sms_delivery = SmsDelivery.find(params[:id])
-    # end
+    def show
+      @sms_delivery = SmsDelivery.find(params[:id])
+    end
 
 
   def new
@@ -47,6 +47,14 @@ class SmsDeliveriesController < ApplicationController
     @sms_delivery = SmsDelivery.find(params[:id])
     @sms_delivery.destroy
     flash[:success] = 'Сообщение успешно удалено'
+    redirect_to sms_deliveries_url
+  end
+
+  def send_message
+    @sms_delivery = SmsDelivery.find(params[:id])
+    http = Net::HTTP.new("smspro.nikita.kg")
+    @response = http.post("/api/message", @sms_delivery.to_xml)
+    flash[:success] = 'Сообщение успешно отправленно'
     redirect_to sms_deliveries_url
   end
 
