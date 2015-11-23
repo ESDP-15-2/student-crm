@@ -1,4 +1,4 @@
-<h1>Просмотр рассылки <%= link_to 'Новая рассылка', new_sms_delivery_path, class: 'btn btn-primary' %></h1>
+<h1>Просмотр рассылки "<% @sms_delivery.title %>"</h1>
 
 <div class="form-group col-sm-12">
   <div class="col-sm-8">
@@ -8,7 +8,7 @@
 
     <div class="col-sm-2">
       <%= link_to 'Удалить', sms_delivery_path(@sms_delivery), method: :delete, class: 'btn btn-default',
-                  data: {confirm: 'Вы действительно хотите удалить это сообщение?'} %>
+                  data: {confirm: 'Вы действительно хотите удалить эту рассылку?'} %>
     </div>
 
 

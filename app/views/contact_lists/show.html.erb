@@ -1,11 +1,10 @@
-<h1>Список получателей "<%= @contact_list.title %>"</h1>
+<h1>Просмотр листа получателей "<%= @contact_list.title %>"</h1>
 
 <table class="table table-striped table-hover col-sm-12">
   <tr>
     <th class="col-sm-3">ФИО</th>
     <th class="col-sm-2">Курс</th>
     <th class="col-sm-2">Номер телефона</th>
-    <th class="col-sm-3">E-mail</th>
     <th class="col-sm-2">Действия</th>
   </tr>
   <% @contact_list.students.each do |student| %>
@@ -17,7 +16,6 @@
         <% end %>
       </td>
       <td><%= student.phone %></td>
-      <td><%= student.email %></td>
       <td>
         <%= link_to 'Редактировать', edit_student_path(student), class: 'btn btn-success btn-xs' %>
         <%= link_to 'Удалить', student_path(student), method: :delete,
@@ -27,4 +25,4 @@
   <% end %>
 </table>
 
-<h5><%= link_to 'Все списки получателей', contact_lists_path %></h5>
+<h5><%= link_to 'Все листы получателей', contact_lists_path %></h5>

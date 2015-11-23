@@ -1,7 +1,7 @@
 <%= form_for @sms_delivery, class: 'form-horizontal' do |f| %>
 
     <div class="form-group col-sm-12">
-      <%= f.label :contact_list, value: 'Лист получателя', class: 'col-sm-2 control-label'  %>
+      <%= f.label :contact_list, value: 'Лист получателей', class: 'col-sm-2 control-label'  %>
       <div class="col-sm-6">
         <%= f.collection_select :contact_list_id,  ContactList.all, :id, :title, {}, autofocus: true,  class: 'form-control'  %>
       </div>
