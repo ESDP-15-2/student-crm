@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :students
+  resources :contact_lists
+  resources :sms_deliveries
   post 'sms_deliveries/:id/send' => 'sms_deliveries#send_message', as: 'sms_send_message'
-
-  root 'sms_deliveries#root'
-
-  resources :contact_lists, :sms_deliveries, :students
 end

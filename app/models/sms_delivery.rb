@@ -1,14 +1,16 @@
 require 'builder'
+
 class SmsDelivery < ActiveRecord::Base
   belongs_to :contact_list
 
   validates :title, presence: true,
-            length: {maximum: 50}
+            length: { maximum: 50 }
 
   validates :author, presence: true,
-            length: { maximum: 50}
+            length: { maximum: 50 }
 
-  validates :content, presence: true
+  validates :content, presence: true,
+            length: { maximum: 800 }
 
   validates :contact_list, presence: true
 

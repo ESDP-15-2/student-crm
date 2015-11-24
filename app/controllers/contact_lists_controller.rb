@@ -1,4 +1,5 @@
 class ContactListsController < ApplicationController
+
   def index
     @contact_lists = ContactList.all
   end
