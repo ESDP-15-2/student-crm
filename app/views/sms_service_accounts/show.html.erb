@@ -1,0 +1,9 @@
+<h1>Просмотр учетной записи "<%= @sms_service_account.login %>"</h1>
+
+<p><b>Пароль: <%= @sms_service_account.password %></b></p>
+<p><b>Отправители:</b></p>
+<% @sms_service_account.senders.each do |sender| %>
+    <ul>
+      <li><%= sender.name %></li>
+    </ul>
+<% end %>

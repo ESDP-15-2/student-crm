@@ -1,0 +1,27 @@
+<h1>Все учетные записи</h1>
+<p><%= link_to 'Новая учетная запись', new_sms_service_account_path, class: 'btn btn-primary margin-bottom' %></p>
+
+<table class="table table-striped table-hover col-sm-12">
+  <tr>
+    <th class="col-sm-3">Логин</th>
+    <th class="col-sm-2">Пароль</th>
+    <th class="col-sm-2">Отправитель</th>
+    <th class="col-sm-3">Действия</th>
+  </tr>
+  <% @sms_service_accounts.each do |account| %>
+      <tr>
+        <td><%= link_to account.login, sms_service_account_path(account) %></td>
+        <td><%= account.password %></td>
+        <td>
+          <% account.senders.each do |sender| %>
+              <p><%= sender.name %></p></br>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to 'Редактировать', edit_sms_service_account_path(account), class: 'btn btn-success btn-xs' %>
+          <%= link_to 'Удалить', sms_service_account_path(account), method: :delete,
+                      data: {confirm: 'Вы действительно хотите удалить данную учетную запись?'}, class: 'btn btn-danger btn-xs'  %>
+        </td>
+      </tr>
+  <% end %>
+</table>
