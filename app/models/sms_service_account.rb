@@ -1,5 +1,4 @@
 class SmsServiceAccount < ActiveRecord::Base
-
   has_many :senders
   accepts_nested_attributes_for :senders, reject_if: :all_blank, allow_destroy: true
 

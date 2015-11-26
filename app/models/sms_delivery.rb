@@ -13,6 +13,7 @@ class SmsDelivery < ActiveRecord::Base
             length: { maximum: 800 }
 
   validates :contact_list, presence: true
+  validates :sender, presence: true
 
   def to_xml
     xml = ::Builder::XmlMarkup.new
