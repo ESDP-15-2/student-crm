@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  sms_service_account_id: 
+
+two:
+  name: MyString
+  sms_service_account_id: 
