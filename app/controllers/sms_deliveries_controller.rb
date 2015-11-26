@@ -1,7 +1,7 @@
 class SmsDeliveriesController < ApplicationController
 
   def index
-    @sms_deliveries = SmsDelivery.all
+    @sms_deliveries = SmsDelivery.order(created_at: :desc)
   end
 
     def show
@@ -57,7 +57,7 @@ class SmsDeliveriesController < ApplicationController
   private
 
   def sms_delivery_params
-    params.require(:sms_delivery).permit(:title, :author, :content, :contact_list_id)
+    params.require(:sms_delivery).permit(:title, :content, :contact_list_id, :sender_id)
   end
 
 end
