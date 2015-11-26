@@ -4,5 +4,6 @@ class Sender < ActiveRecord::Base
   has_many :sms_deliveries
 
   validates :name, presence: true, length: {maximum: 14}
+  
 
 end
