@@ -5,22 +5,22 @@
   <tr>
     <th class="col-sm-3">Заголовок</th>
     <th class="col-sm-2">Список рассылки</th>
-    <th class="col-sm-2">Автор</th>
-    <th class="col-sm-2">Рассылка</th>
+    <th class="col-sm-2">Отправитель</th>
+    <th class="col-sm-2">Текст</th>
     <th class="col-sm-3">Действия</th>
   </tr>
   <% @sms_deliveries.each do |sms| %>
       <tr>
         <td><%= link_to sms.title, sms_delivery_url(sms) %></td>
         <td><%= sms.contact_list.title %></td>
-        <td><%= sms.author %></td>
+        <td><%= sms.sender.name %></td>
         <td><%= sms.content %></td>
         <td>
           <%= form_for sms, url: sms_send_message_path(sms), method: :post do |f| %>
               <%= f.submit 'Отправить', class: 'btn btn-success btn-xs' %>
-          <%= link_to 'Редактировать', edit_sms_delivery_path(sms), class: 'btn btn-primary btn-xs' %>
-          <%= link_to 'Удалить', sms_delivery_path(sms), method: :delete,
-                      data: {confirm: 'Вы действительно хотите удалить эту рассылку?'}, class: 'btn btn-danger btn-xs'  %>
+              <%= link_to 'Редактировать', edit_sms_delivery_path(sms), class: 'btn btn-primary btn-xs' %>
+              <%= link_to 'Удалить', sms_delivery_path(sms), method: :delete,
+                          data: {confirm: 'Вы действительно хотите удалить эту рассылку?'}, class: 'btn btn-danger btn-xs'  %>
           <% end %>
         </td>
       </tr>

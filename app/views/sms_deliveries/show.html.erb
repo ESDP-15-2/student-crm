@@ -11,19 +11,12 @@
                   data: {confirm: 'Вы действительно хотите удалить эту рассылку?'} %>
     </div>
 
-
     <div class="col-sm-8">
       <%= form_for @sms_delivery, url: sms_send_message_path, method: :post do |f| %>
           <%= f.submit 'Отправить', class: 'btn btn-success' %>
       <% end %>
     </div>
-
-
   </div>
-
-
-
-
 </div>
 
 <div class="form-group col-sm-12">
@@ -37,7 +30,6 @@
     </p>
   </div>
 </div>
-
 
 <div class="form-group col-sm-12">
   <div class="col-sm-2">
@@ -58,7 +50,7 @@
 
   <div class="col-sm-3">
     <p class="list-group-item list-group-item-info">
-      <%= @sms_delivery.author %>
+      <%= @sms_delivery.sender.name %>
     </p>
   </div>
 </div>
@@ -74,8 +66,8 @@
     </p>
   </div>
 </div>
-<div class="form-group col-sm-12">
 
+<div class="form-group col-sm-12">
   <div class="form-group col-sm-12">
     <div class="col-sm-offset-2 col-sm-8">
       <h5><%= link_to 'Все рассылки', sms_deliveries_path %></h5>

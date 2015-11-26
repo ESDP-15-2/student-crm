@@ -99,14 +99,15 @@ ActiveRecord::Schema.define(version: 20151126084023) do
 
   create_table "sms_deliveries", force: :cascade do |t|
     t.string   "title"
-    t.string   "author"
     t.text     "content"
+    t.integer  "sender_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "contact_list_id"
   end
 
   add_index "sms_deliveries", ["contact_list_id"], name: "index_sms_deliveries_on_contact_list_id"
+  add_index "sms_deliveries", ["sender_id"], name: "index_sms_deliveries_on_sender_id"
 
   create_table "sms_service_accounts", force: :cascade do |t|
     t.string   "login"
