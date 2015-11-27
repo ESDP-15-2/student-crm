@@ -4,6 +4,8 @@ class SmsDelivery < ActiveRecord::Base
   belongs_to :contact_list
   belongs_to :sender
 
+  before_validation :fill_title
+
   validates :title, presence: true,
             length: { maximum: 50 }
 
@@ -31,5 +33,13 @@ class SmsDelivery < ActiveRecord::Base
       }
     }
 
+  end
+
+  private
+
+  def fill_title
+    if self.title.blank?
+      self.title = self.content[0, 49]
+    end
   end
 end
