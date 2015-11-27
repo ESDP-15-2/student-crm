@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :contact_lists
   resources :sms_deliveries
   resources :sms_service_accounts
+  resources :senders
 
   post 'sms_deliveries/:id/send' => 'sms_deliveries#send_message', as: 'sms_send_message'
 

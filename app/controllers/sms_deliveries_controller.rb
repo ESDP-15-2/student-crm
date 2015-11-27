@@ -4,10 +4,9 @@ class SmsDeliveriesController < ApplicationController
     @sms_deliveries = SmsDelivery.order(created_at: :desc)
   end
 
-    def show
-      @sms_delivery = SmsDelivery.find(params[:id])
-    end
-
+  def show
+    @sms_delivery = SmsDelivery.find(params[:id])
+  end
 
   def new
     @sms_delivery = SmsDelivery.new

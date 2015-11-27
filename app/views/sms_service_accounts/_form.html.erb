@@ -16,15 +16,6 @@
       </div>
     </div>
 
-    <%= f.fields_for :senders do |ff| %>
-        <div class="form-group col-sm-12">
-          <%= ff.label :name,  value: 'Имя отправителя', class: 'col-sm-2 control-label' %>
-          <div class="col-sm-6">
-            <%= ff.text_field :name, class: 'form-control' %>
-          </div>
-        </div>
-    <% end %>
-
     <div class="form-group col-sm-12">
       <div class="col-sm-offset-2 col-sm-6">
         <%= f.submit 'Сохранить', class: 'btn btn-primary' %>

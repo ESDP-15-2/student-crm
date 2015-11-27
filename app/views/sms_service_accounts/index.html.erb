@@ -5,7 +5,7 @@
   <tr>
     <th class="col-sm-3">Логин</th>
     <th class="col-sm-2">Пароль</th>
-    <th class="col-sm-2">Отправитель</th>
+    <th class="col-sm-2">Отправители</th>
     <th class="col-sm-3">Действия</th>
   </tr>
   <% @sms_service_accounts.each do |account| %>
@@ -14,7 +14,7 @@
         <td><%= account.password %></td>
         <td>
           <% account.senders.each do |sender| %>
-              <p><%= sender.name %></p></br>
+              <p><%= sender.name %></p>
           <% end %>
         </td>
         <td>
