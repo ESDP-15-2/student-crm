@@ -46,11 +46,18 @@ class SmsDeliveriesController < ApplicationController
   end
 
   def send_message
-    @sms_delivery = SmsDelivery.find(params[:id])
-    http = Net::HTTP.new("smspro.nikita.kg")
-    @response = http.post("/api/message", @sms_delivery.to_xml)
+    @sms = SmsDelivery.find(params[:id])
+    url = '/api/message'
+    @response = set_url(url, @sms.build_message)
     flash[:success] = 'Сообщение успешно отправленно'
     redirect_to sms_deliveries_url
+  end
+
+  def get_report
+    @sms = SmsDelivery.find(params[:id])
+    url = '/api/dr'
+    @response = set_url(url, @sms.build_report)
+    hash = parse_xml(@response)
   end
 
   private
@@ -59,8 +66,12 @@ class SmsDeliveriesController < ApplicationController
     params.require(:sms_delivery).permit(:title, :content, :contact_list_id, :sender_id)
   end
 
-  def parse_xml(xml)
+  def set_url (url, message)
+    http = Net::HTTP.new('smspro.nikita.kg')
+    http.post(url, message.to_xml)
+  end
 
+  def parse_xml(xml)
     xml_doc = Nokogiri::XML(xml.body)
     xml_doc.remove_namespaces!
     doc = xml_doc.xpath("//phone")
@@ -70,5 +81,4 @@ class SmsDeliveriesController < ApplicationController
     end
     hash
   end
-
 end

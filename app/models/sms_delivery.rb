@@ -15,22 +15,31 @@ class SmsDelivery < ActiveRecord::Base
   validates :contact_list, presence: true
   validates :sender, presence: true
 
-  def to_xml
-    xml = ::Builder::XmlMarkup.new
-    xml.instruct!
-    xml.message{
-      xml.login('aisma')
-      xml.pwd('kiminitodoke')
-      xml.id(Faker::Internet.password(12))
-      xml.sender('K2, ESDP')
-      xml.text(" #{content} ")
-      xml.phones{
-        contact_list.students.each do |student|
-          xml.phone("#{student.phone}")
-        end
+  def build_message
+    Nokogiri::XML::Builder.new do |xml|
+      xml.message {
+        xml.login(sender.sms_service_account.login)
+        xml.pwd(sender.sms_service_account.password)
+        xml.id(id.to_s + 'esdp1502')
+        xml.sender(sender.name)
+        xml.text_ content
+        xml.phones {
+          contact_list.students.each do |student|
+            xml.phone(student.phone)
+          end
+        }
       }
-    }
+    end
+  end
 
+  def build_report
+    Nokogiri::XML::Builder.new do |xml|
+      xml.dr {
+        xml.login('aisma')
+        xml.pwd('kiminitodoke')
+        xml.id(id.to_s + 'esdp1502')
+      }
+    end
   end
 
   private
