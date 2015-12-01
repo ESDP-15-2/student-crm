@@ -50,6 +50,7 @@ class SmsDeliveriesController < ApplicationController
     url = '/api/message'
     @response = set_url(url, @sms.build_message)
     flash[:success] = 'Сообщение успешно отправленно'
+
     redirect_to sms_deliveries_url
   end
 
@@ -57,7 +58,7 @@ class SmsDeliveriesController < ApplicationController
     @sms = SmsDelivery.find(params[:id])
     url = '/api/dr'
     @response = set_url(url, @sms.build_report)
-    hash = parse_xml(@response)
+    hash = parse_report(@response)
   end
 
   private
@@ -71,14 +72,15 @@ class SmsDeliveriesController < ApplicationController
     http.post(url, message.to_xml)
   end
 
-  def parse_xml(xml)
+  def parse_report(xml)
     xml_doc = Nokogiri::XML(xml.body)
     xml_doc.remove_namespaces!
-    doc = xml_doc.xpath("//phone")
+    doc = xml_doc.xpath('//phone')
     hash = {}
     doc.each do |phone|
       hash[phone.xpath('number').text] = phone.xpath('report').text
     end
     hash
   end
+
 end
