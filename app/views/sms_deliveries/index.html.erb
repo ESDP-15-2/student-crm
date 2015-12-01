@@ -14,7 +14,7 @@
         <td><%= link_to sms.title, sms_delivery_url(sms) %></td>
         <td><%= sms.contact_list.title %></td>
         <td><%= sms.sender.name %></td>
-        <td><%= sms.content %></td>
+        <td><%= truncate(sms.content, length: 70) %></td>
         <td>
           <%= form_for sms, url: sms_send_message_path(sms), method: :post do |f| %>
               <%= f.submit 'Отправить', class: 'btn btn-success btn-xs' %>
