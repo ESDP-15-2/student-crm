@@ -5,7 +5,7 @@ class SmsDelivery < ActiveRecord::Base
   before_validation :fill_title
 
   validates :title, presence: true,
-            length: { maximum: 50 }
+            length: { maximum: 70 }
 
   validates :content, presence: true,
             length: { maximum: 800 }
@@ -44,7 +44,7 @@ class SmsDelivery < ActiveRecord::Base
 
   def fill_title
     if self.title.blank?
-      self.title = self.content[0, 49]
+      self.title = self.content[0, 69]
     end
   end
 end
