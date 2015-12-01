@@ -1,3 +1,4 @@
+<h5><%= link_to 'Назад', sms_deliveries_path %></h5>
 <h1>Просмотр рассылки "<%= @sms_delivery.title %>"</h1>
 
 <div class="form-group col-sm-12">
@@ -21,10 +22,10 @@
 
 <div class="form-group col-sm-12">
   <div class="col-sm-2">
-    <span>Заголовок:</span>
+    <span>Название:</span>
   </div>
 
-  <div class="col-sm-3">
+  <div class="col-sm-6">
     <p class="list-group-item list-group-item-info">
       <%= @sms_delivery.title %>
     </p>
@@ -33,22 +34,10 @@
 
 <div class="form-group col-sm-12">
   <div class="col-sm-2">
-    <span>Список получателей:</span>
+    <span>Отправитель:</span>
   </div>
 
-  <div class="col-sm-3">
-    <p class="list-group-item list-group-item-info">
-      <%= @sms_delivery.contact_list.title %>
-    </p>
-  </div>
-</div>
-
-<div class="form-group col-sm-12">
-  <div class="col-sm-2">
-    <span>Имя отправителя:</span>
-  </div>
-
-  <div class="col-sm-3">
+  <div class="col-sm-6">
     <p class="list-group-item list-group-item-info">
       <%= @sms_delivery.sender.name %>
     </p>
@@ -57,20 +46,25 @@
 
 <div class="form-group col-sm-12">
   <div class="col-sm-2">
-    <span>Рассылка:</span>
+    <span>Лист получателей:</span>
   </div>
 
-  <div class="col-sm-5">
+  <div class="col-sm-6">
+    <p class="list-group-item list-group-item-info">
+      <%= @sms_delivery.contact_list.title %>
+    </p>
+  </div>
+</div>
+
+<div class="form-group col-sm-12">
+  <div class="col-sm-2">
+    <span>Текст смс:</span>
+  </div>
+
+  <div class="col-sm-6">
     <p class="list-group-item list-group-item-info">
       <%= @sms_delivery.content %>
     </p>
   </div>
 </div>
 
-<div class="form-group col-sm-12">
-  <div class="form-group col-sm-12">
-    <div class="col-sm-offset-2 col-sm-8">
-      <h5><%= link_to 'Все рассылки', sms_deliveries_path %></h5>
-    </div>
-  </div>
-</div>

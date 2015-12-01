@@ -9,7 +9,7 @@
   </tr>
   <% @senders.each do |sender| %>
       <tr>
-        <td><%= link_to sender.name, sender_path(sender) %></td>
+        <td><%= sender.name %></td>
         <td><%= sender.sms_service_account.login %></td>
         <td>
           <%= link_to 'Редактировать', edit_sender_path(sender), class: 'btn btn-success btn-xs' %>

@@ -1,3 +1,4 @@
+<h5><%= link_to 'Назад', contact_lists_url %></h5>
 <h1>Редактирование данных студента</h1>
 
 <%= form_for @student, class: 'form-horizontal' do |f| %>
@@ -29,7 +30,6 @@
     <div class="form-group col-sm-12">
       <div class="col-sm-offset-2 col-sm-6">
         <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
-        <h5><%= link_to 'Назад', contact_lists_url %></h5>
       </div>
     </div>
 <% end %>

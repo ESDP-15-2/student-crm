@@ -1,6 +1,7 @@
+<h5><%= link_to 'Назад', sms_service_accounts_path %></h5>
 <h1>Просмотр учетной записи "<%= @sms_service_account.login %>"</h1>
 
-<p><b>Пароль: <%= @sms_service_account.password %></b></p>
+<p><b>Пароль: </b><%= @sms_service_account.password %></p>
 <p><b>Отправители:</b></p>
 <% @sms_service_account.senders.each do |sender| %>
     <ul>

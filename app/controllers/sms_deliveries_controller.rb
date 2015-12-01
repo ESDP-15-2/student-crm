@@ -31,7 +31,7 @@ class SmsDeliveriesController < ApplicationController
     @sms_delivery = SmsDelivery.find(params[:id])
     if @sms_delivery.update(sms_delivery_params)
       redirect_to sms_deliveries_url
-      flash[:success] = 'Сообщение успешно отредактированно'
+      flash[:success] = 'Сообщение успешно отредактировано'
     else
       flash[:danger] = 'Вы ввели некорректные данные, проверьте и попробуйте снова'
       render 'edit'
@@ -49,7 +49,7 @@ class SmsDeliveriesController < ApplicationController
     @sms = SmsDelivery.find(params[:id])
     url = '/api/message'
     @response = set_url(url, @sms.build_message)
-    flash[:success] = 'Сообщение успешно отправленно'
+    flash[:success] = 'Сообщение успешно отправлено'
 
     redirect_to sms_deliveries_url
   end
