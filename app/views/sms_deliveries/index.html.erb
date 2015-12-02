@@ -9,6 +9,11 @@
     <th class="col-sm-2">Текст смс</th>
     <th class="col-sm-3">Действия</th>
   </tr>
+  <div class="row">
+    <div class="col-sm-12 products-pagination">
+      <%= will_paginate @sms_deliveries %>
+    </div>
+  </div>
   <% @sms_deliveries.each do |sms| %>
       <tr>
         <td><%= link_to sms.title, sms_delivery_url(sms) %></td>

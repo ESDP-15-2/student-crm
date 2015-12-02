@@ -1,7 +1,7 @@
 class SmsDeliveriesController < ApplicationController
 
   def index
-    @sms_deliveries = SmsDelivery.order(created_at: :desc)
+    @sms_deliveries = SmsDelivery.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
   end
 
   def show
