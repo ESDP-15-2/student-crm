@@ -12,6 +12,11 @@ class SmsDeliveriesController < ApplicationController
     @sms_delivery = SmsDelivery.new
   end
 
+  def new_from_contact_list
+    @sms_delivery = SmsDelivery.new
+    @contact_list = ContactList.find(params[:id])
+  end
+
   def create
     @sms_delivery = SmsDelivery.new(sms_delivery_params)
     if @sms_delivery.save
