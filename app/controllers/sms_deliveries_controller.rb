@@ -36,7 +36,7 @@ class SmsDeliveriesController < ApplicationController
   def update
     @sms_delivery = SmsDelivery.find(params[:id])
     if @sms_delivery.update(sms_delivery_params)
-      @sms_delivery.update_attribute(:delivery_time, :updated_at + 3.minutes)
+      @sms_delivery.update_attribute(:delivery_time, @sms_delivery.updated_at + 3.minutes)
       redirect_to sms_deliveries_url
       flash[:success] = 'Сообщение успешно отредактировано'
     else

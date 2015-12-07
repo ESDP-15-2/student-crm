@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
       unless message.status
         if message.delivery_time <= Time.now
           message.send_message
+          message.update_attribute(:status, true)
         end
       end
     end
