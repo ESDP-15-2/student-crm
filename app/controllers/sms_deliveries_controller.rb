@@ -20,6 +20,7 @@ class SmsDeliveriesController < ApplicationController
   def create
     @sms_delivery = SmsDelivery.new(sms_delivery_params)
     if @sms_delivery.save
+      @sms_delivery.send_message
       flash[:success] = 'СМС рассылка будет отправлена через 3 минуты'
       redirect_to sms_deliveries_url
     else
@@ -52,18 +53,8 @@ class SmsDeliveriesController < ApplicationController
 
   def send_message
     @sms = SmsDelivery.find(params[:id])
-    url = '/api/message'
-    @response = set_url(url, @sms.build_message)
-    flash[:success] = 'Сообщение успешно отправлено'
-
+    @sms.send_message
     redirect_to sms_deliveries_url
-  end
-
-  def get_report
-    @sms = SmsDelivery.find(params[:id])
-    url = '/api/dr'
-    @response = set_url(url, @sms.build_report)
-    hash = parse_report(@response)
   end
 
   private

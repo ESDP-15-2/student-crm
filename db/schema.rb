@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126084023) do
+ActiveRecord::Schema.define(version: 20151207085433) do
 
   create_table "attendances", force: :cascade do |t|
     t.integer  "student_id"
@@ -101,9 +101,11 @@ ActiveRecord::Schema.define(version: 20151126084023) do
     t.string   "title"
     t.text     "content"
     t.integer  "sender_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.integer  "contact_list_id"
+    t.boolean  "status",          default: false
+    t.datetime "delivery_time"
   end
 
   add_index "sms_deliveries", ["contact_list_id"], name: "index_sms_deliveries_on_contact_list_id"
