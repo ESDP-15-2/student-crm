@@ -1,5 +1,16 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+
   protect_from_forgery with: :exception
+
+  scheduler = Rufus::Scheduler.new
+
+  scheduler.every '10s' do
+    SmsDelivery.all.each do |message|
+      unless message.status
+        if message.delivery_time <= Time.now
+          message.send_message
+        end
+      end
+    end
+  end
 end
