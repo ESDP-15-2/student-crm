@@ -30,7 +30,7 @@ class SmsDelivery < ActiveRecord::Base
       xml.message {
         xml.login(sender.sms_service_account.login)
         xml.pwd(sender.sms_service_account.password)
-        xml.id(id.to_s + 'esp1502')
+        xml.id(id.to_s + 'Mesp1502')
         xml.sender(sender.name)
         xml.text_ content
         xml.phones {
@@ -47,7 +47,8 @@ class SmsDelivery < ActiveRecord::Base
       xml.dr {
         xml.login('aisma')
         xml.pwd('kiminitodoke')
-        xml.id(id.to_s + 'esp1502')
+        xml.id(id.to_s + 'Mesp1502')
+        xml.id(id.to_s + 'Mesp1502')
       }
     end
   end

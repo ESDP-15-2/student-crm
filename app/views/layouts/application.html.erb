@@ -10,13 +10,15 @@
 <%= render 'layouts/navbar' %>
 
 <div class="container">
-  <% flash.each do |type, message|%>
-      <%= content_tag :div, message, class: "alert alert-#{type}" %>
-  <% end %>
+  <!--<% flash.each do |type, message|%>-->
+      <!--<%= content_tag :div, message, class: "alert alert-#{type}" %>-->
+  <!--<% end %>-->
+  <%= flash_messages %>
 
   <%= yield %>
 </div>
 
 </body>
+
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </html>
