@@ -1,10 +1,13 @@
 <%= form_for @sms_delivery, class: 'form-horizontal' do |f| %>
 
     <div class="form-group col-sm-12">
-      <%= f.label :title, value: 'Название', class: 'col-sm-2 control-label' %>
+      <%= f.label :content, value: 'Текст', class: 'col-sm-2 control-label' %>
       <div class="col-sm-6">
-        <%= f.text_field :title, autofocus: true, class: 'form-control' %>
-        <%= render 'shared/field_errors', object: @sms_delivery, field_name: :title %>
+        <span>Количество символов: </span><span id="char-num"></span>
+        <br />
+        <span>Количество сообщений: </span><span id="sms-count"></span>
+        <%= f.text_area :content, rows: 10, class: 'form-control', id: 'text-field' %>
+        <%= render 'shared/field_errors', object: @sms_delivery, field_name: :content %>
       </div>
     </div>
 
@@ -26,13 +29,10 @@
     </div>
 
     <div class="form-group col-sm-12">
-      <%= f.label :content, value: 'Текст', class: 'col-sm-2 control-label' %>
+      <%= f.label :title, value: 'Название', class: 'col-sm-2 control-label' %>
       <div class="col-sm-6">
-        <span>Количество символов: </span><span id="char-num"></span>
-         <br />
-        <span>Количество сообщений: </span><span id="sms-count"></span>
-        <%= f.text_area :content, rows: 10, class: 'form-control', id: 'text-field' %>
-        <%= render 'shared/field_errors', object: @sms_delivery, field_name: :content %>
+        <%= f.text_field :title, autofocus: true, class: 'form-control' %>
+        <%= render 'shared/field_errors', object: @sms_delivery, field_name: :title %>
       </div>
     </div>
 
