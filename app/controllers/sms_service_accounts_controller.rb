@@ -1,6 +1,7 @@
 class SmsServiceAccountsController < ApplicationController
   before_action :set_sms_service_account, only: [:show, :edit, :update, :destroy]
 
+  add_breadcrumb 'Учетные записи', :sms_service_accounts_url
   def index
     @sms_service_accounts = SmsServiceAccount.all
     @senders = Sender.all
@@ -11,6 +12,7 @@ class SmsServiceAccountsController < ApplicationController
 
   def new
     @sms_service_account = SmsServiceAccount.new
+    add_breadcrumb 'Новая Учетная Запись'
   end
 
   def create

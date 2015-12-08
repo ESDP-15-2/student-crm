@@ -1,15 +1,18 @@
 class ContactListsController < ApplicationController
 
+  add_breadcrumb 'Листы Получателей', :contact_lists_url
   def index
     @contact_lists = ContactList.all
   end
 
   def show
     @contact_list = ContactList.find(params[:id])
+    add_breadcrumb @contact_list.title, :contact_list_url
   end
 
   def new
     @contact_list = ContactList.new
+    add_breadcrumb 'Новый Лист', :new_contact_list_url
   end
 
   def create
@@ -25,6 +28,7 @@ class ContactListsController < ApplicationController
 
   def edit
     @contact_list = ContactList.find(params[:id])
+    add_breadcrumb 'Редактировать'
   end
 
   def update

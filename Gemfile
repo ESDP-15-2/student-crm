@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.4'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
@@ -10,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+
 group :development, :test do
   gem 'byebug'
 end
@@ -24,3 +24,4 @@ gem 'bootstrap-sass'
 gem 'will_paginate', '~> 3.0.6'
 gem 'bootstrap-will_paginate'
 gem 'rufus-scheduler', '~> 3.1', '>= 3.1.10'
+gem 'breadcrumbs_on_rails'

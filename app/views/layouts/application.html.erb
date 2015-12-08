@@ -8,13 +8,11 @@
 <body>
 
 <%= render 'layouts/navbar' %>
-
 <div class="container">
-  <!--<% flash.each do |type, message|%>-->
-      <!--<%= content_tag :div, message, class: "alert alert-#{type}" %>-->
-  <!--<% end %>-->
   <%= flash_messages %>
-
+	<ol class="breadcrumb">
+		<%= render_breadcrumbs :tag => :li, :separator => '' %>
+	</ol>
   <%= yield %>
 </div>
 

@@ -1,14 +1,18 @@
 class SendersController < ApplicationController
+
   def index
     @senders = Sender.all
+    add_breadcrumb 'Отправители', :senders_url
   end
 
   def show
     @sender = Sender.find(params[:id])
+
   end
 
   def new
     @sender = Sender.new
+
   end
 
   def create

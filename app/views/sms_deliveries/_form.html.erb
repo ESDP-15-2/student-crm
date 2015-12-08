@@ -3,9 +3,8 @@
     <div class="form-group col-sm-12">
       <%= f.label :content, value: 'Текст', class: 'col-sm-2 control-label' %>
       <div class="col-sm-6">
-        <span>Количество символов: </span><span id="char-num"></span>
-        <br />
-        <span>Количество сообщений: </span><span id="sms-count"></span>
+        <span>количество символов: </span><span id="char-num"></span>
+        <span>количество сообщений: </span><span id="sms-count"></span>
         <%= f.text_area :content, rows: 10, class: 'form-control', id: 'text-field' %>
         <%= render 'shared/field_errors', object: @sms_delivery, field_name: :content %>
       </div>

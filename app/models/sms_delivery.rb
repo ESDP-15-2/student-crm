@@ -16,6 +16,8 @@ class SmsDelivery < ActiveRecord::Base
   def send_message
     url = '/api/message'
     @response = set_url(url,build_message)
+    update_attribute(:status, true)
+    # redirect_to :
   end
 
   # def get_report
