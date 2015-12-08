@@ -14,7 +14,7 @@ class SendersController < ApplicationController
   def create
     @sender = Sender.new(sender_params)
     if @sender.save
-      redirect_to senders_url
+      redirect_to sms_service_accounts_url
       flash[:success] = 'Отправитель успешно создан'
     else
       flash[:danger] = 'Вы ввели некорректные данные, проверьте и попробуйте снова'
@@ -31,7 +31,7 @@ class SendersController < ApplicationController
 
     if @sender.update(sender_params)
       flash[:success] = 'Отправитель был успешно обновлен'
-      redirect_to senders_url
+      redirect_to sms_service_accounts_url
     else
       flash[:danger] = 'Вы ввели некорректные данные, проверьте и попробуйте снова'
       render 'edit'
@@ -39,9 +39,10 @@ class SendersController < ApplicationController
   end
 
   def destroy
+    @sender = Sender.find(params[:id])
     @sender.destroy
     flash[:success] = 'Отправитель был успешно удален'
-    redirect_to senders_url
+    redirect_to sms_service_accounts_url
   end
 
   private

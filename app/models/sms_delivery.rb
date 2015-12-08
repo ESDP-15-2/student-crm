@@ -48,7 +48,6 @@ class SmsDelivery < ActiveRecord::Base
         xml.login('aisma')
         xml.pwd('kiminitodoke')
         xml.id(id.to_s + 'Mesp1502')
-        xml.id(id.to_s + 'Mesp1502')
       }
     end
   end

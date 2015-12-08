@@ -3,6 +3,7 @@ class SmsServiceAccountsController < ApplicationController
 
   def index
     @sms_service_accounts = SmsServiceAccount.all
+    @senders = Sender.all
   end
 
   def show
