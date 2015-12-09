@@ -2,6 +2,8 @@
 ror_course = Course.create(name: 'ROR')
 html_course = Course.create(name: 'HTML')
 
+login_nikita = SmsServiceAccount.create(login: 'aisma', password: 'kiminitodoke')
+
 # Groups
 groups = []
 groups.push Group.create(name: 'ROR GR#1',

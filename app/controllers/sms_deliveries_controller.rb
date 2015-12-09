@@ -11,6 +11,13 @@ class SmsDeliveriesController < ApplicationController
     add_breadcrumb @sms_delivery.title, :sms_delivery_url
   end
 
+  def resend_message
+    @sms_delivery = SmsDelivery.find(params[:id])
+    @sms_delivery = SmsDelivery.new(@sms_delivery.attributes)
+    render :new
+  end
+
+
   def new
     @sms_delivery = SmsDelivery.new
     add_breadcrumb 'Новая Рассылка', :new_sms_delivery_url

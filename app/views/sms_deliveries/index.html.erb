@@ -25,6 +25,9 @@
               <%= link_to 'Удалить', sms_delivery_path(sms), method: :delete,
                           data: {confirm: 'Вы действительно хотите удалить эту рассылку?'}, class: 'btn btn-danger btn-xs'  %>
           <% end %>
+          <%= link_to 'Переотправить', sms_resend_path(sms), class: 'btn btn-primary btn-xs' %>
+
+
         </td>
       </tr>
   <% end %>
