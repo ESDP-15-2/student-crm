@@ -31,12 +31,15 @@ ActiveRecord::Schema.define(version: 20151210104109) do
   end
 
   create_table "contacts", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "phone"
     t.string   "additional_phone"
     t.string   "skype"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
+
+  add_index "contacts", ["user_id"], name: "index_contacts_on_user_id"
 
   create_table "course_elements", force: :cascade do |t|
     t.integer  "course_id"
@@ -122,14 +125,6 @@ ActiveRecord::Schema.define(version: 20151210104109) do
   create_table "sms_service_accounts", force: :cascade do |t|
     t.string   "login"
     t.string   "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "students", force: :cascade do |t|
-    t.string   "name"
-    t.string   "phone"
-    t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
