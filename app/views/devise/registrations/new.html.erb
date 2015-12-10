@@ -1,0 +1,110 @@
+<h1>Регистрация</h1>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-horizontal'}) do |f| %>
+
+    <div class="form-group">
+      <%= f.label :name, 'Имя', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+        <%= render 'shared/field_errors', object: resource, field_name: :name %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :surname, 'Фамилия', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.text_field :surname, class: 'form-control' %>
+        <%= render 'shared/field_errors', object: resource, field_name: :surname %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :birthdate, 'Дата рождения', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.date_select :birthdate, order: [:day, :month, :year], start_year: 1950,
+                          prompt: { day: 'День', month: 'Месяц', year: 'Год' }, class: 'form-control' %>
+        <%= render 'shared/field_errors', object: resource, field_name: :birthdate %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :gender, 'Пол', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.radio_button :gender, 'male', :checked => true %> Мужской
+        <%= f.radio_button :gender, 'female' %> Женский
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :passport_data, 'Паспортные данные', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.text_field :passport_data, class: 'form-control' %>
+        <%= render 'shared/field_errors', object: resource, field_name: :passport_data %>
+      </div>
+    </div>
+
+    <%= f.fields_for(:contact) do |ff| %>
+        <div class="form-group">
+          <%= ff.label :phone, 'Номер телефона', class: 'col-sm-2 control-label' %>
+          <div class="col-sm-6">
+            <%= ff.text_field :phone, class: 'form-control' %>
+            <%= render 'shared/field_errors', object: resource, field_name: :phone %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= ff.label :additional_phone, 'Доп. номер телефона', class: 'col-sm-2 control-label' %>
+          <div class="col-sm-6">
+            <%= ff.text_field :additional_phone, class: 'form-control' %>
+            <%= render 'shared/field_errors', object: resource, field_name: :additional_phone %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= ff.label :skype, class: 'col-sm-2 control-label' %>
+          <div class="col-sm-6">
+            <%= ff.text_field :skype, class: 'form-control' %>
+            <%= render 'shared/field_errors', object: resource, field_name: :skype %>
+          </div>
+        </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :email, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.email_field :email, class: 'form-control' %><span class="help-block">(только gmail)</span>
+        <%= render 'shared/field_errors', object: resource, field_name: :email %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password, 'Пароль', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
+        <% if @minimum_password_length %>
+            <span class="help-block">(минимум <%= @minimum_password_length %> символов)</span>
+        <% end %>
+        <%= render 'shared/field_errors', object: resource, field_name: :password %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password_confirmation, 'Подтверждение пароля', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control' %>
+        <%= render 'shared/field_errors', object: resource, field_name: :password_confirmation %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-6">
+        <%= f.submit 'Сохранить', class: 'btn btn-default' %>
+      </div>
+    </div>
+<% end %>
+
+<div class="row">
+  <div class="col-sm-offset-2 col-sm-10">
+    <%= render 'devise/shared/links' %>
+  </div>
+</div>
