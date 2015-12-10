@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   root 'sms_deliveries#index'
 
   resources :students,
