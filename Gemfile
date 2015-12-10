@@ -19,9 +19,16 @@ group :development do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
 gem 'faker'
+
 gem 'bootstrap-sass'
+
 gem 'will_paginate', '~> 3.0.6'
 gem 'bootstrap-will_paginate'
+
 gem 'rufus-scheduler', '~> 3.1', '>= 3.1.10'
+
 gem 'breadcrumbs_on_rails'
+
+gem 'devise'
