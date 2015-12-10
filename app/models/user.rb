@@ -13,9 +13,12 @@ class User < ActiveRecord::Base
   has_many :contact_lists, through: :recipient_depositories
 
   has_one :contact, dependent: :destroy
-  accepts_nested_attributes_for :contact
+  accepts_nested_attributes_for :contact, reject_if: :all_blank
 
   after_initialize do
     self.contact ||= self.build_contact()
   end
+
+   validates :name, :surname, :birthdate, :passport_data, presence: true
+   validates :email, format: { with: /@gmail\.com\z/, message: 'Only gmail' }
 end
