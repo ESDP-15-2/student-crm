@@ -32,3 +32,6 @@ gem 'rufus-scheduler', '~> 3.1', '>= 3.1.10'
 gem 'breadcrumbs_on_rails'
 
 gem 'devise'
+
+gem 'cancancan', '~> 1.10'
+gem 'rolify'
