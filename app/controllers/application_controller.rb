@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
 
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :surname, :gender, :birthdate,
                                                             :passport_data, :email, :password, :password_confirmation,
+                                                            :current_password,
                                                             contact_attributes:[:phone, :additional_phone, :skype]) }
   end
 end
