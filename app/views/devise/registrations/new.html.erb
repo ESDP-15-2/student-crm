@@ -48,7 +48,7 @@
           <%= ff.label :phone, 'Номер телефона', class: 'col-sm-2 control-label' %>
           <div class="col-sm-6">
             <%= ff.text_field :phone, class: 'form-control' %>
-            <%= render 'shared/field_errors', object: resource, field_name: :phone %>
+            <%= render 'shared/field_errors', object: resource.contact, field_name: :phone %>
           </div>
         </div>
 
@@ -56,7 +56,7 @@
           <%= ff.label :additional_phone, 'Доп. номер телефона', class: 'col-sm-2 control-label' %>
           <div class="col-sm-6">
             <%= ff.text_field :additional_phone, class: 'form-control' %>
-            <%= render 'shared/field_errors', object: resource, field_name: :additional_phone %>
+            <%= render 'shared/field_errors', object: resource.contact, field_name: :additional_phone %>
           </div>
         </div>
 
@@ -64,7 +64,7 @@
           <%= ff.label :skype, class: 'col-sm-2 control-label' %>
           <div class="col-sm-6">
             <%= ff.text_field :skype, class: 'form-control' %>
-            <%= render 'shared/field_errors', object: resource, field_name: :skype %>
+            <%= render 'shared/field_errors', object: resource.contact, field_name: :skype %>
           </div>
         </div>
     <% end %>

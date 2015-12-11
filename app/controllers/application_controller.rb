@@ -9,28 +9,12 @@ class ApplicationController < ActionController::Base
   private
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :name
-    devise_parameter_sanitizer.for(:account_update) << :name
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :surname, :gender, :birthdate,
+                                                            :passport_data, :email, :password, :password_confirmation,
+                                                            contact_attributes:[:phone, :additional_phone, :skype]) }
 
-    devise_parameter_sanitizer.for(:sign_up) << :surname
-    devise_parameter_sanitizer.for(:account_update) << :surname
-
-    devise_parameter_sanitizer.for(:sign_up) << :gender
-    devise_parameter_sanitizer.for(:account_update) << :gender
-
-    devise_parameter_sanitizer.for(:sign_up) << :birthdate
-    devise_parameter_sanitizer.for(:account_update) << :birthdate
-
-    devise_parameter_sanitizer.for(:sign_up) << :passport_data
-    devise_parameter_sanitizer.for(:account_update) << :passport_data
-
-    devise_parameter_sanitizer.for(:sign_up) << :phone
-    devise_parameter_sanitizer.for(:account_update) << :phone
-
-    devise_parameter_sanitizer.for(:sign_up) << :additional_phone
-    devise_parameter_sanitizer.for(:account_update) << :additional_phone
-
-    devise_parameter_sanitizer.for(:sign_up) << :skype
-    devise_parameter_sanitizer.for(:account_update) << :skype
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :surname, :gender, :birthdate,
+                                                            :passport_data, :email, :password, :password_confirmation,
+                                                            contact_attributes:[:phone, :additional_phone, :skype]) }
   end
 end
