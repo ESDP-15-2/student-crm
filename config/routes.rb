@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'users/new'
+
+  get 'users/show'
+
+  get 'users/index'
+
   devise_for :users
   root 'sms_deliveries#index'
 
-  resources :students,
+  resources :users,
             :contact_lists,
             :sms_deliveries,
             :sms_service_accounts,
