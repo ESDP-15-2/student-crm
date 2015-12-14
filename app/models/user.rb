@@ -2,8 +2,10 @@ class User < ActiveRecord::Base
   rolify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
   has_many :group_memberships
   has_many :groups, through: :group_memberships
 
@@ -22,4 +24,8 @@ class User < ActiveRecord::Base
 
   validates :name, :surname, :birthdate, :passport_data, presence: true
   validates :email, format: { with: /@gmail\.com\z/, message: 'Only gmail' }
+
+  def full_name
+    "#{name} #{surname}"
+  end
 end
