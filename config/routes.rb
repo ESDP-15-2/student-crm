@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
-
-  get 'users/new'
-
-  get 'users/show'
-
-  get 'users/index'
+  root 'sms_deliveries#index'
 
   devise_for :users
-  root 'sms_deliveries#index'
+
+  get 'users/students' => 'users#students', as: 'students'
 
   resources :users,
             :contact_lists,
