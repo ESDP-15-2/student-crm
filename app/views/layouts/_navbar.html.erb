@@ -15,12 +15,13 @@
         <li><%= link_to 'Рассылки', sms_deliveries_path %></li>
         <li><%= link_to 'Листы получателей', contact_lists_path %></li>
         <li><%= link_to 'Учетные записи', sms_service_accounts_path %></li>
-        <!--<li><%= link_to 'Отправители', senders_path %></li>-->
+        <li><%= link_to 'Пользователи', users_path %></li>
+        <li><%= link_to 'Студенты', students_path %></li>
       </ul>
       <ul class="navbar-nav navbar-right">
         <% if user_signed_in? %>
             <p class="navbar-text">
-              <%= link_to current_user.name, edit_user_registration_path(current_user), class: 'navbar-link' %>
+              <%= link_to current_user.full_name, edit_user_registration_path(current_user), class: 'navbar-link' %>
             </p>
             <ul class="nav navbar-nav">
               <li class="dropdown">
