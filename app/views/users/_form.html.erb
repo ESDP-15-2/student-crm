@@ -1,0 +1,103 @@
+<%= form_for @user, html: {class: 'form-horizontal'} do |f| %>
+
+    <div class="form-group">
+      <%= f.label :name, 'Имя', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+        <%= render 'shared/field_errors', object: @user, field_name: :name %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :surname, 'Фамилия', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.text_field :surname, class: 'form-control' %>
+        <%= render 'shared/field_errors', object: @user, field_name: :surname %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :birthdate, 'Дата рождения', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.date_select :birthdate, order: [:day, :month, :year], start_year: 1950,
+                          prompt: { day: 'День', month: 'Месяц', year: 'Год' },
+                          use_month_names: ['Январь','Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                          class: 'form-control' %>
+        <%= render 'shared/field_errors', object: @user, field_name: :birthdate %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :gender, 'Пол', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.radio_button :gender, 'male', :checked => true %> Мужской
+        <%= f.radio_button :gender, 'female' %> Женский
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :passport_data, 'Паспортные данные', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.text_field :passport_data, class: 'form-control' %>
+        <%= render 'shared/field_errors', object: @user, field_name: :passport_data %>
+      </div>
+    </div>
+
+    <%= f.fields_for(:contact) do |ff| %>
+        <div class="form-group">
+          <%= ff.label :phone, 'Номер телефона', class: 'col-sm-2 control-label' %>
+          <div class="col-sm-6">
+            <%= ff.text_field :phone, class: 'form-control' %>
+            <%= render 'shared/field_errors', object: @user.contact, field_name: :phone %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= ff.label :additional_phone, 'Доп. номер телефона', class: 'col-sm-2 control-label' %>
+          <div class="col-sm-6">
+            <%= ff.text_field :additional_phone, class: 'form-control' %>
+            <%= render 'shared/field_errors', object: @user.contact, field_name: :additional_phone %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= ff.label :skype, class: 'col-sm-2 control-label' %>
+          <div class="col-sm-6">
+            <%= ff.text_field :skype, class: 'form-control' %>
+            <%= render 'shared/field_errors', object: @user.contact, field_name: :skype %>
+          </div>
+        </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :email, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.email_field :email, class: 'form-control' %>
+      <%= render 'shared/field_errors', object: @user, field_name: :email %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password, 'Пароль', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
+        <span class="help-block">(минимум 8 символов)</span>
+        <%= render 'shared/field_errors', object: @user, field_name: :password %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :roles, 'Статус', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.collection_check_boxes(:role_ids, Role.all, :id, :name, :item_wrapper_class => 'inline') do |r| %>
+            <%= r.label { r.check_box + ' ' + r.text } %><br/>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-6">
+        <%= f.submit 'Сохранить', class: 'btn btn-default' %>
+      </div>
+    </div>
+<% end %>
