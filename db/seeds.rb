@@ -12,13 +12,22 @@ groups.push Group.create!(name: 'HTML GR#1',
                          course: html_course)
 groups.push Group.create!(name: 'HTML GR#2',
                          course: html_course)
+
+# Roles
+
+roles = []
+roles.push Role.create!(name: 'Администратор')
+roles.push Role.create!(name: 'Пользователь с полным доступом')
+roles.push Role.create!(name: 'Преподаватель')
+roles.push Role.create!(name: 'Студент')
+
 # Users
 users = []
 
-alexander = User.create!(name:'Alexander',
-                         surname:'Gudov',
+alexander = User.create!(name:'Александр',
+                         surname:'Гудов',
                          birthdate:'1983-06-05',
-                         gender:'male',
+                         gender:'мужской',
                          passport_data:'IT000',
                          contact_attributes: {
                            phone:'996707861277',
@@ -26,12 +35,12 @@ alexander = User.create!(name:'Alexander',
                            skype:'alexander_glok_zs'},
                          email:'admin@gmail.com',
                          password:'password')
-alexander.add_role 'admin'
+alexander.add_role 'Администратор'
 
-abai = User.create!(name:'Abai',
-                    surname:'Ismail',
+abai = User.create!(name:'Aбай',
+                    surname:'Исмаил',
                     birthdate:'1990-07-13',
-                    gender:'male',
+                    gender:'мужской',
                     passport_data:'K2-111',
                     contact_attributes: {
                       phone:'996550113377',
@@ -39,12 +48,12 @@ abai = User.create!(name:'Abai',
                       skype:'aismai'},
                     email:'aismai@gmail.com',
                     password:'password')
-abai.add_role 'student'
+abai.add_role 'Студент'
 
-aliia = User.create!(name:'Aliia',
-                    surname:'Kaiumova',
+aliia = User.create!(name:'Алия',
+                    surname:'Каюмова',
                     birthdate:'1978-12-06',
-                    gender:'female',
+                    gender:'женский',
                     passport_data:'K2-222',
                     contact_attributes: {
                       phone:'996700605070',
@@ -52,12 +61,12 @@ aliia = User.create!(name:'Aliia',
                       skype:'kalinka'},
                     email:'kalinka@gmail.com',
                     password:'password')
-aliia.add_role 'student'
+aliia.add_role 'Студент'
 
-marat = User.create!(name:'Marat',
-                     surname:'Kulbaev',
+marat = User.create!(name:'Марат',
+                     surname:'Кулбаев',
                      birthdate:'1990-01-12',
-                     gender:'male',
+                     gender:'мужской',
                      passport_data:'K2-333',
                      contact_attributes: {
                        phone:'996555623310',
@@ -65,12 +74,12 @@ marat = User.create!(name:'Marat',
                        skype:'klmart'},
                      email:'klmart@gmail.com',
                      password:'password')
-marat.add_role 'student'
+marat.add_role 'Студент'
 
-mahabat = User.create!(name:'Mahabat',
-                     surname:'Munalbaeva',
+mahabat = User.create!(name:'Махабат',
+                     surname:'Муналбаева',
                      birthdate:'1990-01-11',
-                     gender:'female',
+                     gender:'женский',
                      passport_data:'K2-444',
                      contact_attributes: {
                        phone:'996700067042',
@@ -78,12 +87,12 @@ mahabat = User.create!(name:'Mahabat',
                        skype:'dafnaa'},
                      email:'dafnaa@gmail.com',
                      password:'password')
-mahabat.add_role 'student'
+mahabat.add_role 'Студент'
 
-sanjar = User.create!(name:'Sanjar',
-                     surname:'Musaev',
+sanjar = User.create!(name:'Санжар',
+                     surname:'Мусаев',
                      birthdate:'1990-07-18',
-                     gender:'male',
+                     gender:'мужской',
                      passport_data:'K2-555',
                      contact_attributes: {
                        phone:'996550612056',
@@ -91,12 +100,12 @@ sanjar = User.create!(name:'Sanjar',
                        skype:'levydraiden'},
                      email:'musaev_s@gmail.com',
                     password:'password')
-sanjar.add_role 'student'
+sanjar.add_role 'Студент'
 
 users.push abai, aliia, marat, mahabat, alexander, sanjar
 
 # Group Membership
-student = Role.find_by(name: 'student')
+student = Role.find_by(name: 'Студент')
 students = student.users
 
 students.each do |student|
