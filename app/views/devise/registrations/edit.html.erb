@@ -21,7 +21,9 @@
       <%= f.label :birthdate, 'Дата рождения', class: 'col-sm-2 control-label' %>
       <div class="col-sm-6">
         <%= f.date_select :birthdate, order: [:day, :month, :year], start_year: 1950,
-                          prompt: { day: 'День', month: 'Месяц', year: 'Год' }, class: 'form-control' %>
+                          prompt: { day: 'День', month: 'Месяц', year: 'Год' },
+                          use_month_names: ['Январь','Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                          class: 'form-control' %>
         <%= render 'shared/field_errors', object: resource, field_name: :birthdate %>
       </div>
     </div>
