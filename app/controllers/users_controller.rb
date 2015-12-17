@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    add_breadcrumb 'Просмотр профиля пользователя', :user_url
   end
 
   def index
@@ -37,7 +38,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    add_breadcrumb 'Редактирование данных пользователя', :new_user_url
+    add_breadcrumb 'Редактирование данных пользователя', :edit_user_url
     @user = User.find(params[:id])
   end
 

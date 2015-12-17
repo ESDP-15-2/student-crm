@@ -1,2 +1,19 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<p><b>Имя: </b><%= @user.name %></p>
+<p><b>Фамилия: </b><%= @user.surname %></p>
+<p><b>Дата рождения: </b><%= @user.birthdate %></p>
+<p><b>Пол: </b><%= @user.gender %><p/>
+<p><b>Паспортные данные: </b><%= @user.passport_data %></p>
+<p><b>Телефон: </b><%= @user.contact.phone%></p>
+<% unless @user.contact.additional_phone.empty? %>
+  <p><b>Дополнительный телефон: </b><%= @user.contact.additional_phone %></p>
+<% end %>
+<p><b>Skype: </b><%= @user.contact.skype %></p>
+<p><b>Email: </b><%= @user.email %></p>
+
+<div>
+  <%= link_to 'Редактировать', edit_user_path(@user), class: 'btn btn-default' %>
+  <%= link_to 'Удалить', user_path(@user),
+            method: :delete,
+            data: {confirm: 'Вы действительно хотите удалить данного пользователя?'},
+            class: 'btn btn-danger' %>
+</div>
