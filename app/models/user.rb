@@ -22,8 +22,8 @@ class User < ActiveRecord::Base
     self.contact ||= self.build_contact()
   end
 
-  validates :name, :surname, :birthdate, :passport_data, presence: true
-  validates :email, format: { with: /@gmail\.com\z/, message: 'Only gmail' }
+  validates :name, :surname, :passport_data, presence: true
+  validates :email, format: { with: /@gmail\.com\z/, message: '??????????? gmail ?????' }
 
   def full_name
     "#{name} #{surname}"
