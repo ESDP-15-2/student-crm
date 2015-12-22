@@ -21,7 +21,6 @@
       <div class="col-sm-6">
         <%= f.date_select :birthdate, order: [:day, :month, :year], start_year: 1950,
                           prompt: { day: 'День', month: 'Месяц', year: 'Год' },
-                          use_month_names: ['Январь','Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
                           class: 'form-control' %>
         <%= render 'shared/field_errors', object: @user, field_name: :birthdate %>
       </div>
@@ -89,7 +88,7 @@
     <div class="form-group">
       <%= f.label :roles, 'Статус', class: 'col-sm-2 control-label' %>
       <div class="col-sm-6">
-        <%= f.collection_check_boxes(:role_ids, Role.all, :id, :name, :item_wrapper_class => 'inline') do |r| %>
+        <%= f.collection_check_boxes(:role_ids, Role.all, :id, :name) do |r| %>
             <%= r.label { r.check_box + ' ' + r.text } %><br/>
         <% end %>
       </div>

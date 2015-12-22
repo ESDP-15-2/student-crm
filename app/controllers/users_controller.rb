@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:success] = 'Пользователь успешно создан'
-      redirect_to users_url
+      redirect_to @user
     else
       flash[:danger] = 'Вы ввели некорректные данные, проверьте и попробуйте снова'
       render 'new'
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
     add_roles(@user)
 
     if @user.update(user_params)
-      redirect_to users_url
+      redirect_to @user
       flash[:success] = 'Данные пользователя успешно обновлены'
     else
       flash[:danger] = 'Вы ввели некорректные данные, проверьте и попробуйте снова'
