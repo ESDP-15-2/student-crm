@@ -8,11 +8,11 @@
 /.bundle
 
 # Ignore the default SQLite database.
-/db/*.sqlite3
+/esdp/esdp-15.12.15/student-crm/db/development.sqlite3
 /db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
-/log/*
+/esdp-15.12.15/student-crm/log/.keep
 !/log/.keep
 /tmp
 
