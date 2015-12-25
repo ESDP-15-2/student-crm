@@ -9,7 +9,8 @@ Rails.application.routes.draw do
             :contact_lists,
             :sms_deliveries,
             :sms_service_accounts,
-            :senders
+            :senders,
+            :course_elements
 
   post 'sms_deliveries/:id/send' => 'sms_deliveries#send_message', as: 'sms_send_message'
   get 'select_objects/select_group/:id' => 'select_objects#select_group', as: 'select_groups'
