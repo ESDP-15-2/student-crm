@@ -37,3 +37,5 @@ gem 'cancancan', '~> 1.10'
 gem 'rolify'
 
 gem 'bcrypt'
+
+gem 'paperclip', '~> 4.3'

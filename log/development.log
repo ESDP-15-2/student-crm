@@ -10089,3 +10089,4 @@ Completed 200 OK in 447ms (Views: 444.1ms | ActiveRecord: 0.3ms)
   [1m[36mSmsDelivery Load (0.5ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
   [1m[35mSmsDelivery Load (1.0ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
   [1m[36mSmsDelivery Load (1.1ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[36mSmsDelivery Load (7.0ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
