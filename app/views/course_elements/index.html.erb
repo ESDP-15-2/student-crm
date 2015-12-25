@@ -1,0 +1,27 @@
+<h1>Все учебные программы</h1>
+<p><%= link_to 'Новый курс', new_course_element_path, class: 'btn btn-primary margin-bottom' %></p>
+
+<table class="table table-striped table-hover col-sm-12">
+  <tr>
+    <th class="col-sm-3">Тема</th>
+    <th class="col-sm-3">Тип</th>
+    <th class="col-sm-3">Дата проведения</th>
+    <th class="col-sm-3">Домашнее задание</th>
+    <th class="col-sm-3">Дата сдачи</th>
+    <th class="col-sm-3">Действия</th>
+  </tr>
+  <% @course_elements.each do |course_element| %>
+      <tr>
+        <td><%= course_element.theme %></td>
+        <td><%= course_element.element_type %></td>
+        <td><%= course_element.date_for_theme %></td>
+        <td><%= course_element.home_work %></td>
+        <td><%= course_element.date_for_hw %></td>
+        <td>
+          <%= link_to 'Редактировать', edit_course_element_path(course_element), class: 'btn btn-success btn-xs' %>
+          <%= link_to 'Удалить', course_element_path(course_element), method: :delete,
+                      data: {confirm: 'Вы действительно хотите удалить данный курс?'}, class: 'btn btn-danger btn-xs'  %>
+        </td>
+      </tr>
+  <% end %>
+</table>
