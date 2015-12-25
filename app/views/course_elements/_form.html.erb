@@ -1,0 +1,58 @@
+<h1>Учебная программа</h1>
+
+<%= form_for @course_element, class: 'form-horizontal' do |f| %>
+
+    <div class="form-group col-sm-12">
+      <%= f.label :theme, 'Тема', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.text_field :theme, autofocus: true, class: 'form-control' %>
+        <%= render 'shared/field_errors', object: @course_element, field_name: :theme %>
+      </div>
+    </div>
+
+    <div class="form-group col-sm-12">
+      <%= f.label :element_type, 'Тип', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.text_field :element_type, class: 'form-control' %>
+        <%= render 'shared/field_errors', object: @course_element, field_name: :element_type %>
+      </div>
+    </div>
+
+    <div class="form-group col-sm-12">
+      <%= f.label :date_for_theme, 'Дата проведения', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.date_select :date_for_theme, order: [:day, :month, :year], start_year: 2015,
+                          prompt: { day: 'День', month: 'Месяц', year: 'Год' }, class: 'form-control' %>
+        <%= render 'shared/field_errors', object: @course_element, field_name: :date_for_theme %>
+      </div>
+    </div>
+
+
+    <div class="form-group col-sm-12">
+      <%= f.label :home_work, 'Домашнее задание', class: 'col-sm-2 control-label' %>
+    <div class="col-sm-6">
+      <div class="checkbox">
+      <label>
+        <input type="checkbox">
+      </label>
+      <%= render 'shared/field_errors', object: @course_element, field_name: :home_work %>
+    </div>
+    </div>
+    </div>
+    <div class="form-group col-sm-12">
+      <%= f.label :date_for_hw, 'Дата сдачи', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.date_select :date_for_hw, order: [:day, :month, :year], start_year: 2015,
+                          prompt: { day: 'День', month: 'Месяц', year: 'Год' }, class: 'form-control' %>
+        <%= render 'shared/field_errors', object: @course_element, field_name: :date_for_hw %>
+      </div>
+    </div>
+
+    <div class="form-group col-sm-12">
+      <div class="col-sm-offset-2 col-sm-6">
+        <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
+      </div>
+    </div>
+<% end %>
+
+
