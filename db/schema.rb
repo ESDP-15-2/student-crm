@@ -45,8 +45,11 @@ ActiveRecord::Schema.define(version: 20151211072029) do
     t.integer  "course_id"
     t.string   "theme"
     t.string   "element_type"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.date     "date_for_theme"
+    t.boolean  "home_work"
+    t.date     "date_for_hw"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   add_index "course_elements", ["course_id"], name: "index_course_elements_on_course_id"
@@ -80,14 +83,14 @@ ActiveRecord::Schema.define(version: 20151211072029) do
   add_index "groups", ["course_id"], name: "index_groups_on_course_id"
 
   create_table "periods", force: :cascade do |t|
-    t.integer  "course_element_id"
+    t.integer  "course_elements_id"
     t.string   "title"
     t.datetime "commence_datetime"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
-  add_index "periods", ["course_element_id"], name: "index_periods_on_course_element_id"
+  add_index "periods", ["course_elements_id"], name: "index_periods_on_course_elements_id"
 
   create_table "recipient_depositories", force: :cascade do |t|
     t.integer  "user_id"
