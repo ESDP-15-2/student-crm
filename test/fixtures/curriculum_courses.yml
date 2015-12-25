@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course_name: MyString
+  teacher: MyString
+  theme: MyString
+  date_for_theme: 2015-12-15
+  home_work: MyString
+  date_for_hw: 2015-12-15
+
+two:
+  course_name: MyString
+  teacher: MyString
+  theme: MyString
+  date_for_theme: 2015-12-15
+  home_work: MyString
+  date_for_hw: 2015-12-15
