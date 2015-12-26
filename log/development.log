@@ -10742,3 +10742,16 @@ Migrating to CreateCustomLists (20151226080200)
   [1m[35mSmsDelivery Load (1.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
   [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
   [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.2ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.2ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.5ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
