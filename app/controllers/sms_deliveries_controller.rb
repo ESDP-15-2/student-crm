@@ -77,15 +77,4 @@ class SmsDeliveriesController < ApplicationController
     params.require(:sms_delivery).permit(:title, :content, :contact_list_id, :sender_id)
   end
 
-  def parse_report(xml)
-    xml_doc = Nokogiri::XML(xml.body)
-    xml_doc.remove_namespaces!
-    doc = xml_doc.xpath('//phone')
-    hash = {}
-    doc.each do |phone|
-      hash[phone.xpath('number').text] = phone.xpath('report').text
-    end
-    hash
-  end
-
 end

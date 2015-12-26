@@ -4,41 +4,37 @@ class SmsDelivery < ActiveRecord::Base
 
   before_validation :fill_title
 
-  validates :title, presence: true,
-            length: { maximum: 70 }
-
-  validates :content, presence: true,
-            length: { maximum: 800 }
-
+  validates :title, presence: true, length: { maximum: 70 }
+  validates :content, presence: true, length: { maximum: 800 }
   validates :contact_list, presence: true
   validates :sender, presence: true
 
   def send_message
     url = '/api/message'
-    @response = set_url(url,build_message)
+    @response = set_url(url, build_message)
     update_attribute(:status, true)
-    # redirect_to :
   end
-
-  # def get_report
-  #   @sms = SmsDelivery.find(params[:id])
-  #   url = '/api/dr'
-  #   @response = set_url(url, @sms.build_report)
-  #   hash = parse_report(@response)
-  # end
 
   def build_message
     Nokogiri::XML::Builder.new do |xml|
       xml.message {
         xml.login(sender.sms_service_account.login)
         xml.pwd(sender.sms_service_account.password)
-        xml.id(id.to_s + 'Mesp1502')
+        xml.id(id.to_s + 'importecsdm')
         xml.sender(sender.name)
         xml.text_ content
         xml.phones {
-          contact_list.students.each do |student|
-            xml.phone(student.phone)
+
+          unless contact_list.custom_lists
+            contact_list.custom_lists.each do |phone|
+              xml.phone(phone.phone)
+            end
+          else
+            contact_list.users.each do |student|
+              xml.phone(student.contact.phone)
+            end
           end
+
         }
       }
     end
@@ -52,6 +48,17 @@ class SmsDelivery < ActiveRecord::Base
         xml.id(id.to_s + 'Mesp1502')
       }
     end
+  end
+
+  def parse_report(xml)
+    xml_doc = Nokogiri::XML(xml.body)
+    xml_doc.remove_namespaces!
+    doc = xml_doc.xpath('//phone')
+    hash = {}
+    doc.each do |phone|
+      hash[phone.xpath('number').text] = phone.xpath('report').text
+    end
+    hash
   end
 
   private

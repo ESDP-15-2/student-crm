@@ -54,6 +54,6 @@ class ContactListsController < ApplicationController
   private
 
   def contact_list_params
-    params.require(:contact_list).permit(:title, student_ids: [])
+    params.require(:contact_list).permit(:title, user_ids: [])
   end
 end
