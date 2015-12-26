@@ -5,5 +5,5 @@ class ContactList < ActiveRecord::Base
   has_many :custom_lists, dependent: :destroy
 
   validates :title, presence: true, uniqueness: true, length: { maximum: 50 }
-  validates :users, presence: true
+  # validates :users, presence: true
 end
