@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require dropzone
 //= require_tree .
 
 //this function calls alert close method to close an alert

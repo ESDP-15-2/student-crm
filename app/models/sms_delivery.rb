@@ -25,7 +25,7 @@ class SmsDelivery < ActiveRecord::Base
         xml.text_ content
         xml.phones {
 
-          unless contact_list.custom_lists
+          if contact_list.custom_lists.any?
             contact_list.custom_lists.each do |phone|
               xml.phone(phone.phone)
             end

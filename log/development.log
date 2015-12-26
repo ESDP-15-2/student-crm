@@ -17015,3 +17015,1745 @@ Completed 200 OK in 173ms (Views: 170.6ms | ActiveRecord: 1.1ms)
   [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
   [1m[35mSmsDelivery Load (0.5ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
   [1m[36mSmsDelivery Load (0.5ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.5ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.5ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+
+
+Started GET "/users/students" for 127.0.0.1 at 2015-12-26 15:39:05 +0600
+Processing by UsersController#students as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT 1[0m  [["name", "Студент"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_roles" ON "users"."id" = "users_roles"."user_id" WHERE "users_roles"."role_id" = ? LIMIT 10 OFFSET 0  [["role_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 3]]
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 4]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 5]]
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 6]]
+  Rendered users/students.html.erb within layouts/application (8.5ms)
+  Rendered layouts/_navbar.html.erb (2.7ms)
+Completed 200 OK in 181ms (Views: 155.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/course_elements" for 127.0.0.1 at 2015-12-26 15:39:06 +0600
+Processing by CourseElementsController#index as HTML
+  [1m[35mCourseElement Load (0.3ms)[0m  SELECT "course_elements".* FROM "course_elements"
+  Rendered course_elements/index.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.2ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (6.4ms)
+Completed 200 OK in 223ms (Views: 215.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-12-26 15:39:07 +0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 10 OFFSET 0[0m
+  [1m[35mContact Load (0.2ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  [1m[35mContact Load (0.2ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 3]]
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 4]]
+  [1m[35mContact Load (0.2ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 5]]
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 6]]
+  [1m[35mRole Load (0.6ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  [["user_id", 1]]
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  [["user_id", 3]]
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 4]]
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  [["user_id", 5]]
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered users/index.html.erb within layouts/application (36.8ms)
+  Rendered layouts/_navbar.html.erb (3.2ms)
+Completed 200 OK in 226ms (Views: 219.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/contact_lists" for 127.0.0.1 at 2015-12-26 15:39:08 +0600
+Processing by ContactListsController#index as HTML
+  [1m[35mContactList Load (0.3ms)[0m  SELECT "contact_lists".* FROM "contact_lists"
+  Rendered contact_lists/index.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (8.3ms)
+Completed 200 OK in 204ms (Views: 202.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/students" for 127.0.0.1 at 2015-12-26 15:39:08 +0600
+Processing by UsersController#students as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT 1[0m  [["name", "Студент"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_roles" ON "users"."id" = "users_roles"."user_id" WHERE "users_roles"."role_id" = ? LIMIT 10 OFFSET 0  [["role_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 3]]
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 4]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 5]]
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 6]]
+  Rendered users/students.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_navbar.html.erb (2.4ms)
+Completed 200 OK in 162ms (Views: 156.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/course_elements" for 127.0.0.1 at 2015-12-26 15:39:10 +0600
+Processing by CourseElementsController#index as HTML
+  [1m[35mCourseElement Load (0.2ms)[0m  SELECT "course_elements".* FROM "course_elements"
+  Rendered course_elements/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (4.6ms)
+Completed 200 OK in 173ms (Views: 171.5ms | ActiveRecord: 0.4ms)
+  [1m[36mSmsDelivery Load (0.6ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+
+
+Started GET "/course_elements/new" for 127.0.0.1 at 2015-12-26 15:39:11 +0600
+Processing by CourseElementsController#new as HTML
+  Rendered shared/_field_errors.html.erb (0.2ms)
+  Rendered shared/_field_errors.html.erb (0.1ms)
+  Rendered shared/_field_errors.html.erb (0.1ms)
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  Rendered course_elements/_form.html.erb (50.7ms)
+  Rendered course_elements/new.html.erb within layouts/application (52.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (7.6ms)
+Completed 200 OK in 285ms (Views: 273.3ms | ActiveRecord: 0.7ms)
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.2ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+
+
+Started POST "/course_elements" for 127.0.0.1 at 2015-12-26 15:39:45 +0600
+Processing by CourseElementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eXu1SntewJNBf/73zVMXcCfBHr5x4l67YAO/bKBMOpo7DWDEMhkqD7rgQsov4zdJ2AmejA6nXlWDB66RkSlw/w==", "course_element"=>{"theme"=>"Тестовая Тема", "element_type"=>"?", "date_for_theme(3i)"=>"31", "date_for_theme(2i)"=>"12", "date_for_theme(1i)"=>"2015", "date_for_hw(3i)"=>"31", "date_for_hw(2i)"=>"1", "date_for_hw(1i)"=>"2016"}, "commit"=>"Сохранить"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "course_elements" ("theme", "element_type", "date_for_theme", "date_for_hw", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["theme", "Тестовая Тема"], ["element_type", "?"], ["date_for_theme", "2015-12-31"], ["date_for_hw", "2016-01-31"], ["created_at", "2015-12-26 09:39:45.974679"], ["updated_at", "2015-12-26 09:39:45.974679"]]
+  [1m[36m (236.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/course_elements
+Completed 302 Found in 244ms (ActiveRecord: 237.5ms)
+
+
+Started GET "/course_elements" for 127.0.0.1 at 2015-12-26 15:39:46 +0600
+Processing by CourseElementsController#index as HTML
+  [1m[35mCourseElement Load (0.4ms)[0m  SELECT "course_elements".* FROM "course_elements"
+  Rendered course_elements/index.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (5.1ms)
+Completed 200 OK in 182ms (Views: 179.7ms | ActiveRecord: 0.7ms)
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.5ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.5ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.5ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.5ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.5ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.5ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.5ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.5ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.5ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.2ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.5ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.5ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.5ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.5ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.5ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.5ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.5ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.5ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+
+
+Started GET "/course_elements" for 127.0.0.1 at 2015-12-26 15:44:51 +0600
+Processing by CourseElementsController#index as HTML
+  [1m[36mCourseElement Load (0.3ms)[0m  [1mSELECT "course_elements".* FROM "course_elements"[0m
+  Rendered course_elements/index.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 962ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (File to import not found or unreadable: dropzone/dropzone.
+Load paths:
+  /home/aismai/test/student-crm/app/assets/images
+  /home/aismai/test/student-crm/app/assets/javascripts
+  /home/aismai/test/student-crm/app/assets/stylesheets
+  /home/aismai/test/student-crm/vendor/assets/javascripts
+  /home/aismai/test/student-crm/vendor/assets/stylesheets
+  /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/turbolinks-2.5.3/lib/assets/javascripts
+  /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/jquery-rails-4.0.5/vendor/assets/javascripts
+  /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/coffee-rails-4.1.0/lib/assets/javascripts
+  /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/bootstrap-sass-3.3.5.1/assets/stylesheets
+  /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/bootstrap-sass-3.3.5.1/assets/javascripts
+  /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/bootstrap-sass-3.3.5.1/assets/fonts
+  /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/bootstrap-sass-3.3.5.1/assets/images
+  /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/bootstrap-sass-3.3.5.1/assets/stylesheets):
+    2: <html>
+    3: <head>
+    4:   <title>StudentCrm</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= csrf_meta_tags %>
+    7: </head>
+    8: <body>
+  app/assets/stylesheets/application.scss:9
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__1636960535158279453_40847760'
+
+
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.9ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.9ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.0ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (36.4ms)
+  [1m[35mSmsDelivery Load (1.0ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+
+
+Started GET "/course_elements" for 127.0.0.1 at 2015-12-26 15:45:51 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CourseElementsController#index as HTML
+  [1m[35mCourseElement Load (0.2ms)[0m  SELECT "course_elements".* FROM "course_elements"
+  Rendered course_elements/index.html.erb within layouts/application (11.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.2ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (59.4ms)
+Completed 200 OK in 3245ms (Views: 3223.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/application.self-d9e9b94492f4aa7085a5ccfd4323979af807e0a6ca505711f2524306e87d1009.css?body=1" for 127.0.0.1 at 2015-12-26 15:45:54 +0600
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:54 +0600
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:54 +0600
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:54 +0600
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:54 +0600
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:54 +0600
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:54 +0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:54 +0600
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/dropzone.self-f4968c5c76d568fc8a719bd83aebcd638a3fa75f906e749002045ae7027615bd.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/contact_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/courses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/custom_list.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/custom_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/select_objects.self-a92a28e2f32da3b327d6eb37eae380fbb4c1fb8c61eaa13c6295cb2e7b3edc86.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/sender.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/sms_counter.min.self-8d2e05cbf89fbcc1cab021c24649fa6a4c880caeb3d0ba52cb189d3637e460f3.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/sms_service_accounts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/sms_deliveries.self-73a2a4e6c2c1e3111f4fcdc8a5f68f37da01e47cdfa2b68ff6bb7e040058cc33.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/application.self-236373355c264f3b784614a0106f8ee389a680df55fa6cefd00c2cd465e6136b.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+
+
+Started GET "/assets/logo-c1bf007ff2c9b1c06938bdc6867761d477da3ac7a53174e0da4bacdc29147937.png" for 127.0.0.1 at 2015-12-26 15:45:55 +0600
+  [1m[36mSmsDelivery Load (0.7ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 15:45:56 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[35mSmsDelivery Load (0.9ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0
+  [1m[36mContactList Load (0.2ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSender Load (0.4ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (55.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.4ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (10.8ms)
+Completed 200 OK in 260ms (Views: 255.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/sms_deliveries/new" for 127.0.0.1 at 2015-12-26 15:45:57 +0600
+Processing by SmsDeliveriesController#new as HTML
+  Rendered shared/_field_errors.html.erb (0.7ms)
+  [1m[36mSender Load (0.3ms)[0m  [1mSELECT "senders".* FROM "senders"  ORDER BY "senders"."created_at" DESC[0m
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  [1m[35mContactList Load (0.3ms)[0m  SELECT "contact_lists".* FROM "contact_lists"  ORDER BY "contact_lists"."created_at" DESC
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  Rendered shared/_field_errors.html.erb (0.2ms)
+  Rendered sms_deliveries/_form.html.erb (452.5ms)
+  Rendered sms_deliveries/new.html.erb within layouts/application (454.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (5.4ms)
+Completed 200 OK in 632ms (Views: 629.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/custom_lists/import" for 127.0.0.1 at 2015-12-26 15:46:04 +0600
+Processing by CustomListsController#import as JSON
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x007f0e93664ee8 @tempfile=#<Tempfile:/tmp/RackMultipart20151226-10937-69hajy.xlsx>, @original_filename="aismai.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"aismai.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mContactList Exists (0.2ms)[0m  SELECT  1 AS one FROM "contact_lists" WHERE "contact_lists"."title" = '2015-12-26--15:46:04-aismai.xlsx' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "contact_lists" ("title", "temp", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "2015-12-26--15:46:04-aismai.xlsx"], ["temp", "t"], ["created_at", "2015-12-26 09:46:04.585703"], ["updated_at", "2015-12-26 09:46:04.585703"]]
+  [1m[35m (127.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "custom_lists" ("phone", "contact_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["phone", "996550113377"], ["contact_list_id", 4], ["created_at", "2015-12-26 09:46:04.732023"], ["updated_at", "2015-12-26 09:46:04.732023"]]
+  [1m[36m (206.8ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 368ms (Views: 0.4ms | ActiveRecord: 336.8ms)
+  [1m[35mSmsDelivery Load (0.5ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.2ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+
+
+Started POST "/sms_deliveries" for 127.0.0.1 at 2015-12-26 15:46:20 +0600
+Processing by SmsDeliveriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jfSUeO8Izo9QycxfatAtjzx1fh3kYE+eSucHjDlCjJDPgkH2pk8kE6tWcGKIYA22w73+L5slT3Cp4xZxCCfG9Q==", "sms_delivery"=>{"content"=>"testing dropzone", "sender_id"=>"1", "contact_list_id"=>"4", "title"=>""}, "commit"=>"Сохранить"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mContactList Load (0.2ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mSender Load (0.1ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "sms_deliveries" ("title", "content", "contact_list_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "testing dropzone"], ["content", "testing dropzone"], ["contact_list_id", 4], ["sender_id", 1], ["created_at", "2015-12-26 09:46:20.355236"], ["updated_at", "2015-12-26 09:46:20.355236"]]
+  [1m[35m (149.0ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "sms_deliveries" SET "delivery_time" = ?, "updated_at" = ? WHERE "sms_deliveries"."id" = ?  [["delivery_time", "2015-12-26 09:49:20.507927"], ["updated_at", "2015-12-26 09:46:20.509491"], ["id", 7]]
+  [1m[36m (386.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 551ms (ActiveRecord: 537.8ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 15:46:20 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0
+  [1m[36mContactList Load (0.1ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mSender Load (0.1ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mContactList Load (0.1ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (16.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (4.5ms)
+Completed 200 OK in 190ms (Views: 187.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sms_deliveries/7/send" for 127.0.0.1 at 2015-12-26 15:46:24 +0600
+Processing by SmsDeliveriesController#send_message as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k76tEbtJn9E2qpPzF+8+QcqJzWJEuTWW/IoiFLHHd5zRyHif8g51Tc01L871Xx54NUFNUDv8NXgfjjPpgKI9+Q==", "commit"=>"Отправить", "id"=>"7"}
+  [1m[36mSmsDelivery Load (0.2ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mSender Load (0.1ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSmsServiceAccount Load (0.2ms)[0m  [1mSELECT  "sms_service_accounts".* FROM "sms_service_accounts" WHERE "sms_service_accounts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "recipient_depositories" ON "users"."id" = "recipient_depositories"."user_id" WHERE "recipient_depositories"."contact_list_id" = ?[0m  [["contact_list_id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "sms_deliveries" SET "status" = ?, "updated_at" = ? WHERE "sms_deliveries"."id" = ?[0m  [["status", "t"], ["updated_at", "2015-12-26 09:46:24.792386"], ["id", 7]]
+  [1m[35m (121.2ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 259ms (ActiveRecord: 123.3ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 15:46:24 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0[0m
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mSender Load (0.1ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (11.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (4.5ms)
+Completed 200 OK in 174ms (Views: 172.5ms | ActiveRecord: 0.9ms)
+  [1m[35mSmsDelivery Load (0.6ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+
+
+Started GET "/sms_deliveries/new" for 127.0.0.1 at 2015-12-26 15:46:50 +0600
+Processing by SmsDeliveriesController#new as HTML
+  Rendered shared/_field_errors.html.erb (0.1ms)
+  [1m[36mSender Load (0.3ms)[0m  [1mSELECT "senders".* FROM "senders"  ORDER BY "senders"."created_at" DESC[0m
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  [1m[35mContactList Load (0.3ms)[0m  SELECT "contact_lists".* FROM "contact_lists"  ORDER BY "contact_lists"."created_at" DESC
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  Rendered sms_deliveries/_form.html.erb (10.7ms)
+  Rendered sms_deliveries/new.html.erb within layouts/application (11.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (4.9ms)
+Completed 200 OK in 198ms (Views: 195.6ms | ActiveRecord: 0.8ms)
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.5ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+
+
+Started GET "/sms_deliveries/new" for 127.0.0.1 at 2015-12-26 15:48:32 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SmsDeliveriesController#new as HTML
+  Rendered shared/_field_errors.html.erb (0.4ms)
+  [1m[35mSender Load (0.2ms)[0m  SELECT "senders".* FROM "senders"  ORDER BY "senders"."created_at" DESC
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  [1m[36mContactList Load (0.2ms)[0m  [1mSELECT "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."temp" = ?  ORDER BY "contact_lists"."created_at" DESC[0m  [["temp", "f"]]
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  Rendered sms_deliveries/_form.html.erb (485.0ms)
+  Rendered sms_deliveries/new.html.erb within layouts/application (489.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (36.1ms)
+Completed 200 OK in 879ms (Views: 850.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.self-d9e9b94492f4aa7085a5ccfd4323979af807e0a6ca505711f2524306e87d1009.css?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/contact_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/dropzone.self-f4968c5c76d568fc8a719bd83aebcd638a3fa75f906e749002045ae7027615bd.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/courses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/custom_list.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/custom_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/select_objects.self-a92a28e2f32da3b327d6eb37eae380fbb4c1fb8c61eaa13c6295cb2e7b3edc86.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/sender.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/sms_counter.min.self-8d2e05cbf89fbcc1cab021c24649fa6a4c880caeb3d0ba52cb189d3637e460f3.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/sms_deliveries.self-73a2a4e6c2c1e3111f4fcdc8a5f68f37da01e47cdfa2b68ff6bb7e040058cc33.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/sms_service_accounts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/application.self-236373355c264f3b784614a0106f8ee389a680df55fa6cefd00c2cd465e6136b.js?body=1" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/assets/logo-c1bf007ff2c9b1c06938bdc6867761d477da3ac7a53174e0da4bacdc29147937.png" for 127.0.0.1 at 2015-12-26 15:48:33 +0600
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 15:48:36 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0
+  [1m[36mContactList Load (0.3ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mSender Load (0.2ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mContactList Load (0.1ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.2ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (32.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (7.2ms)
+Completed 200 OK in 265ms (Views: 262.1ms | ActiveRecord: 1.5ms)
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+
+
+Started GET "/sms_deliveries/new" for 127.0.0.1 at 2015-12-26 15:49:17 +0600
+Processing by SmsDeliveriesController#new as HTML
+  Rendered shared/_field_errors.html.erb (0.5ms)
+  [1m[36mSender Load (0.9ms)[0m  [1mSELECT "senders".* FROM "senders"  ORDER BY "senders"."created_at" DESC[0m
+  Rendered shared/_field_errors.html.erb (0.1ms)
+  [1m[35mContactList Load (0.3ms)[0m  SELECT "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."temp" = ?  ORDER BY "contact_lists"."created_at" DESC  [["temp", "f"]]
+  Rendered shared/_field_errors.html.erb (0.1ms)
+  Rendered shared/_field_errors.html.erb (0.1ms)
+  Rendered sms_deliveries/_form.html.erb (13.3ms)
+  Rendered sms_deliveries/new.html.erb within layouts/application (14.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (4.8ms)
+Completed 200 OK in 198ms (Views: 195.0ms | ActiveRecord: 1.7ms)
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+
+
+Started POST "/sms_deliveries" for 127.0.0.1 at 2015-12-26 15:49:30 +0600
+Processing by SmsDeliveriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J46Urj3NbLoDB+SAXB1kBARBfLooJCDFUnu69dNlU4Zl+EEgdIqGJviYWL2+rUQ9+4n8iFdhICuxf6sI4gAZ4w==", "sms_delivery"=>{"content"=>"testing without dropzone", "sender_id"=>"1", "contact_list_id"=>"2", "title"=>""}, "commit"=>"Сохранить"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mContactList Load (0.2ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSender Load (0.2ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "sms_deliveries" ("title", "content", "contact_list_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "testing without dropzone"], ["content", "testing without dropzone"], ["contact_list_id", 2], ["sender_id", 1], ["created_at", "2015-12-26 09:49:30.829388"], ["updated_at", "2015-12-26 09:49:30.829388"]]
+  [1m[35m (187.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "sms_deliveries" SET "delivery_time" = ?, "updated_at" = ? WHERE "sms_deliveries"."id" = ?  [["delivery_time", "2015-12-26 09:52:31.019772"], ["updated_at", "2015-12-26 09:49:31.020695"], ["id", 8]]
+  [1m[36m (164.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mSmsDelivery Load (0.5ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 369ms (ActiveRecord: 354.1ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 15:49:31 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0[0m
+  [1m[35mContactList Load (0.2ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSender Load (0.1ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (22.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (5.1ms)
+Completed 200 OK in 229ms (Views: 226.7ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/sms_deliveries/8/send" for 127.0.0.1 at 2015-12-26 15:49:32 +0600
+Processing by SmsDeliveriesController#send_message as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yow8LoSXscK6V2TJl9QtGF4SEV4O6meHM+vYKUmsuv0g+umgzdBbXkHI2PR1ZA0hodqRbHGvZ2nQ78nUeMnwmA==", "commit"=>"Отправить", "id"=>"8"}
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mSender Load (0.1ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSmsServiceAccount Load (0.2ms)[0m  SELECT  "sms_service_accounts".* FROM "sms_service_accounts" WHERE "sms_service_accounts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mContactList Load (0.1ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "recipient_depositories" ON "users"."id" = "recipient_depositories"."user_id" WHERE "recipient_depositories"."contact_list_id" = ?  [["contact_list_id", 2]]
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "sms_deliveries" SET "status" = ?, "updated_at" = ? WHERE "sms_deliveries"."id" = ?[0m  [["status", "t"], ["updated_at", "2015-12-26 09:49:32.927066"], ["id", 8]]
+  [1m[35m (148.1ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 329ms (ActiveRecord: 151.1ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 15:49:33 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0[0m
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSender Load (0.1ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (15.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (4.8ms)
+Completed 200 OK in 202ms (Views: 199.8ms | ActiveRecord: 1.1ms)
+  [1m[35mSmsDelivery Load (0.5ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.5ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.6ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[36mSmsDelivery Load (7.5ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mContactList Load (1.0ms)[0m  SELECT "contact_lists".* FROM "contact_lists"
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.5ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.5ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.5ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[36mContactList Load (2.8ms)[0m  [1mSELECT "contact_lists".* FROM "contact_lists"[0m
+  [1m[35mContactList Load (0.3ms)[0m  SELECT "contact_lists".* FROM "contact_lists"
+  [1m[36mContactList Load (0.4ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" LIMIT 1[0m
+  [1m[35mContactList Load (0.6ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" LIMIT 1
+  [1m[36mContactList Load (0.3ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists"  ORDER BY "contact_lists"."id" DESC LIMIT 1[0m
+  [1m[35mContactList Load (0.3ms)[0m  SELECT  "contact_lists".* FROM "contact_lists"  ORDER BY "contact_lists"."id" DESC LIMIT 1
+  [1m[36mCustomList Load (0.3ms)[0m  [1mSELECT "custom_lists".* FROM "custom_lists" WHERE "custom_lists"."contact_list_id" = ?[0m  [["contact_list_id", 4]]
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:06:20 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SmsDeliveriesController#index as HTML
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0
+  [1m[36mContactList Load (0.2ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSender Load (0.2ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mContactList Load (0.1ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (57.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.2ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (35.2ms)
+Completed 200 OK in 511ms (Views: 489.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/application.self-d9e9b94492f4aa7085a5ccfd4323979af807e0a6ca505711f2524306e87d1009.css?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/dropzone.self-f4968c5c76d568fc8a719bd83aebcd638a3fa75f906e749002045ae7027615bd.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/contact_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/courses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/custom_list.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/custom_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/select_objects.self-a92a28e2f32da3b327d6eb37eae380fbb4c1fb8c61eaa13c6295cb2e7b3edc86.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/sender.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/sms_deliveries.self-73a2a4e6c2c1e3111f4fcdc8a5f68f37da01e47cdfa2b68ff6bb7e040058cc33.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/sms_counter.min.self-8d2e05cbf89fbcc1cab021c24649fa6a4c880caeb3d0ba52cb189d3637e460f3.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/sms_service_accounts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/application.self-236373355c264f3b784614a0106f8ee389a680df55fa6cefd00c2cd465e6136b.js?body=1" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/assets/logo-c1bf007ff2c9b1c06938bdc6867761d477da3ac7a53174e0da4bacdc29147937.png" for 127.0.0.1 at 2015-12-26 16:06:21 +0600
+
+
+Started GET "/sms_deliveries/new" for 127.0.0.1 at 2015-12-26 16:06:22 +0600
+Processing by SmsDeliveriesController#new as HTML
+  Rendered shared/_field_errors.html.erb (0.4ms)
+  [1m[36mSender Load (0.2ms)[0m  [1mSELECT "senders".* FROM "senders"  ORDER BY "senders"."created_at" DESC[0m
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  [1m[35mContactList Load (0.2ms)[0m  SELECT "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."temp" = ?  ORDER BY "contact_lists"."created_at" DESC  [["temp", "f"]]
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  Rendered sms_deliveries/_form.html.erb (461.7ms)
+  Rendered sms_deliveries/new.html.erb within layouts/application (463.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (5.6ms)
+Completed 200 OK in 639ms (Views: 637.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:06:31 +0600
+Processing by SmsDeliveriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GCLEbsol/4kesLpNXFMgg2kqWE+V6Yugpd9kqUvRccdaVBHgg2IVFeUvBnC+4wC6luLYfeqsi05G23VUerQ7og==", "sms_delivery"=>{"content"=>"test", "sender_id"=>"1", "contact_list_id"=>"2", "title"=>""}, "commit"=>"Сохранить"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSender Load (0.1ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "sms_deliveries" ("title", "content", "contact_list_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "test"], ["content", "test"], ["contact_list_id", 2], ["sender_id", 1], ["created_at", "2015-12-26 10:06:31.082203"], ["updated_at", "2015-12-26 10:06:31.082203"]]
+  [1m[36m (146.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "sms_deliveries" SET "delivery_time" = ?, "updated_at" = ? WHERE "sms_deliveries"."id" = ?[0m  [["delivery_time", "2015-12-26 10:09:31.232265"], ["updated_at", "2015-12-26 10:06:31.232892"], ["id", 9]]
+  [1m[35m (275.9ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 435ms (ActiveRecord: 424.2ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:06:31 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[36mSmsDelivery Load (0.5ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "sms_deliveries"
+  [1m[36mContactList Load (0.1ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSender Load (0.1ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mContactList Load (0.1ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (20.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (5.6ms)
+Completed 200 OK in 222ms (Views: 219.7ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/sms_deliveries/9/send" for 127.0.0.1 at 2015-12-26 16:06:32 +0600
+Processing by SmsDeliveriesController#send_message as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ja2OZ1ztmSm1GkWJ3F6W7Jm1Iv4/RiZJOU1bnTAavh5n21vpFapztU6F+bQ+7rbVZn2izEADJqfaSUpgAX/0ew==", "commit"=>"Отправить", "id"=>"9"}
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mSender Load (0.2ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSmsServiceAccount Load (0.3ms)[0m  [1mSELECT  "sms_service_accounts".* FROM "sms_service_accounts" WHERE "sms_service_accounts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mContactList Load (0.2ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCustomList Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "custom_lists" WHERE "custom_lists"."contact_list_id" = ? LIMIT 1[0m  [["contact_list_id", 2]]
+  [1m[35mCustomList Load (0.2ms)[0m  SELECT "custom_lists".* FROM "custom_lists" WHERE "custom_lists"."contact_list_id" = ?  [["contact_list_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "sms_deliveries" SET "status" = ?, "updated_at" = ? WHERE "sms_deliveries"."id" = ?  [["status", "t"], ["updated_at", "2015-12-26 10:06:33.142154"], ["id", 9]]
+  [1m[36m (146.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 294ms (ActiveRecord: 149.5ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:06:33 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "sms_deliveries"[0m
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSender Load (0.1ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (20.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (4.6ms)
+Completed 200 OK in 213ms (Views: 210.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/sms_deliveries/resend_message/8" for 127.0.0.1 at 2015-12-26 16:06:38 +0600
+Processing by SmsDeliveriesController#resend_message as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mSmsDelivery Load (0.2ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered shared/_field_errors.html.erb (0.1ms)
+  [1m[36mSender Load (0.3ms)[0m  [1mSELECT "senders".* FROM "senders"  ORDER BY "senders"."created_at" DESC[0m
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  [1m[35mContactList Load (0.1ms)[0m  SELECT "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."temp" = ?  ORDER BY "contact_lists"."created_at" DESC  [["temp", "f"]]
+  Rendered shared/_field_errors.html.erb (0.1ms)
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  Rendered sms_deliveries/_form.html.erb (11.1ms)
+  Rendered sms_deliveries/new.html.erb within layouts/application (12.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (5.0ms)
+Completed 200 OK in 280ms (Views: 275.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/custom_lists/import" for 127.0.0.1 at 2015-12-26 16:07:05 +0600
+Processing by CustomListsController#import as JSON
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x007f9ca000a520 @tempfile=#<Tempfile:/tmp/RackMultipart20151226-11257-dirrbn.xlsx>, @original_filename="aismai.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"aismai.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mContactList Exists (0.2ms)[0m  SELECT  1 AS one FROM "contact_lists" WHERE "contact_lists"."title" = '2015-12-26--16:07:05-aismai.xlsx' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "contact_lists" ("title", "temp", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "2015-12-26--16:07:05-aismai.xlsx"], ["temp", "t"], ["created_at", "2015-12-26 10:07:05.439525"], ["updated_at", "2015-12-26 10:07:05.439525"]]
+  [1m[35m (135.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "custom_lists" ("phone", "contact_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["phone", "996550113377"], ["contact_list_id", 5], ["created_at", "2015-12-26 10:07:05.589054"], ["updated_at", "2015-12-26 10:07:05.589054"]]
+  [1m[36m (187.7ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 345ms (Views: 0.4ms | ActiveRecord: 324.6ms)
+
+
+Started POST "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:07:19 +0600
+Processing by SmsDeliveriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y9DSdzYFazHmvcMB1Cg7vn8JLXg3AwbOpJmywaBptgchpgf5f0KBrR0ifzw2mBuHgMGtSkhGBiBHnaM8kQz8Yg==", "sms_delivery"=>{"content"=>"testing message", "sender_id"=>"1", "contact_list_id"=>"5", "title"=>"testing without dropzone"}, "commit"=>"Сохранить"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mContactList Load (0.2ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mSender Load (0.1ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "sms_deliveries" ("title", "content", "contact_list_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "testing without dropzone"], ["content", "testing message"], ["contact_list_id", 5], ["sender_id", 1], ["created_at", "2015-12-26 10:07:19.089699"], ["updated_at", "2015-12-26 10:07:19.089699"]]
+  [1m[35m (150.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "sms_deliveries" SET "delivery_time" = ?, "updated_at" = ? WHERE "sms_deliveries"."id" = ?  [["delivery_time", "2015-12-26 10:10:19.244124"], ["updated_at", "2015-12-26 10:07:19.244863"], ["id", 10]]
+  [1m[36m (142.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 307ms (ActiveRecord: 294.8ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:07:19 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "sms_deliveries"[0m
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mSender Load (0.1ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (17.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (4.1ms)
+Completed 200 OK in 210ms (Views: 208.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/sms_deliveries/10/send" for 127.0.0.1 at 2015-12-26 16:07:22 +0600
+Processing by SmsDeliveriesController#send_message as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ka5XWZJChbtxnzz1ceNOzAt1rE6WAkcCkHN++0b5SV7T2ILX2wVvJ4oAgMiTU2719L0sfOlHR+xzd28Gd5wDOw==", "commit"=>"Отправить", "id"=>"10"}
+  [1m[35mSmsDelivery Load (0.1ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mSender Load (0.1ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSmsServiceAccount Load (0.1ms)[0m  SELECT  "sms_service_accounts".* FROM "sms_service_accounts" WHERE "sms_service_accounts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mContactList Load (0.1ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCustomList Exists (0.1ms)[0m  SELECT  1 AS one FROM "custom_lists" WHERE "custom_lists"."contact_list_id" = ? LIMIT 1  [["contact_list_id", 5]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "recipient_depositories" ON "users"."id" = "recipient_depositories"."user_id" WHERE "recipient_depositories"."contact_list_id" = ?[0m  [["contact_list_id", 5]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "sms_deliveries" SET "status" = ?, "updated_at" = ? WHERE "sms_deliveries"."id" = ?[0m  [["status", "t"], ["updated_at", "2015-12-26 10:07:22.527034"], ["id", 10]]
+  [1m[35m (140.6ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 260ms (ActiveRecord: 142.4ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:07:22 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "sms_deliveries"
+  [1m[36mContactList Load (0.1ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mSender Load (0.1ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mContactList Load (0.1ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mContactList Load (0.1ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (17.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (4.3ms)
+Completed 200 OK in 191ms (Views: 188.9ms | ActiveRecord: 1.1ms)
+  [1m[36mSmsDelivery Load (3.0ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-26 16:08:47 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SmsDeliveriesController#index as HTML
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "sms_deliveries"[0m
+  [1m[35mContactList Load (0.2ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mSender Load (0.1ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (503.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (30.6ms)
+Completed 200 OK in 880ms (Views: 861.8ms | ActiveRecord: 3.1ms)
+
+
+Started DELETE "/sms_deliveries/10" for 127.0.0.1 at 2015-12-26 16:08:50 +0600
+Processing by SmsDeliveriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"I5DLvjbtZBvfX/6R3XrzeeHY37IynsY/avG4Y6PAI6xh5h4wf6qOhyTAQqw/ytNAHhBfgE3bxtGJ9amekqVpyQ==", "id"=>"10"}
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ?  [["id", 10]]
+  [1m[36m (156.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 162ms (ActiveRecord: 157.9ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:08:50 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "sms_deliveries"[0m
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSender Load (0.1ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (20.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (4.6ms)
+Completed 200 OK in 292ms (Views: 289.5ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/sms_deliveries/9" for 127.0.0.1 at 2015-12-26 16:08:53 +0600
+Processing by SmsDeliveriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"z1y9Yp3F3uPWiFadOBvC9YxKEOdd2dqs1EXF2Ht3FpiNKmjs1II0fy0X6qDaq+LMc4KQ1SKc2kI3QdQlShJc/Q==", "id"=>"9"}
+  [1m[35mSmsDelivery Load (0.2ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  DELETE FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ?  [["id", 9]]
+  [1m[36m (157.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 163ms (ActiveRecord: 159.1ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:08:53 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0
+  [1m[36mContactList Load (0.1ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSender Load (0.1ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mContactList Load (0.1ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (17.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (6.6ms)
+Completed 200 OK in 224ms (Views: 221.6ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/sms_deliveries/8" for 127.0.0.1 at 2015-12-26 16:08:55 +0600
+Processing by SmsDeliveriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9zwxANRJkvuXPbAW1TokpSwqDrsK6L6pT0TwbimCRNy1SuSOnQ54Z2yiDCs3igSc0+KOiXWtvkesQOGTGOcOuQ==", "id"=>"8"}
+  [1m[36mSmsDelivery Load (0.2ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ?[0m  [["id", 8]]
+  [1m[35m (117.8ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 121ms (ActiveRecord: 118.6ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:08:55 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0[0m
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mSender Load (0.1ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (14.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (5.7ms)
+Completed 200 OK in 207ms (Views: 204.7ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/sms_deliveries/7" for 127.0.0.1 at 2015-12-26 16:08:57 +0600
+Processing by SmsDeliveriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mB1BIxTDwDVv3knkk4kQLNgi4PLEBhH4ZVcAvGR5Ppfaa5StXYQqqZRB9dlxOTAVJ+pgwLtDERaGUxFBVRx08g==", "id"=>"7"}
+  [1m[35mSmsDelivery Load (0.2ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ?  [["id", 7]]
+  [1m[36m (157.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 162ms (ActiveRecord: 158.6ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:08:57 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0
+  [1m[36mContactList Load (0.1ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSender Load (0.1ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (12.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (5.5ms)
+Completed 200 OK in 194ms (Views: 192.4ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/sms_deliveries/6" for 127.0.0.1 at 2015-12-26 16:08:58 +0600
+Processing by SmsDeliveriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dUloHoolFu1wSuxffUP1fZxgvZUHHMI2iiAUGxODCrc3P72Qw2L8cYvVUGKf89VEY6g9p3hZwthpJAXmIuZA0g==", "id"=>"6"}
+  [1m[36mSmsDelivery Load (0.1ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ?[0m  [["id", 6]]
+  [1m[35m (143.8ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 147ms (ActiveRecord: 144.8ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:08:58 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0[0m
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSender Load (0.1ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (8.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (7.4ms)
+Completed 200 OK in 214ms (Views: 212.2ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/sms_deliveries/5" for 127.0.0.1 at 2015-12-26 16:09:00 +0600
+Processing by SmsDeliveriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Jv+/10u3AP9Zfw8cH+TJrQEd/4L2jGge2pTHRr12MqRkiWpZAvDqY6LgsyH9VOmU/tV/sInJaPA5kNa7jBN4wQ==", "id"=>"5"}
+  [1m[35mSmsDelivery Load (0.1ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ?  [["id", 5]]
+  [1m[36m (153.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 157ms (ActiveRecord: 153.9ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:09:00 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0
+  [1m[36mContactList Load (0.1ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSender Load (0.1ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (8.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (4.3ms)
+Completed 200 OK in 182ms (Views: 179.6ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/sms_deliveries/3" for 127.0.0.1 at 2015-12-26 16:09:02 +0600
+Processing by SmsDeliveriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"08bzyJFV58Kr3HvcGjL+KspGOOC8GVHH+Hz7acs64sORsCZG2BINXlBDx+H4gt4TNY640sNcUSkbeOqU+l+opg==", "id"=>"3"}
+  [1m[36mSmsDelivery Load (0.2ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ?[0m  [["id", 3]]
+  [1m[35m (131.3ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 136ms (ActiveRecord: 132.2ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:09:02 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[36mSmsDelivery Load (0.5ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0[0m
+  [1m[35mContactList Load (0.2ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSender Load (0.1ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (8.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (7.3ms)
+Completed 200 OK in 240ms (Views: 237.2ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/sms_deliveries/2" for 127.0.0.1 at 2015-12-26 16:09:03 +0600
+Processing by SmsDeliveriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eOvCvWPPTgMJ27RKxsv826+rSV4R7cxdNeYVWut1gIk6nRczKoikn/JECHcke9ziUGPJbG6ozLPW4gSn2hDK7A==", "id"=>"2"}
+  [1m[35mSmsDelivery Load (0.2ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ?  [["id", 2]]
+  [1m[36m (135.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 140ms (ActiveRecord: 136.3ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:09:04 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0
+  [1m[36mContactList Load (0.1ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSender Load (0.1ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (4.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (4.9ms)
+Completed 200 OK in 207ms (Views: 204.7ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/sms_deliveries/1" for 127.0.0.1 at 2015-12-26 16:09:05 +0600
+Processing by SmsDeliveriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UILP0v5XO0/IxEOJKTUbLBVaNXkVEZPd70Mj+02pzTwS9BpctxDR0zNb/7TLhTsV6pK1S2pUkzMMRzIGfMyHWQ==", "id"=>"1"}
+  [1m[36mSmsDelivery Load (0.2ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ?[0m  [["id", 1]]
+  [1m[35m (154.0ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 159ms (ActiveRecord: 155.0ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:09:06 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0[0m
+  Rendered sms_deliveries/index.html.erb within layouts/application (1.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (5.2ms)
+Completed 200 OK in 190ms (Views: 187.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/sms_deliveries/new" for 127.0.0.1 at 2015-12-26 16:09:16 +0600
+Processing by SmsDeliveriesController#new as HTML
+  Rendered shared/_field_errors.html.erb (0.4ms)
+  [1m[35mSender Load (0.2ms)[0m  SELECT "senders".* FROM "senders"  ORDER BY "senders"."created_at" DESC
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  [1m[36mContactList Load (0.2ms)[0m  [1mSELECT "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."temp" = ?  ORDER BY "contact_lists"."created_at" DESC[0m  [["temp", "f"]]
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  Rendered sms_deliveries/_form.html.erb (23.4ms)
+  Rendered sms_deliveries/new.html.erb within layouts/application (24.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (7.8ms)
+Completed 200 OK in 243ms (Views: 241.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:09:33 +0600
+Processing by SmsDeliveriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ITSz2FG9Ss1c74MQBraCxR5klvKo9KYSKJah+v2je/9jQmZWGPqgUadwPy3kBqL84awWwNexpvzLkrAHzMYxmg==", "sms_delivery"=>{"content"=>"custom with contacts", "sender_id"=>"1", "contact_list_id"=>"3", "title"=>""}, "commit"=>"Сохранить"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mContactList Load (0.2ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mSender Load (0.1ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "sms_deliveries" ("title", "content", "contact_list_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "custom with contacts"], ["content", "custom with contacts"], ["contact_list_id", 3], ["sender_id", 1], ["created_at", "2015-12-26 10:09:33.987043"], ["updated_at", "2015-12-26 10:09:33.987043"]]
+  [1m[35m (136.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "sms_deliveries" SET "delivery_time" = ?, "updated_at" = ? WHERE "sms_deliveries"."id" = ?  [["delivery_time", "2015-12-26 10:12:34.126758"], ["updated_at", "2015-12-26 10:09:34.127955"], ["id", 11]]
+  [1m[36m (140.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 292ms (ActiveRecord: 279.2ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:09:34 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0
+  [1m[36mContactList Load (0.1ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mSender Load (0.1ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (5.4ms)
+Completed 200 OK in 216ms (Views: 212.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/sms_deliveries/11/send" for 127.0.0.1 at 2015-12-26 16:09:37 +0600
+Processing by SmsDeliveriesController#send_message as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"66FS8VTwUsgrzNXTklg787ynZO0w0eAz9tgHOmMcXNyp14d/Hbe4VNBTae5w6BvKQ2/k30+U4N0V3BbHUnkWuQ==", "commit"=>"Отправить", "id"=>"11"}
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mSender Load (0.2ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSmsServiceAccount Load (0.2ms)[0m  [1mSELECT  "sms_service_accounts".* FROM "sms_service_accounts" WHERE "sms_service_accounts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "recipient_depositories" ON "users"."id" = "recipient_depositories"."user_id" WHERE "recipient_depositories"."contact_list_id" = ?[0m  [["contact_list_id", 3]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "sms_deliveries" SET "status" = ?, "updated_at" = ? WHERE "sms_deliveries"."id" = ?  [["status", "t"], ["updated_at", "2015-12-26 10:09:42.514062"], ["id", 11]]
+  [1m[36m (170.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 5315ms (ActiveRecord: 173.4ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:09:42 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[35mSmsDelivery Load (0.5ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0
+  [1m[36mContactList Load (0.1ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mSender Load (0.1ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (6.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.2ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (6.5ms)
+Completed 200 OK in 219ms (Views: 216.3ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/sms_deliveries/11" for 127.0.0.1 at 2015-12-26 16:10:04 +0600
+Processing by SmsDeliveriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"unrNWI37Zy3fwVeS2z4u1Z6pEUz0ZE5OfR2t8Lip2bL4DBjWxLyNsSRe6685jg7sYWGRfoshTqCeGbwNicyT1w==", "id"=>"11"}
+  [1m[36mSmsDelivery Load (0.2ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ?[0m  [["id", 11]]
+  [1m[35m (144.9ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 150ms (ActiveRecord: 146.2ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:10:04 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0[0m
+  Rendered sms_deliveries/index.html.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (4.9ms)
+Completed 200 OK in 215ms (Views: 213.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contact_lists" for 127.0.0.1 at 2015-12-26 16:10:06 +0600
+Processing by ContactListsController#index as HTML
+  [1m[35mContactList Load (0.3ms)[0m  SELECT "contact_lists".* FROM "contact_lists"
+  Rendered contact_lists/index.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.2ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (5.2ms)
+Completed 200 OK in 227ms (Views: 224.7ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/contact_lists/3" for 127.0.0.1 at 2015-12-26 16:10:08 +0600
+Processing by ContactListsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GTOr6V7A5TiWNUkCjj7Ol56RZyy96424/neFFyNfzkxbRX5nF4cPpG2q9T9sju6uYVnnHsKujVYdc5TqEjqEKQ==", "id"=>"3"}
+  [1m[36mContactList Load (0.2ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries" WHERE "sms_deliveries"."contact_list_id" = ?[0m  [["contact_list_id", 3]]
+  [1m[35mCustomList Load (0.3ms)[0m  SELECT "custom_lists".* FROM "custom_lists" WHERE "custom_lists"."contact_list_id" = ?  [["contact_list_id", 3]]
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "contact_lists" WHERE "contact_lists"."id" = ?[0m  [["id", 3]]
+  [1m[35m (138.8ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/contact_lists
+Completed 302 Found in 152ms (ActiveRecord: 140.4ms)
+
+
+Started GET "/contact_lists" for 127.0.0.1 at 2015-12-26 16:10:09 +0600
+Processing by ContactListsController#index as HTML
+  [1m[36mContactList Load (0.3ms)[0m  [1mSELECT "contact_lists".* FROM "contact_lists"[0m
+  Rendered contact_lists/index.html.erb within layouts/application (3.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (5.5ms)
+Completed 200 OK in 195ms (Views: 193.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:10:12 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0
+  Rendered sms_deliveries/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.2ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (6.3ms)
+Completed 200 OK in 242ms (Views: 240.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/sms_deliveries/new" for 127.0.0.1 at 2015-12-26 16:10:13 +0600
+Processing by SmsDeliveriesController#new as HTML
+  Rendered shared/_field_errors.html.erb (0.1ms)
+  [1m[36mSender Load (0.4ms)[0m  [1mSELECT "senders".* FROM "senders"  ORDER BY "senders"."created_at" DESC[0m
+  Rendered shared/_field_errors.html.erb (0.1ms)
+  [1m[35mContactList Load (0.2ms)[0m  SELECT "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."temp" = ?  ORDER BY "contact_lists"."created_at" DESC  [["temp", "f"]]
+  Rendered shared/_field_errors.html.erb (0.1ms)
+  Rendered shared/_field_errors.html.erb (0.1ms)
+  Rendered sms_deliveries/_form.html.erb (14.4ms)
+  Rendered sms_deliveries/new.html.erb within layouts/application (15.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.2ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (8.4ms)
+Completed 200 OK in 294ms (Views: 291.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:10:39 +0600
+Processing by SmsDeliveriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sg8lACfHWO9XxgZQ/TjxjznR9WW86bcLOxRpEhUuhI3wefCOboCyc6xZum0fiNG2xhl1V8Ost+XYEHjvJEvO6A==", "sms_delivery"=>{"content"=>"Just Contact List", "sender_id"=>"1", "contact_list_id"=>"2", "title"=>""}, "commit"=>"Сохранить"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mContactList Load (0.2ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSender Load (0.1ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "sms_deliveries" ("title", "content", "contact_list_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Just Contact List"], ["content", "Just Contact List"], ["contact_list_id", 2], ["sender_id", 1], ["created_at", "2015-12-26 10:10:39.662168"], ["updated_at", "2015-12-26 10:10:39.662168"]]
+  [1m[36m (137.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "sms_deliveries" SET "delivery_time" = ?, "updated_at" = ? WHERE "sms_deliveries"."id" = ?[0m  [["delivery_time", "2015-12-26 10:13:39.804127"], ["updated_at", "2015-12-26 10:10:39.805487"], ["id", 12]]
+  [1m[35m (151.4ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 307ms (ActiveRecord: 291.5ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:10:39 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0[0m
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSender Load (0.1ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (5.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.4ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (7.8ms)
+Completed 200 OK in 299ms (Views: 296.5ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/sms_deliveries/12/send" for 127.0.0.1 at 2015-12-26 16:10:42 +0600
+Processing by SmsDeliveriesController#send_message as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O/5aLxPSMkH7dihfSvrZVIY/4oyeFYDvZ4r3djbuiOp5iI+hWpXY3QDplGKoSvltefdivuFQgAGEjuaLB4vCjw==", "commit"=>"Отправить", "id"=>"12"}
+  [1m[35mSmsDelivery Load (0.2ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36mSender Load (0.2ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSmsServiceAccount Load (0.2ms)[0m  SELECT  "sms_service_accounts".* FROM "sms_service_accounts" WHERE "sms_service_accounts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mContactList Load (0.2ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "recipient_depositories" ON "users"."id" = "recipient_depositories"."user_id" WHERE "recipient_depositories"."contact_list_id" = ?  [["contact_list_id", 2]]
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "sms_deliveries" SET "status" = ?, "updated_at" = ? WHERE "sms_deliveries"."id" = ?[0m  [["status", "t"], ["updated_at", "2015-12-26 10:10:47.211209"], ["id", 12]]
+  [1m[35m (140.3ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 5277ms (ActiveRecord: 142.3ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:10:47 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0[0m
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSender Load (0.1ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (5.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (6.7ms)
+Completed 200 OK in 218ms (Views: 216.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:17:50 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0
+  [1m[36mContactList Load (0.1ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSender Load (0.1ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (5.9ms)
+Completed 200 OK in 214ms (Views: 211.6ms | ActiveRecord: 0.9ms)
+  [1m[36mSmsDelivery Load (3.0ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.5ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."id" DESC LIMIT 1
+  [1m[36mContactList Load (0.3ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCustomList Load (0.3ms)[0m  SELECT "custom_lists".* FROM "custom_lists" WHERE "custom_lists"."contact_list_id" = ?  [["contact_list_id", 2]]
+
+
+Started GET "/sms_deliveries/new" for 127.0.0.1 at 2015-12-26 16:27:10 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SmsDeliveriesController#new as HTML
+  Rendered shared/_field_errors.html.erb (0.4ms)
+  [1m[35mSender Load (0.2ms)[0m  SELECT "senders".* FROM "senders"  ORDER BY "senders"."created_at" DESC
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  [1m[36mContactList Load (0.3ms)[0m  [1mSELECT "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."temp" = ?  ORDER BY "contact_lists"."created_at" DESC[0m  [["temp", "f"]]
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  Rendered sms_deliveries/_form.html.erb (436.8ms)
+  Rendered sms_deliveries/new.html.erb within layouts/application (440.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (39.4ms)
+Completed 200 OK in 934ms (Views: 907.7ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/custom_lists/import" for 127.0.0.1 at 2015-12-26 16:27:23 +0600
+Processing by CustomListsController#import as JSON
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x007f187244e4e0 @tempfile=#<Tempfile:/tmp/RackMultipart20151226-11701-mj396f.xlsx>, @original_filename="aismai.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"aismai.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mContactList Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "contact_lists" WHERE "contact_lists"."title" = '2015-12-26--16:27:23-aismai.xlsx' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "contact_lists" ("title", "temp", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "2015-12-26--16:27:23-aismai.xlsx"], ["temp", "t"], ["created_at", "2015-12-26 10:27:23.077630"], ["updated_at", "2015-12-26 10:27:23.077630"]]
+  [1m[36m (138.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "custom_lists" ("phone", "contact_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["phone", "996550113377"], ["contact_list_id", 6], ["created_at", "2015-12-26 10:27:23.237134"], ["updated_at", "2015-12-26 10:27:23.237134"]]
+  [1m[35m (191.1ms)[0m  commit transaction
+Completed 200 OK in 367ms (Views: 0.4ms | ActiveRecord: 331.8ms)
+
+
+Started POST "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:27:25 +0600
+Processing by SmsDeliveriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LJ8lc26ZWdneos1PfShvaqgEkYGGmiNMzrFnVf3fSDZu6fD9J96zRSU9cXKfmE9TV8wRs/nfI6IttXaozLoCUw==", "sms_delivery"=>{"content"=>"Custom List", "sender_id"=>"1", "contact_list_id"=>"6", "title"=>""}, "commit"=>"Сохранить"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mContactList Load (0.3ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mSender Load (0.2ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "sms_deliveries" ("title", "content", "contact_list_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Custom List"], ["content", "Custom List"], ["contact_list_id", 6], ["sender_id", 1], ["created_at", "2015-12-26 10:27:25.112046"], ["updated_at", "2015-12-26 10:27:25.112046"]]
+  [1m[36m (122.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "sms_deliveries" SET "delivery_time" = ?, "updated_at" = ? WHERE "sms_deliveries"."id" = ?[0m  [["delivery_time", "2015-12-26 10:30:25.237547"], ["updated_at", "2015-12-26 10:27:25.238196"], ["id", 13]]
+  [1m[35m (164.7ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 304ms (ActiveRecord: 289.5ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:27:25 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0[0m
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mSender Load (0.1ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (9.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (6.1ms)
+Completed 200 OK in 208ms (Views: 205.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sms_deliveries/13/send" for 127.0.0.1 at 2015-12-26 16:27:27 +0600
+Processing by SmsDeliveriesController#send_message as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MMM8y0WaqW5hzdmav4KB67LGKvjll1K3OEFGKpVL3L9ytelFDN1D8ppSZaddMqHSTQ6qyprSUlnbRVfXpC6W2g==", "commit"=>"Отправить", "id"=>"13"}
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mSender Load (0.1ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSmsServiceAccount Load (0.2ms)[0m  SELECT  "sms_service_accounts".* FROM "sms_service_accounts" WHERE "sms_service_accounts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mContactList Load (0.1ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCustomList Exists (0.2ms)[0m  SELECT  1 AS one FROM "custom_lists" WHERE "custom_lists"."contact_list_id" = ? LIMIT 1  [["contact_list_id", 6]]
+  [1m[36mCustomList Load (0.2ms)[0m  [1mSELECT "custom_lists".* FROM "custom_lists" WHERE "custom_lists"."contact_list_id" = ?[0m  [["contact_list_id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mUPDATE "sms_deliveries" SET "status" = ?, "updated_at" = ? WHERE "sms_deliveries"."id" = ?[0m  [["status", "t"], ["updated_at", "2015-12-26 10:27:27.892824"], ["id", 13]]
+  [1m[35m (145.8ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 298ms (ActiveRecord: 148.2ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:27:28 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0[0m
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mSender Load (0.1ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (5.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (4.9ms)
+Completed 200 OK in 185ms (Views: 183.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/sms_deliveries/resend_message/12" for 127.0.0.1 at 2015-12-26 16:27:40 +0600
+Processing by SmsDeliveriesController#resend_message as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mSmsDelivery Load (0.1ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered shared/_field_errors.html.erb (0.1ms)
+  [1m[36mSender Load (0.2ms)[0m  [1mSELECT "senders".* FROM "senders"  ORDER BY "senders"."created_at" DESC[0m
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  [1m[35mContactList Load (0.1ms)[0m  SELECT "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."temp" = ?  ORDER BY "contact_lists"."created_at" DESC  [["temp", "f"]]
+  Rendered shared/_field_errors.html.erb (0.0ms)
+  Rendered shared/_field_errors.html.erb (0.1ms)
+  Rendered sms_deliveries/_form.html.erb (10.1ms)
+  Rendered sms_deliveries/new.html.erb within layouts/application (11.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (5.2ms)
+Completed 200 OK in 192ms (Views: 188.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:27:44 +0600
+Processing by SmsDeliveriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HjFJ43uRimD6I13ylk429YJnJ6pOdFwPiLMRg00/4LhcR5xtMtZg/AG84c90/hbMfa+nmDExXOFrtwB+fFqq3Q==", "sms_delivery"=>{"content"=>"Just Contact List", "sender_id"=>"1", "contact_list_id"=>"2", "title"=>"Just Contact List"}, "commit"=>"Сохранить"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSender Load (0.2ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "sms_deliveries" ("title", "content", "contact_list_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Just Contact List"], ["content", "Just Contact List"], ["contact_list_id", 2], ["sender_id", 1], ["created_at", "2015-12-26 10:27:44.699052"], ["updated_at", "2015-12-26 10:27:44.699052"]]
+  [1m[36m (148.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "sms_deliveries" SET "delivery_time" = ?, "updated_at" = ? WHERE "sms_deliveries"."id" = ?[0m  [["delivery_time", "2015-12-26 10:30:44.852251"], ["updated_at", "2015-12-26 10:27:44.853312"], ["id", 14]]
+  [1m[35m (141.2ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 305ms (ActiveRecord: 292.3ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:27:45 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0[0m
+  [1m[35mContactList Load (0.2ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSender Load (0.1ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mContactList Load (0.1ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (11.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (5.1ms)
+Completed 200 OK in 212ms (Views: 208.9ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/sms_deliveries/14/send" for 127.0.0.1 at 2015-12-26 16:27:46 +0600
+Processing by SmsDeliveriesController#send_message as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O6SbgPfylYH+FNhvMRnGH2lF3/rt/sQTEb84i7x3Grt50k4OvrV/HQWLZFLTqeYmlo1fyJK7xP3yuyl2jRJQ3g==", "commit"=>"Отправить", "id"=>"14"}
+  [1m[35mSmsDelivery Load (0.2ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries" WHERE "sms_deliveries"."id" = ? LIMIT 1  [["id", 14]]
+  [1m[36mSender Load (0.1ms)[0m  [1mSELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSmsServiceAccount Load (0.1ms)[0m  SELECT  "sms_service_accounts".* FROM "sms_service_accounts" WHERE "sms_service_accounts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mContactList Load (0.2ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCustomList Exists (0.1ms)[0m  SELECT  1 AS one FROM "custom_lists" WHERE "custom_lists"."contact_list_id" = ? LIMIT 1  [["contact_list_id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "recipient_depositories" ON "users"."id" = "recipient_depositories"."user_id" WHERE "recipient_depositories"."contact_list_id" = ?[0m  [["contact_list_id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "sms_deliveries" SET "status" = ?, "updated_at" = ? WHERE "sms_deliveries"."id" = ?  [["status", "t"], ["updated_at", "2015-12-26 10:27:47.088339"], ["id", 14]]
+  [1m[36m (154.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/sms_deliveries
+Completed 302 Found in 283ms (ActiveRecord: 157.0ms)
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 16:27:47 +0600
+Processing by SmsDeliveriesController#index as HTML
+  [1m[35mSmsDelivery Load (0.5ms)[0m  SELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0
+  [1m[36mContactList Load (0.2ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSender Load (0.1ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mContactList Load (0.2ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "contact_lists".* FROM "contact_lists" WHERE "contact_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "senders".* FROM "senders" WHERE "senders"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sms_deliveries/index.html.erb within layouts/application (11.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mContact Load (0.1ms)[0m  SELECT  "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered layouts/_navbar.html.erb (4.5ms)
+Completed 200 OK in 206ms (Views: 203.5ms | ActiveRecord: 1.3ms)
