@@ -10968,3 +10968,283 @@ Migrating to AddContactListToCustomList (20151226080418)
   [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
   [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
   [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddTempToContactList (20151226081244)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "contact_lists" ADD "temp" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151226081244"]]
+  [1m[36m (129.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_attendances_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_attendances_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_attendances_on_period_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_attendances_on_period_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contacts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contacts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_course_elements_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_course_elements_on_course_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_custom_lists_on_contact_list_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_custom_lists_on_contact_list_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_group_memberships_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_group_memberships_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_group_memberships_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_group_memberships_on_group_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_on_course_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_periods_on_course_elements_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_periods_on_course_elements_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipient_depositories_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipient_depositories_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipient_depositories_on_contact_list_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipient_depositories_on_contact_list_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_name' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_name' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_name_and_resource_type_and_resource_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_name_and_resource_type_and_resource_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_senders_on_sms_service_account_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_senders_on_sms_service_account_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sms_deliveries_on_sender_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sms_deliveries_on_sender_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sms_deliveries_on_contact_list_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sms_deliveries_on_contact_list_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_roles_on_user_id_and_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_roles_on_user_id_and_role_id' AND type='index'
+[0m
+  [1m[36mSmsDelivery Load (1.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.2ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.5ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+
+
+Started GET "/sms_deliveries" for 127.0.0.1 at 2015-12-26 14:17:08 +0600
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by SmsDeliveriesController#index as HTML
+  [1m[36mSmsDelivery Load (0.2ms)[0m  [1mSELECT  "sms_deliveries".* FROM "sms_deliveries"  ORDER BY "sms_deliveries"."created_at" DESC LIMIT 8 OFFSET 0[0m
+  Rendered sms_deliveries/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_navbar.html.erb (2.6ms)
+Completed 200 OK in 184ms (Views: 177.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contact_lists" for 127.0.0.1 at 2015-12-26 14:17:09 +0600
+Processing by ContactListsController#index as HTML
+  [1m[35mContactList Load (0.2ms)[0m  SELECT "contact_lists".* FROM "contact_lists"
+  Rendered contact_lists/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_navbar.html.erb (4.9ms)
+Completed 200 OK in 192ms (Views: 180.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contact_lists/new" for 127.0.0.1 at 2015-12-26 14:17:10 +0600
+Processing by ContactListsController#new as HTML
+  Rendered shared/_field_errors.html.erb (0.5ms)
+  Rendered contact_lists/_form.html.erb (54.8ms)
+  Rendered contact_lists/new.html.erb within layouts/application (56.6ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `students' for #<ContactList:0x007f902c36d418>):
+    11:     <div class="form-group col-sm-12">
+    12:       <%= f.label 'Курс', class: 'col-sm-2 control-label' %>
+    13:       <div class="col-sm-8">
+    14:         <%= f.collection_select(:students, Course.all, :id, :name, {:include_blank => "Выберите курс"}, {:id=>'select-course-id'}) %>
+    15:       </div>
+    16:     </div>
+    17: 
+  app/views/contact_lists/_form.html.erb:14:in `block in _app_views_contact_lists__form_html_erb__4209214127645299246_70128599879400'
+  app/views/contact_lists/_form.html.erb:1:in `_app_views_contact_lists__form_html_erb__4209214127645299246_70128599879400'
+  app/views/contact_lists/new.html.erb:1:in `_app_views_contact_lists_new_html_erb___2550199175945576958_70128599932960'
+
+
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.7ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (52.0ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (30.2ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (67.3ms)
+
+
+Started GET "/contact_lists/new" for 127.0.0.1 at 2015-12-26 14:17:10 +0600
+Processing by ContactListsController#new as HTML
+  Rendered shared/_field_errors.html.erb (0.4ms)
+  Rendered contact_lists/_form.html.erb (5.1ms)
+  Rendered contact_lists/new.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `students' for #<ContactList:0x000000042681e0>):
+    11:     <div class="form-group col-sm-12">
+    12:       <%= f.label 'Курс', class: 'col-sm-2 control-label' %>
+    13:       <div class="col-sm-8">
+    14:         <%= f.collection_select(:students, Course.all, :id, :name, {:include_blank => "Выберите курс"}, {:id=>'select-course-id'}) %>
+    15:       </div>
+    16:     </div>
+    17: 
+  app/views/contact_lists/_form.html.erb:14:in `block in _app_views_contact_lists__form_html_erb__4209214127645299246_34507740'
+  app/views/contact_lists/_form.html.erb:1:in `_app_views_contact_lists__form_html_erb__4209214127645299246_34507740'
+  app/views/contact_lists/new.html.erb:1:in `_app_views_contact_lists_new_html_erb___2550199175945576958_34748740'
+
+
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.7ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.3ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.5ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/aismai/.rvm/gems/ruby-2.2.3@rubykurs/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (37.4ms)
+
+
+Started GET "/contact_lists" for 127.0.0.1 at 2015-12-26 14:17:15 +0600
+Processing by ContactListsController#index as HTML
+  [1m[36mContactList Load (0.2ms)[0m  [1mSELECT "contact_lists".* FROM "contact_lists"[0m
+  Rendered contact_lists/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_navbar.html.erb (2.5ms)
+Completed 200 OK in 166ms (Views: 165.2ms | ActiveRecord: 0.2ms)
+  [1m[35mSmsDelivery Load (0.6ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.4ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.2ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.4ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
+  [1m[35mSmsDelivery Load (0.3ms)[0m  SELECT "sms_deliveries".* FROM "sms_deliveries"
+  [1m[36mSmsDelivery Load (0.3ms)[0m  [1mSELECT "sms_deliveries".* FROM "sms_deliveries"[0m
