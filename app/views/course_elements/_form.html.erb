@@ -1,5 +1,3 @@
-<h1>Учебная программа</h1>
-
 <%= form_for @course_element, class: 'form-horizontal' do |f| %>
 
     <div class="form-group col-sm-12">
@@ -28,17 +26,14 @@
     </div>
 
 
-    <div class="form-group col-sm-12">
-      <%= f.label :home_work, 'Домашнее задание', class: 'col-sm-2 control-label' %>
-    <div class="col-sm-6">
-      <div class="checkbox">
-      <label>
-        <input type="checkbox">
-      </label>
-      <%= render 'shared/field_errors', object: @course_element, field_name: :home_work %>
-    </div>
-    </div>
-    </div>
+		<div class="form-group col-sm-12">
+			<%= f.label :home_work, 'Домашнее задание', class: 'col-sm-2 control-label' %>
+			<div class="col-sm-6">
+				<%= f.check_box :home_work %>
+				<%= render 'shared/field_errors', object: @course_element, field_name: :home_work %>
+			</div>
+		</div>
+
     <div class="form-group col-sm-12">
       <%= f.label :date_for_hw, 'Дата сдачи', class: 'col-sm-2 control-label' %>
       <div class="col-sm-6">
