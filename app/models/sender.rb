@@ -3,5 +3,5 @@ class Sender < ActiveRecord::Base
   has_many :sms_deliveries
 
   validates :name, presence: true, length: {maximum: 14}
-  validates :sms_service_account, presence: true
+  # validates :sms_service_account, presence: true
 end

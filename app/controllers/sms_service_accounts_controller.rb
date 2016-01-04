@@ -12,6 +12,7 @@ class SmsServiceAccountsController < ApplicationController
 
   def new
     @sms_service_account = SmsServiceAccount.new
+    @sms_service_account.senders.build
     add_breadcrumb 'Новая Учетная Запись'
   end
 
@@ -53,6 +54,6 @@ class SmsServiceAccountsController < ApplicationController
   end
 
   def sms_service_account_params
-    params.require(:sms_service_account).permit(:login, :password)
+    params.require(:sms_service_account).permit(:login, :password, senders_attributes: [:id, :name])
   end
 end
