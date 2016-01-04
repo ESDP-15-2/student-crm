@@ -50,6 +50,14 @@
       </div>
     </div>
 
+    <div class="form-group">
+      <%= f.label :passport_scan_copy, 'Скан-копия паспорта', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.file_field :passport_scan_copy %>
+        <%= render 'shared/field_errors', object: @user, field_name: :passport_scan_copy %>
+      </div>
+    </div>
+
     <%= f.fields_for(:contact) do |ff| %>
         <div class="form-group">
           <%= ff.label :phone, 'Номер телефона', class: 'col-sm-2 control-label' %>

@@ -24,6 +24,12 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :photo,
                                     content_type: ['image/jpeg', 'image/gif', 'image/png']
 
+  has_attached_file :passport_scan_copy,
+                    styles: { medium: '300x300>', thumb: '100x100>'},
+                    default_url: '/images/:style/missing_passport_scan_copy.png'
+  validates_attachment_content_type :passport_scan_copy,
+                                    content_type: ['image/jpeg', 'image/gif', 'image/png']
+
 
   after_initialize do
     self.contact ||= self.build_contact()
