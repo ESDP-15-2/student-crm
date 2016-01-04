@@ -18,12 +18,19 @@ class User < ActiveRecord::Base
   has_one :contact, dependent: :destroy
   accepts_nested_attributes_for :contact
 
+  has_attached_file :photo,
+                    styles: { medium: '300x300>', thumb: '100x100>'},
+                    default_url: '/images/:style/missing_photo.png'
+  validates_attachment_content_type :photo,
+                                    content_type: ['image/jpeg', 'image/gif', 'image/png']
+
+
   after_initialize do
     self.contact ||= self.build_contact()
   end
 
   validates :name, :surname, :passport_data, presence: true
-  validates :email, format: { with: /@gmail\.com\z/, message: '??????????? gmail ?????' }
+  validates :email, format: { with: /@gmail\.com\z/, message: 'Используйте gmail почту' }
 
   def full_name
     "#{name} #{surname}"

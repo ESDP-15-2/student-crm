@@ -35,6 +35,14 @@
     </div>
 
     <div class="form-group">
+      <%= f.label :photo, 'Фотография', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <%= f.file_field :photo %>
+        <%= render 'shared/field_errors', object: @user, field_name: :photo %>
+      </div>
+    </div>
+
+    <div class="form-group">
       <%= f.label :passport_data, 'Паспортные данные', class: 'col-sm-2 control-label' %>
       <div class="col-sm-6">
         <%= f.text_field :passport_data, class: 'form-control' %>

@@ -171,6 +171,10 @@ ActiveRecord::Schema.define(version: 20151226081244) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
