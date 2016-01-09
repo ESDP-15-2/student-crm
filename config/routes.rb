@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
-  root 'sms_deliveries#index'
-
   devise_for :users
+
+  devise_scope :user do
+    authenticated :user do
+      root to: 'users#home', as: :authenticated_root
+    end
+
+    unauthenticated do
+      root 'devise/sessions#new', as: :unauthenticated_root
+    end
+  end
 
   get 'users/students' => 'users#students', as: 'students'
 
@@ -11,7 +19,6 @@ Rails.application.routes.draw do
             :sms_service_accounts,
             :senders,
             :course_elements
-
 
   resources :custom_lists do
     collection {post :import}
