@@ -12,6 +12,7 @@ class CourseElementsController < ApplicationController
 
   def new
     @course_element = CourseElement.new
+    add_breadcrumb 'Новая учебная программа', :new_course_element_url
   end
 
   def create
@@ -28,6 +29,7 @@ class CourseElementsController < ApplicationController
 
   def edit
     @course_element = CourseElement.find(params[:id])
+    add_breadcrumb 'Редактирование учебной программы - ' + @course_element.theme
   end
 
   def update
