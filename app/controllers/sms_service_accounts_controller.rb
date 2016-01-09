@@ -8,12 +8,13 @@ class SmsServiceAccountsController < ApplicationController
   end
 
   def show
+    add_breadcrumb 'Просмотр учетной записи'
   end
 
   def new
     @sms_service_account = SmsServiceAccount.new
     @sms_service_account.senders.build
-    add_breadcrumb 'Новая Учетная Запись'
+    add_breadcrumb 'Новая учетная запись'
   end
 
   def create
@@ -29,6 +30,7 @@ class SmsServiceAccountsController < ApplicationController
 
   def edit
     @sms_service_account.senders.build
+    add_breadcrumb 'Редактирование учетной записи'
   end
 
   def update
