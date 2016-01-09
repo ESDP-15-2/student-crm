@@ -17,15 +17,15 @@ class SmsDeliveriesController < ApplicationController
     render :new
   end
 
-
   def new
     @sms_delivery = SmsDelivery.new
-    add_breadcrumb 'Новая Рассылка', :new_sms_delivery_url
+    add_breadcrumb 'Новая рассылка', :new_sms_delivery_url
   end
 
   def new_from_contact_list
     @sms_delivery = SmsDelivery.new
     @contact_list = ContactList.find(params[:id])
+    add_breadcrumb 'Новая рассылка'
   end
 
   def create
@@ -42,7 +42,7 @@ class SmsDeliveriesController < ApplicationController
 
   def edit
     @sms_delivery = SmsDelivery.find(params[:id])
-    add_breadcrumb 'Редактировать', :sms_delivery_url
+    add_breadcrumb 'Редактирование рассылки - ' + @sms_delivery.title
   end
 
   def update

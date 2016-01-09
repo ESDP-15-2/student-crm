@@ -3,32 +3,33 @@ class UsersController < ApplicationController
 
   before_action :authenticate_user!
 
-  add_breadcrumb 'Пользователи', :users_url
-
-  def show
-    @user = User.find(params[:id])
-    add_breadcrumb 'Просмотр профиля', :user_url
-  end
-
   def home
     @user = current_user
     add_breadcrumb 'Мой профиль', :authenticated_root_url
   end
 
+  def show
+    @user = User.find(params[:id])
+    add_breadcrumb 'Пользователи', :users_url
+    add_breadcrumb @user.full_name, :user_url
+  end
+
   def index
     @users = User.paginate(page: params[:page], per_page: 10)
+    add_breadcrumb 'Пользователи', :users_url
   end
 
   def students
-    add_breadcrumb 'Студенты', :students_url
-
     student = Role.find_by(name: 'Студент')
     @students = student.users.paginate(page: params[:page], per_page: 10)
+    add_breadcrumb 'Пользователи', :users_url
+    add_breadcrumb 'Студенты', :students_url
   end
 
   def new
-    add_breadcrumb 'Создание пользователя', :new_user_url
     @user = User.new
+    add_breadcrumb 'Пользователи', :users_url
+    add_breadcrumb 'Новый пользователь', :new_user_url
   end
 
   def create
@@ -45,8 +46,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    add_breadcrumb 'Редактирование данных пользователя', :edit_user_url
     @user = User.find(params[:id])
+    add_breadcrumb 'Пользователи', :users_url
+    add_breadcrumb 'Редактирование данных пользователя - ' + @user.full_name
   end
 
   def update

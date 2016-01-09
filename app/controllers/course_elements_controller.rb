@@ -1,6 +1,6 @@
 class CourseElementsController < ApplicationController
 
-  add_breadcrumb 'Учебная программа', :course_elements_url
+  add_breadcrumb 'Учебные программы', :course_elements_url
 
   def index
     @course_elements = CourseElement.all

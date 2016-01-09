@@ -1,18 +1,9 @@
 class SendersController < ApplicationController
 
-  def index
-    @senders = Sender.all
-    add_breadcrumb 'Отправители', :senders_url
-  end
-
-  def show
-    @sender = Sender.find(params[:id])
-
-  end
-
   def new
     @sender = Sender.new
-
+    add_breadcrumb 'Учетные записи', :sms_service_accounts_url
+    add_breadcrumb 'Новый отравитель', :new_sender_url
   end
 
   def create
@@ -24,29 +15,6 @@ class SendersController < ApplicationController
       flash[:danger] = 'Вы ввели некорректные данные, проверьте и попробуйте снова'
       render 'new'
     end
-  end
-
-  def edit
-    @sender = Sender.find(params[:id])
-  end
-
-  def update
-    @sender = Sender.find(params[:id])
-
-    if @sender.update(sender_params)
-      flash[:success] = 'Отправитель был успешно обновлен'
-      redirect_to sms_service_accounts_url
-    else
-      flash[:danger] = 'Вы ввели некорректные данные, проверьте и попробуйте снова'
-      render 'edit'
-    end
-  end
-
-  def destroy
-    @sender = Sender.find(params[:id])
-    @sender.destroy
-    flash[:success] = 'Отправитель был успешно удален'
-    redirect_to sms_service_accounts_url
   end
 
   private
