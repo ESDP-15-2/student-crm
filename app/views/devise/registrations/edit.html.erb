@@ -2,7 +2,7 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'form-horizontal' }) do |f| %>
     <div class="form-group">
-      <%= f.label :name, 'Имя', class: 'col-sm-2 control-label' %>
+      <%= f.label :name, 'Имя*', class: 'col-sm-3 control-label' %>
       <div class="col-sm-6">
         <%= f.text_field :name, autofocus: true, class: 'form-control' %>
         <%= render 'shared/field_errors', object: resource, field_name: :name %>
@@ -10,7 +10,7 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :surname, 'Фамилия', class: 'col-sm-2 control-label' %>
+      <%= f.label :surname, 'Фамилия*', class: 'col-sm-3 control-label' %>
       <div class="col-sm-6">
         <%= f.text_field :surname, class: 'form-control' %>
         <%= render 'shared/field_errors', object: resource, field_name: :surname %>
@@ -18,7 +18,7 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :birthdate, 'Дата рождения', class: 'col-sm-2 control-label' %>
+      <%= f.label :birthdate, 'Дата рождения*', class: 'col-sm-3 control-label' %>
       <div class="col-sm-6">
         <%= f.date_select :birthdate, order: [:day, :month, :year], start_year: 1950,
                           prompt: { day: 'День', month: 'Месяц', year: 'Год' },
@@ -28,7 +28,7 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :gender, 'Пол', class: 'col-sm-2 control-label' %>
+      <%= f.label :gender, 'Пол*', class: 'col-sm-3 control-label' %>
       <div class="col-sm-6">
         <%= f.radio_button :gender, 'male', checked: :true %> Мужской
         <%= f.radio_button :gender, 'female' %> Женский
@@ -37,7 +37,7 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :passport_data, 'Паспортные данные', class: 'col-sm-2 control-label' %>
+      <%= f.label :passport_data, 'Паспортные данные*', class: 'col-sm-3 control-label' %>
       <div class="col-sm-6">
         <%= f.text_field :passport_data, class: 'form-control' %>
         <%= render 'shared/field_errors', object: resource, field_name: :passport_data %>
@@ -46,7 +46,7 @@
 
     <%= f.fields_for(:contact) do |ff| %>
         <div class="form-group">
-          <%= ff.label :phone, 'Номер телефона', class: 'col-sm-2 control-label' %>
+          <%= ff.label :phone, 'Номер телефона*', class: 'col-sm-3 control-label' %>
           <div class="col-sm-6">
             <%= ff.text_field :phone, class: 'form-control' %>
             <%= render 'shared/field_errors', object: resource.contact, field_name: :phone %>
@@ -54,7 +54,7 @@
         </div>
 
         <div class="form-group">
-          <%= ff.label :additional_phone, 'Доп. номер телефона', class: 'col-sm-2 control-label' %>
+          <%= ff.label :additional_phone, 'Доп. номер телефона', class: 'col-sm-3 control-label' %>
           <div class="col-sm-6">
             <%= ff.text_field :additional_phone, class: 'form-control' %>
             <%= render 'shared/field_errors', object: resource.contact, field_name: :additional_phone %>
@@ -62,7 +62,7 @@
         </div>
 
         <div class="form-group">
-          <%= ff.label :skype, class: 'col-sm-2 control-label' %>
+          <%= ff.label :skype, 'Skype*', class: 'col-sm-3 control-label' %>
           <div class="col-sm-6">
             <%= ff.text_field :skype, class: 'form-control' %>
             <%= render 'shared/field_errors', object: resource.contact, field_name: :skype %>
@@ -71,7 +71,7 @@
     <% end %>
 
     <div class="form-group">
-      <%= f.label :email, class: 'col-sm-2 control-label' %>
+      <%= f.label :email, 'Email*', class: 'col-sm-3 control-label' %>
       <div class="col-sm-6">
         <%= f.email_field :email, class: 'form-control' %><em> (только gmail)</em>
         <%= render 'shared/field_errors', object: resource, field_name: :email %>
@@ -83,7 +83,7 @@
     <% end %>
 
     <div class="form-group">
-      <%= f.label :password, 'Пароль', class: 'col-sm-2 control-label' %>
+      <%= f.label :password, 'Пароль*', class: 'col-sm-3 control-label' %>
       <div class="col-sm-6">
         <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
         <span class="help-block">(оставьте поле пустым, если не хотите менять пароль)</span>
@@ -92,7 +92,7 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :password_confirmation, 'Подтверждение пароля', class: 'col-sm-2 control-label' %>
+      <%= f.label :password_confirmation, 'Подтверждение пароля*', class: 'col-sm-3 control-label' %>
       <div class="col-sm-6">
         <%= f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control' %>
         <%= render 'shared/field_errors', object: resource, field_name: :password_confirmation %>
@@ -100,7 +100,7 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :current_password, 'Текущий пароль', class: 'col-sm-2 control-label' %>
+      <%= f.label :current_password, 'Текущий пароль*', class: 'col-sm-3 control-label' %>
       <div class="col-sm-6">
         <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
         <%= render 'shared/field_errors', object: resource, field_name: :current_password %>
@@ -108,7 +108,7 @@
     </div>
 
     <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-6">
+      <div class="col-sm-offset-3 col-sm-6">
         <%= f.submit 'Сохранить', class: 'btn btn-default' %>
       </div>
     </div>
@@ -116,7 +116,7 @@
 
 <h3>Удаление профиля</h3>
 <div class="row">
-  <div class="col-sm-offset-2 col-sm-6">
+  <div class="col-sm-offset-3 col-sm-6">
     <p><%= link_to 'Удалить профиль', registration_path(resource_name),
                    data: { confirm: 'Вы действительно хотите удалить профиль?' },
                    method: :delete, class: 'btn btn-default'%></p>
