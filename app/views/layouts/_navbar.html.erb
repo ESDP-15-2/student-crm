@@ -11,8 +11,8 @@
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <% if user_signed_in? %>
       <ul id="active" class="nav navbar-nav side-nav">
-        <li class="avatar">
-          <%= image_tag current_user.photo.url(:thumb), class: 'img-thumbnail' %>
+        <li class="my-avatar">
+          <%= image_tag current_user.photo.url(:thumb), class: 'img-circle' %>
         </li>
 
         <li class="nav-header"><a href="#" data-toggle="collapse" data-target="#userMenu"> Мой профиль <i class="fa fa-chevron-down"></i></a>
@@ -32,13 +32,13 @@
             <li><%= link_to '<i class="fa fa-user-plus fa-lg"></i>&nbsp;&nbsp;Учетные записи'.html_safe, sms_service_accounts_path %></li>
           </ul>
 
-          <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#menu2"> Пользователи <i class="fa fa-chevron-right"></i></a>
+          <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#menu3"> Пользователи <i class="fa fa-chevron-right"></i></a>
           <ul class="nav nav-stacked collapse" id="menu3">
             <li><%= link_to '<i class="fa fa-users fa-lg"></i>&nbsp;&nbsp;Пользователи'.html_safe, users_path %></li>
             <li><%= link_to '<i class="fa fa-graduation-cap fa-lg"></i>&nbsp;&nbsp;Студенты'.html_safe, students_path %></li>
           </ul>
 
-          <li class="nav-header"><a href="#" data-toggle="collapse" data-target="#menu3"> Курсы <i class="fa fa-chevron-right"></i></a>
+          <li class="nav-header"><a href="#" data-toggle="collapse" data-target="#menu4"> Курсы <i class="fa fa-chevron-right"></i></a>
           <ul class="nav nav-stacked collapse" id="menu4">
             <li><%= link_to '<i class="fa fa-book fa-lg"></i>&nbsp;&nbsp;&nbsp;Курсы'.html_safe, course_elements_path %></li>
           </ul>

@@ -83,7 +83,7 @@ marat.add_role 'Студент'
 
 mahabat = User.create!(name:'Махабат',
                      surname:'Муналбаева',
-                     birthdate:'1990-01-11',
+                     birthdate:'1990-01-30',
                      gender:'женский',
                      passport_data:'K2-444',
                      contact_attributes: {

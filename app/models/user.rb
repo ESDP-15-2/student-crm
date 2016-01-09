@@ -41,6 +41,6 @@ class User < ActiveRecord::Base
   end
 
   def full_name
-    "#{name} #{surname}"
+    "#{surname} #{name}"
   end
 end

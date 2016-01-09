@@ -18,16 +18,37 @@ a {
   color: rgb(0, 137, 155);
 }
 
-.avatar {
+.my-avatar {
   margin: 10px 0 20px 25px;
 }
 
+.user-photo {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.user-info {
+  margin: 0 auto;
+}
+
 .panel .panel-body {
-  height: 350px;
   // background-color: rgb(250, 247, 196);
   // background-color: rgb(254, 231, 164);
   //background-color: #99cc66;
   background-color: #e0f3b7;
+}
+
+.panel .panel-heading {
+  background-color: #222222;
+}
+
+.panel .panel-heading span{
+  color: #999999;
+  margin-right: 10px;
+}
+
+.my-profile-info .panel .panel-body{
+  height: 350px;
 }
 
 .panel .panel-body .table td {

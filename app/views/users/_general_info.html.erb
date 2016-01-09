@@ -1,0 +1,29 @@
+<tr>
+  <td class="col-sm-6">Имя</td>
+  <td class="col-sm-6"><%= @user.name %></td>
+</tr>
+<tr>
+  <td class="col-sm-6">Фамилия</td>
+  <td class="col-sm-6"><%= @user.surname %></td>
+</tr>
+<tr>
+  <td class="col-sm-6">Дата рождения</td>
+  <td class="col-sm-6"><%= @user.birthdate %></td>
+</tr>
+<tr>
+  <td class="col-sm-6">Пол</td>
+  <td class="col-sm-6"><%= @user.gender %></td>
+</tr>
+<tr>
+  <td class="col-sm-6">Паспортные данные</td>
+  <td class="col-sm-6"><%= @user.passport_data %></td>
+</tr>
+<tr>
+  <td class="col-sm-6">Скан-копия паспорта</td>
+  <% if File.exist?('#{@user.passport_scan_copy.path}') %>
+    <td class="col-sm-6"><%= link_to @user.passport_scan_copy_file_name, @user.passport_scan_copy.path(:medium) %></td>
+  <% else %>
+    <td>Файл не загружен</td>
+  <% end %>
+</tr>
+

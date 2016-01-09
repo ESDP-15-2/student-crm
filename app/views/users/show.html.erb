@@ -1,19 +1,37 @@
-<p><b>Имя: </b><%= @user.name %></p>
-<p><b>Фамилия: </b><%= @user.surname %></p>
-<p><b>Дата рождения: </b><%= @user.birthdate %></p>
-<p><b>Пол: </b><%= @user.gender %><p/>
-<p><b>Паспортные данные: </b><%= @user.passport_data %></p>
-<p><b>Телефон: </b><%= @user.contact.phone%></p>
-<% unless @user.contact.additional_phone.empty? %>
-  <p><b>Дополнительный телефон: </b><%= @user.contact.additional_phone %></p>
-<% end %>
-<p><b>Skype: </b><%= @user.contact.skype %></p>
-<p><b>Email: </b><%= @user.email %></p>
-
-<div>
-  <%= link_to 'Редактировать', edit_user_path(@user), class: 'btn btn-default' %>
-  <%= link_to 'Удалить', user_path(@user),
-            method: :delete,
-            data: {confirm: 'Вы действительно хотите удалить данного пользователя?'},
-            class: 'btn btn-danger' %>
+<div class="user-info">
+  <div class="col-sm-9">
+    <div class="panel">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <span>
+            <%= @user.full_name %> - <%= @user.roles.map { |role| role.name }.join(', ') %>
+          </span>
+          <%= link_to '<i class="fa fa-file-text-o fa-lg"></i>'.html_safe, '#', class: 'btn btn-default btn-xs' %>
+          <%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe, edit_user_path(@user), class: 'btn btn-default btn-xs' %>
+          <%= link_to '<i class="fa fa-remove fa-lg"></i>'.html_safe, user_path(@user), method: :delete,
+                      data: {confirm: 'Вы действительно хотите удалить данного пользователя?'}, class: 'btn btn-danger btn-xs' %>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <div class="col-sm-6">
+          <div class="user-photo">
+            <%= image_tag @user.photo.url(:medium), class: 'img-thumbnail' %>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <h4>Общая информация</h4>
+          <table class="table">
+            <%= render 'general_info' %>
+          </table>
+          <h4>Контактные данные</h4>
+          <table class="table">
+            <%= render 'contact_info' %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
