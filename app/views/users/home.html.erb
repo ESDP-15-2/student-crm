@@ -1,0 +1,67 @@
+<div class="user-info">
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h4>Общая информация</h4><hr/>
+        <table class="table">
+          <tr>
+            <td>Имя</td>
+            <td><%= @user.name %></td>
+          </tr>
+          <tr>
+            <td>Фамилия</td>
+            <td><%= @user.surname %></td>
+          </tr>
+          <tr>
+            <td>Дата рождения</td>
+            <td><%= @user.birthdate %></td>
+          </tr>
+          <tr>
+            <td>Пол</td>
+            <td><%= @user.gender %></td>
+          </tr>
+          <tr>
+            <td>Паспортные данные</td>
+            <td><%= @user.passport_data %></td>
+          </tr>
+          <tr>
+            <td>Скан-копия паспорта</td>
+            <% if File.exist?('#{@user.passport_scan_copy.path}') %>
+              <td><%= link_to @user.passport_scan_copy_file_name, @user.passport_scan_copy.path(:medium) %></td>
+            <% else %>
+              <td>Файл не загружен</td>
+            <% end %>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h4>Контактные данные</h4><hr/>
+        <table class="table">
+          <tr>
+            <td>Номер телефона</td>
+            <td><%= @user.contact.phone %></td>
+          </tr>
+          <% unless @user.contact.additional_phone.empty? %>
+            <tr>
+              <td>Доп. номер телефона</td>
+              <td><%= @user.contact.additional_phone %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <td>Skype</td>
+            <td><%= @user.contact.skype %></td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td><%= @user.email %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
