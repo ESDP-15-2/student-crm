@@ -14,7 +14,6 @@ groups.push Group.create!(name: 'GR#2',
                          course: html_course)
 
 # Roles
-
 roles = []
 roles.push Role.create!(name: 'Администратор')
 roles.push Role.create!(name: 'Пользователь с полным доступом')
@@ -22,6 +21,8 @@ roles.push Role.create!(name: 'Преподаватель')
 roles.push Role.create!(name: 'Студент')
 
 # Users
+users_path = Rails.root.join('app', 'assets', 'images', 'users')
+
 users = []
 
 alexander = User.create!(name:'Александр',
@@ -34,7 +35,8 @@ alexander = User.create!(name:'Александр',
                            additional_phone:'',
                            skype:'alexander_glok_zs'},
                          email:'admin@gmail.com',
-                         password:'password')
+                         password:'password',
+                         photo: File.new(users_path.join('admin.jpg')))
 alexander.add_role 'Администратор'
 
 abai = User.create!(name:'Aбай',
@@ -47,7 +49,8 @@ abai = User.create!(name:'Aбай',
                       additional_phone:'',
                       skype:'aismai'},
                     email:'aismai@gmail.com',
-                    password:'password')
+                    password:'password',
+                    photo: File.new(users_path.join('abai.jpg')))
 abai.add_role 'Студент'
 
 aliia = User.create!(name:'Алия',
@@ -60,7 +63,8 @@ aliia = User.create!(name:'Алия',
                       additional_phone:'',
                       skype:'kalinka'},
                     email:'kalinka@gmail.com',
-                    password:'password')
+                    password:'password',
+                    photo: File.new(users_path.join('aliia.jpg')))
 aliia.add_role 'Студент'
 
 marat = User.create!(name:'Марат',
@@ -73,7 +77,8 @@ marat = User.create!(name:'Марат',
                        additional_phone:'',
                        skype:'klmart'},
                      email:'klmart@gmail.com',
-                     password:'password')
+                     password:'password',
+                     photo: File.new(users_path.join('marat.png')))
 marat.add_role 'Студент'
 
 mahabat = User.create!(name:'Махабат',
@@ -86,7 +91,8 @@ mahabat = User.create!(name:'Махабат',
                        additional_phone:'',
                        skype:'dafnaa'},
                      email:'dafnaa@gmail.com',
-                     password:'password')
+                     password:'password',
+                     photo: File.new(users_path.join('mahabat.jpg')))
 mahabat.add_role 'Студент'
 
 sanjar = User.create!(name:'Санжар',
@@ -99,7 +105,8 @@ sanjar = User.create!(name:'Санжар',
                        additional_phone:'',
                        skype:'levydraiden'},
                      email:'musaev_s@gmail.com',
-                    password:'password')
+                     password:'password',
+                     photo: File.new(users_path.join('sanjar.jpg')))
 sanjar.add_role 'Студент'
 
 users.push abai, aliia, marat, mahabat, alexander, sanjar

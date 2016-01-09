@@ -47,10 +47,10 @@ ActiveRecord::Schema.define(version: 20160104130921) do
     t.string   "theme"
     t.string   "element_type"
     t.date     "date_for_theme"
-    t.boolean  "home_work"
+    t.boolean  "home_work",      default: false
     t.date     "date_for_hw"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   add_index "course_elements", ["course_id"], name: "index_course_elements_on_course_id"
