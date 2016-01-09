@@ -18,25 +18,27 @@ class User < ActiveRecord::Base
   has_one :contact, dependent: :destroy
   accepts_nested_attributes_for :contact
 
+  validates :name, :surname, :passport_data, presence: true
+  validates :email, format: { with: /@gmail\.com\z/ }
+
   has_attached_file :photo,
-                    styles: { medium: '300x300>', thumb: '100x100>'},
-                    default_url: '/images/:style/missing_photo.png'
+                    styles: { medium: '300x300>', thumb: '150x150>'},
+                    default_url:  '/images/:style/no_avatar.png'
   validates_attachment_content_type :photo,
-                                    content_type: ['image/jpeg', 'image/gif', 'image/png']
+                                    content_type: ['image/jpeg', 'image/jpg', 'image/gif', 'image/png']
 
   has_attached_file :passport_scan_copy,
-                    styles: { medium: '300x300>', thumb: '100x100>'},
-                    default_url: '/images/:style/missing_passport_scan_copy.png'
+                    styles: { large: '600x600>', medium: '300x300>', thumb: '150x150>'}
   validates_attachment_content_type :passport_scan_copy,
-                                    content_type: ['image/jpeg', 'image/gif', 'image/png']
+                                    content_type: ['image/jpeg', 'image/jpg', 'image/gif', 'image/png']
 
+  def password_required?
+    new_record? ? false : super
+  end
 
   after_initialize do
     self.contact ||= self.build_contact()
   end
-
-  validates :name, :surname, :passport_data, presence: true
-  validates :email, format: { with: /@gmail\.com\z/, message: 'Используйте gmail почту' }
 
   def full_name
     "#{name} #{surname}"

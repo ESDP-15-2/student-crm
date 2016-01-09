@@ -1,11 +1,18 @@
 class UsersController < ApplicationController
+  #load_and_authorize_resource
+
   before_action :authenticate_user!
 
   add_breadcrumb 'Пользователи', :users_url
 
   def show
     @user = User.find(params[:id])
-    add_breadcrumb 'Просмотр профиля пользователя', :user_url
+    add_breadcrumb 'Просмотр профиля', :user_url
+  end
+
+  def home
+    @user = current_user
+    add_breadcrumb 'Мой профиль', :authenticated_root_url
   end
 
   def index
@@ -44,11 +51,17 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    add_roles(@user)
+    if @user.has_role? 'Администратор'
+      add_roles(@user)
+    end
 
     if @user.update(user_params)
-      redirect_to @user
-      flash[:success] = 'Данные пользователя успешно обновлены'
+      if @user == current_user
+        redirect_to authenticated_root_url
+      else
+       redirect_to @user
+      end
+        flash[:success] = 'Данные пользователя успешно обновлены'
     else
       flash[:danger] = 'Вы ввели некорректные данные, проверьте и попробуйте снова'
       render 'edit'
