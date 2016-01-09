@@ -1,4 +1,4 @@
-<p><%= link_to 'Новый лист', new_contact_list_path, class: 'btn btn-primary btn-xs' %></p>
+<p><%= link_to 'Новый лист', new_contact_list_path, class: 'btn btn-default' %></p>
 
 <table class="table table-striped table-hover col-sm-12">
   <tr>
@@ -9,9 +9,9 @@
       <tr>
         <td><%= link_to list.title, contact_list_path(list) %></td>
         <td>
-          <%= link_to 'Новая рассылка', sms_new_from_contact_list_path(list), class: 'btn btn-primary btn-xs' %>
-          <%= link_to 'Редактировать', edit_contact_list_path(list), class: 'btn btn-success btn-xs' %>
-          <%= link_to 'Удалить', contact_list_path(list), method: :delete,
+          <%= link_to '<i class="fa fa-envelope-o fa-lg"></i>'.html_safe, sms_new_from_contact_list_path(list), class: 'btn btn-default btn-xs' %>
+          <%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe, edit_contact_list_path(list), class: 'btn btn-default btn-xs' %>
+          <%= link_to '<i class="fa fa-remove fa-lg"></i>'.html_safe, contact_list_path(list), method: :delete,
                       data: {confirm: 'Вы действительно хотите удалить этот лист получателей?'}, class: 'btn btn-danger btn-xs'  %>
         </td>
       </tr>

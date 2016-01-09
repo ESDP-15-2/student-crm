@@ -56,7 +56,8 @@ a {
   height: 350px;
 }
 
-.panel .panel-body .table td {
+.panel .panel-body .table td,
+.panel .panel-body .table th {
   border-top: none;
 }
 
