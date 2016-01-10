@@ -58,12 +58,8 @@ class UsersController < ApplicationController
     end
 
     if @user.update(user_params)
-      if @user == current_user
-        redirect_to authenticated_root_url
-      else
-       redirect_to @user
-      end
-        flash[:success] = 'Данные пользователя успешно обновлены'
+      redirect_to @user
+      flash[:success] = 'Данные пользователя успешно обновлены'
     else
       flash[:danger] = 'Вы ввели некорректные данные, проверьте и попробуйте снова'
       render 'edit'

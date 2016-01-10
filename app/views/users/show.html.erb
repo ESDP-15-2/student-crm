@@ -1,5 +1,5 @@
 <div class="user-info">
-  <div class="col-sm-9">
+  <div class="col-sm-12">
     <div class="panel">
       <div class="panel-heading">
         <h3 class="panel-title">
@@ -13,12 +13,12 @@
         </h3>
       </div>
       <div class="panel-body">
-        <div class="col-sm-6">
+        <div class="col-sm-5">
           <div class="user-photo">
             <%= image_tag @user.photo.url(:medium), class: 'img-thumbnail' %>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-7">
           <h4>Общая информация</h4>
           <table class="table">
             <%= render 'general_info' %>

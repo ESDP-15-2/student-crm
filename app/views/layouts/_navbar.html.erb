@@ -10,40 +10,7 @@
   </div>
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <% if user_signed_in? %>
-      <ul id="active" class="nav navbar-nav side-nav">
-        <li class="my-avatar">
-          <%= image_tag current_user.photo.url(:thumb), class: 'img-circle' %>
-        </li>
-
-        <li class="nav-header"><a href="#" data-toggle="collapse" data-target="#userMenu"> Мой профиль <i class="fa fa-chevron-down"></i></a>
-        <ul class="nav nav-stacked collapse in" id="userMenu">
-          <li><%= link_to '<i class="fa fa-eye fa-lg"></i> Просмотреть'.html_safe, authenticated_root_path %></li>
-          <li><%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i> Редактировать'.html_safe, edit_user_path(current_user) %></li>
-          <li><%= link_to '<i class="fa fa-remove fa-lg"></i> Удалить'.html_safe, user_path(current_user),
-                            method: :delete,
-                            data: {confirm: 'Вы действительно хотите удалить профиль?'}%></li>
-        </ul>
-
-        <% if current_user.has_role? 'Администратор' %>
-          <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#menu2"> Смс-рассылка <i class="fa fa-chevron-right"></i></a>
-          <ul class="nav nav-stacked collapse" id="menu2">
-            <li><%= link_to '<i class="fa fa-envelope-o fa-lg"></i>&nbsp;&nbsp;&nbsp;SMS'.html_safe, sms_deliveries_path %></li>
-            <li><%= link_to '<i class="fa fa-list fa-lg"></i>&nbsp;&nbsp;&nbsp;Получатели'.html_safe, contact_lists_path %></li>
-            <li><%= link_to '<i class="fa fa-user-plus fa-lg"></i>&nbsp;&nbsp;Учетные записи'.html_safe, sms_service_accounts_path %></li>
-          </ul>
-
-          <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#menu3"> Пользователи <i class="fa fa-chevron-right"></i></a>
-          <ul class="nav nav-stacked collapse" id="menu3">
-            <li><%= link_to '<i class="fa fa-users fa-lg"></i>&nbsp;&nbsp;Пользователи'.html_safe, users_path %></li>
-            <li><%= link_to '<i class="fa fa-graduation-cap fa-lg"></i>&nbsp;&nbsp;Студенты'.html_safe, students_path %></li>
-          </ul>
-
-          <li class="nav-header"><a href="#" data-toggle="collapse" data-target="#menu4"> Курсы <i class="fa fa-chevron-right"></i></a>
-          <ul class="nav nav-stacked collapse" id="menu4">
-            <li><%= link_to '<i class="fa fa-book fa-lg"></i>&nbsp;&nbsp;&nbsp;Учебные программы'.html_safe, course_elements_path %></li>
-          </ul>
-        <% end %>
-      </ul>
+      <%= render 'layouts/sidebar' %>
       <ul class="nav navbar-nav navbar-right">
         <ul class="nav navbar-nav">
           <p class="navbar-text">

@@ -5,11 +5,13 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <div id="wrapper">
-    <%= render 'layouts/navbar' %>
-    <div class="container">
-      <% if user_signed_in? %>
+<body<%= " id=#{@body_id}" if @body_id %>>
+  <% if @body_id=='login_page' %>
+    <!--<%= render 'layouts/navbar' %>-->
+    <%= yield %>
+  <% else %>
+    <div id="wrapper">
+      <%= render 'layouts/navbar' %>
       <div id="page-wrapper">
         <div class="row">
           <div class="col-lg-12">
@@ -23,12 +25,8 @@
           </div>
         </div>
       </div>
-      <% else %>
-        <%= yield %>
-      <% end %>
     </div>
-  </div>
+  <% end %>
 </body>
-
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </html>

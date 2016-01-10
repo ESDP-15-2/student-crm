@@ -20,8 +20,8 @@
 </tr>
 <tr>
   <td class="col-sm-6">Скан-копия паспорта</td>
-  <% if File.exist?('#{@user.passport_scan_copy.path}') %>
-    <td class="col-sm-6"><%= link_to @user.passport_scan_copy_file_name, @user.passport_scan_copy.path(:medium) %></td>
+  <% if @user.passport_scan_copy.exists? %>
+    <td class="col-sm-6"><%= link_to @user.passport_scan_copy_file_name, @user.passport_scan_copy.url(:large) %></td>
   <% else %>
     <td>Файл не загружен</td>
   <% end %>
