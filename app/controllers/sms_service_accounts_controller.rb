@@ -57,6 +57,6 @@ class SmsServiceAccountsController < ApplicationController
   end
 
   def sms_service_account_params
-    params.require(:sms_service_account).permit(:login, :password, senders_attributes: [:id, :name])
+    params.require(:sms_service_account).permit(:login, :password, senders_attributes: [:id, :name, :sms_service_account])
   end
 end
