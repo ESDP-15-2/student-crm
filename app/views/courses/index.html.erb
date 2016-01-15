@@ -1,0 +1,23 @@
+<p><%= link_to 'Новый курс', new_course_path, class: 'btn btn-primary margin-bottom' %></p>
+
+<table class="table table-striped table-hover col-sm-12">
+  <tr>
+    <th class="col-sm-3">Название</th>
+    <th class="col-sm-3">Дата начала</th>
+    <th class="col-sm-3">Дата окончания</th>
+  </tr>
+  <% @courses.each do |course| %>
+    <tr>
+      <td><%= link_to course.name, course_path(course) %></td>
+      <td><%= course.starts_at %></td>
+      <td><%= course.ends_at %></td>
+      <td>
+        <%= link_to 'Редактировать', edit_course_path(course),
+                    class: 'btn btn-success btn-xs' %>
+        <%= link_to 'Удалить', course_path(course), method: :delete,
+                    data: {confirm: 'Вы действительно хотите удалить данное занятие?'},
+                    class: 'btn btn-danger btn-xs'  %>
+      </td>
+    </tr>
+  <% end %>
+</table>

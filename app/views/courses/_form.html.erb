@@ -1,0 +1,38 @@
+<%= form_for @course, html: {class: 'form-horizontal'} do |f| %>
+
+  <div class="form-group col-sm-12">
+    <%= f.label :name, 'Название', class: 'col-sm-3 control-label' %>
+    <div class="col-sm-6">
+      <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+      <%= render 'shared/field_errors',
+                 object: @course,
+                 field_name: :name %>
+    </div>
+  </div>
+
+  <div class="form-group col-sm-12">
+    <%= f.label :starts_at, 'Начинается', class: 'col-sm-3 control-label' %>
+    <div class="col-sm-6">
+      <%= f.date_select :starts_at, class: 'form-control' %>
+      <%= render 'shared/field_errors',
+                 object: @course,
+                 field_name: :starts_at %>
+    </div>
+  </div>
+
+  <div class="form-group col-sm-12">
+    <%= f.label :ends_at, 'Заканчивается', class: 'col-sm-3 control-label' %>
+    <div class="col-sm-6">
+      <%= f.date_select :ends_at, class: 'form-control' %>
+      <%= render 'shared/field_errors',
+                 object: @course,
+                 field_name: :ends_at %>
+    </div>
+  </div>
+
+  <div class="form-group col-sm-12">
+    <div class="col-sm-offset-3 col-sm-6">
+      <%= f.submit 'Сохранить', class: 'btn btn-default' %>
+    </div>
+  </div>
+<% end %>

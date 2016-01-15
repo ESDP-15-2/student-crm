@@ -1,6 +1,10 @@
 # Courses
-ror_course = Course.create!(name: 'ROR')
-html_course = Course.create!(name: 'HTML')
+ror_course = Course.create!(name: 'ROR',
+                            starts_at: '2016-03-16',
+                            ends_at: '2017-04-16')
+html_course = Course.create!(name: 'HTML',
+                             starts_at: '2016-03-12',
+                             ends_at: '2016-12-12')
 
 # Groups
 groups = []
@@ -51,6 +55,7 @@ abai = User.create!(name:'Aбай',
                     email:'aismai@gmail.com',
                     password:'password',
                     photo: File.new(users_path.join('abai.jpg')))
+
 abai.add_role 'Студент'
 
 aliia = User.create!(name:'Алия',
@@ -65,6 +70,7 @@ aliia = User.create!(name:'Алия',
                     email:'kalinka@gmail.com',
                     password:'password',
                     photo: File.new(users_path.join('aliia.jpg')))
+
 aliia.add_role 'Студент'
 
 marat = User.create!(name:'Марат',
@@ -79,6 +85,7 @@ marat = User.create!(name:'Марат',
                      email:'klmart@gmail.com',
                      password:'password',
                      photo: File.new(users_path.join('marat.png')))
+
 marat.add_role 'Студент'
 
 mahabat = User.create!(name:'Махабат',
@@ -107,9 +114,10 @@ sanjar = User.create!(name:'Санжар',
                      email:'musaev_s@gmail.com',
                      password:'password',
                      photo: File.new(users_path.join('sanjar.jpg')))
+
 sanjar.add_role 'Студент'
 
-users.push abai, aliia, marat, mahabat, alexander, sanjar
+users.push(abai, aliia, marat, mahabat, alexander, sanjar)
 
 # Group Membership
 student = Role.find_by(name: 'Студент')
@@ -120,6 +128,3 @@ students.each do |student|
                           group: groups.sample,
                           active: true)
 end
-
-# Sms Service Accounts
-login_nikita = SmsServiceAccount.create!(login: 'aisma', password: 'kiminitodoke')
