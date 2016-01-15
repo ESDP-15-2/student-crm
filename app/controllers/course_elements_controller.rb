@@ -1,6 +1,6 @@
 class CourseElementsController < ApplicationController
 
-  add_breadcrumb 'Учебные программы', :course_elements_url
+  add_breadcrumb 'Учебные блоки', :course_elements_url
 
   def index
     @course_elements = CourseElement.all
@@ -12,14 +12,14 @@ class CourseElementsController < ApplicationController
 
   def new
     @course_element = CourseElement.new
-    add_breadcrumb 'Новая учебная программа', :new_course_element_url
+    add_breadcrumb 'Новый учебный блок', :new_course_element_url
   end
 
   def create
     @course_element = CourseElement.new(course_elements_params)
 
     if @course_element.save
-      flash[:success] = 'Учебная программа успешно создана'
+      flash[:success] = 'Учебный блок успешно создан'
       redirect_to course_elements_url
     else
       flash[:danger] = 'Вы ввели некорректные данные, проверьте и попробуйте снова'
@@ -29,7 +29,7 @@ class CourseElementsController < ApplicationController
 
   def edit
     @course_element = CourseElement.find(params[:id])
-    add_breadcrumb 'Редактирование учебной программы - ' + @course_element.theme
+    add_breadcrumb 'Редактирование учебного блока - ' + @course_element.theme
   end
 
   def update
@@ -37,7 +37,7 @@ class CourseElementsController < ApplicationController
 
     if @course_element.update(course_elements_params)
       redirect_to course_elements_url
-      flash[:success] = 'Данные учебной программы успешно обновлены'
+      flash[:success] = 'Учебный блок успешно обновлен'
     else
       flash[:danger] = 'Вы ввели некорректные данные, проверьте и попробуйте снова'
       render 'edit'
@@ -48,7 +48,7 @@ class CourseElementsController < ApplicationController
     @course_element = CourseElement.find(params[:id])
 
     @course_element.destroy
-    flash[:success] = 'Учебная программа успешно удалена'
+    flash[:success] = 'Учебный блок успешно удален'
     redirect_to course_elements_url
   end
 
@@ -56,7 +56,7 @@ class CourseElementsController < ApplicationController
   private
 
   def course_elements_params
-    params.require(:course_element).permit(:theme, :element_type, :date_for_theme, :home_work, :date_for_hw)
+    params.require(:course_element).permit(:theme, :element_type)
   end
 
 end
