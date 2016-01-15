@@ -1,0 +1,31 @@
+<h1 class="text-center">Настройка пароля</h1>
+<hr/>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: 'form-horizontal'  }) do |f| %>
+  <%= f.hidden_field :reset_password_token %>
+  <div class="form-group">
+    <%= f.label :password, 'Пароль', class: 'col-sm-4 control-label' %>
+    <div class="col-sm-5">
+      <%= f.password_field :password, autofocus: true, autocomplete: 'off', class: 'form-control'%>
+      <span class="help-block">(минимум <%= @minimum_password_length %> символов)</span>
+      <%= render 'shared/field_errors', object: resource, field_name: :password %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :password_confirmation, 'Подтверждение пароля', class: 'col-sm-4 control-label' %>
+    <div class="col-sm-5">
+      <%= f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control'%>
+      <%= render 'shared/field_errors', object: resource, field_name: :password_confirmation %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-4 col-sm-5">
+      <%= f.submit 'Сохранить', class: 'btn btn-default' %>
+    </div>
+  </div>
+<% end %>
+<div class="row">
+  <div class="col-sm-offset-4 col-sm-5">
+    <%= render 'devise/shared/links' %>
+  </div>
+</div>
+
