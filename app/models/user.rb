@@ -2,9 +2,9 @@ class User < ActiveRecord::Base
   rolify
 
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  # :registerable, :confirmable, :lockable, :timeoutable and :omniauthable
 
-  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable#, :registerable
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
 
   has_many :group_memberships
   has_many :groups, through: :group_memberships

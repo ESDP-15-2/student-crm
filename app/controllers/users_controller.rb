@@ -37,6 +37,7 @@ class UsersController < ApplicationController
     add_roles(@user)
 
     if @user.save
+      @user.send_reset_password_instructions
       flash[:success] = 'Пользователь успешно создан'
       redirect_to @user
     else
