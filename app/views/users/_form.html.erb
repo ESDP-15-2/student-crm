@@ -118,7 +118,9 @@
       </div>
     </div>
   <% end %>
+
 <% else %>
+
   <%= form_for @user, html: {class: 'form-horizontal'} do |f| %>
     <div class="form-group">
       <%= f.label :photo, 'Фотография', class: 'col-sm-3 control-label' %>
@@ -163,6 +165,31 @@
         <%= f.email_field :email, class: 'form-control' %>
         <span class="help-block">Только gmail</span>
         <%= render 'shared/field_errors', object: @user, field_name: :email %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password, 'Пароль', class: 'col-sm-3 control-label' %>
+      <div class="col-sm-6">
+        <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
+        <span class="help-block">(оставьте поле пустым, если не хотите менять пароль)</span>
+        <%= render 'shared/field_errors', object: @user, field_name: :password %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password_confirmation, 'Подтверждение пароля', class: 'col-sm-3 control-label' %>
+      <div class="col-sm-6">
+        <%= f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control' %>
+        <%= render 'shared/field_errors', object: @user, field_name: :password_confirmation %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :current_password, 'Текущий пароль', class: 'col-sm-3 control-label' %>
+      <div class="col-sm-6">
+        <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
+        <%= render 'shared/field_errors', object: @user, field_name: :current_password %>
       </div>
     </div>
 
