@@ -23,3 +23,5 @@ Gemfile.lock
 .ruby-gemset
 
 /public/system
+# Ignore application configuration
+/config/application.yml
