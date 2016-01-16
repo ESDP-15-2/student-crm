@@ -7,8 +7,8 @@
 </head>
 <body>
   <div id="wrapper">
-  <%= render 'layouts/navbar' %>
   <% if user_signed_in? %>
+    <%= render 'layouts/navbar' %>
     <div id="page-wrapper">
       <%= flash_messages %>
       <h4>

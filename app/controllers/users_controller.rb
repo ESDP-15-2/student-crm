@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   before_action :authenticate_user!
 
-  def home
+  def profile
     @user = current_user
     add_breadcrumb 'Мой профиль', :authenticated_root_url
   end

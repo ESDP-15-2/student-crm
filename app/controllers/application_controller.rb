@@ -16,4 +16,8 @@ class ApplicationController < ActionController::Base
                                                             :current_password,
                                                             contact_attributes:[:phone, :additional_phone, :skype]) }
   end
+
+  def after_sign_in_path_for(resource)
+    authenticated_root_path
+  end
 end
