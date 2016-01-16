@@ -4,4 +4,5 @@ class CourseElement < ActiveRecord::Base
 
   validates :theme, presence: true
   validates :element_type, presence: true
+  validates :course, presence: true
 end
