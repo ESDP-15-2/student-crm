@@ -1,12 +1,10 @@
 @import "bootstrap";
 @import "bootstrap-sprockets";
-@import 'bootstrap/theme';
+//@import 'bootstrap/theme';
 
 @import "custom";
-@import "contact_lists";
 @import "sms_deliveries";
-@import "course_elements";
-@import "dropzone/dropzone";
+@import "dropzone";
 @import "users";
 @import "pages";
 

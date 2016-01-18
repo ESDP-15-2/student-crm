@@ -1,6 +1,6 @@
 body {
-  margin-top: 100px;
-  background-color: rgb(244, 244, 244);
+  margin-top: 65px;
+  background-color: #fff;
 }
 
 .error-message {
@@ -17,101 +17,6 @@ body {
 
 a {
   color: rgb(0, 137, 155);
-}
-
-.my-avatar {
-  margin: 10px 0 20px 25px;
-}
-
-.user-photo {
-  width: 300px;
-  margin: 0 auto;
-}
-
-.user-info {
-  margin: 0 auto;
-}
-
-.panel .panel-body {
-  // background-color: rgb(250, 247, 196);
-  // background-color: rgb(254, 231, 164);
-  //background-color: #99cc66;
-  background-color: #e0f3b7;
-}
-
-.panel .panel-heading {
-  background-color: #222222;
-}
-
-.panel .panel-heading span{
-  color: #999999;
-  margin-right: 10px;
-}
-
-.my-profile-info .panel .panel-body{
-  height: 380px;
-}
-
-.panel .panel-body .table td,
-.panel .panel-body .table th {
-  border-top: none;
-  //border-bottom: 1px solid white;
-}
-
-p.normal label {
-  font-weight: normal;
-}
-
-/* Wrappers */
-
-#wrapper {
-  padding-left: 0;
-}
-
-#page-wrapper {
-  width: 80%;
-  margin-left: 260px;
-  padding: 5px 15px;
-}
-
-/* Side Nav */
-
-.side-nav {
-  margin-left: -225px;
-  left: 225px;
-  width: 225px;
-  position: fixed;
-  top: 50px;
-  height: 100%;
-  border-radius: 0;
-  border: none;
-  background-color: #222222;
-  overflow-y: auto;
-}
-
-.side-nav>li>a {
-  width: 225px;
-}
-
-.navbar-inverse .navbar-nav>li>a:hover,
-.navbar-inverse .navbar-nav>li>a:active {
-  background-color: #080808;
-}
-
-.navbar-inverse .navbar-nav>li>a:active {
-  // border-left: 7px solid rgb(0, 137, 155);
-}
-
-/* Submenu*/
-
-.nav .nav-stacked>li>a {
-  padding-left: 30px;
-  color: #BDBDBD;
-}
-
-.nav .nav-stacked>li>a:hover,
-.nav .nav-stacked>li>a:active{
-  background-color: #080808;
 }
 
 

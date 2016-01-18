@@ -3,6 +3,7 @@
 <head>
   <title>StudentCrm</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -11,11 +12,11 @@
     <%= render 'layouts/navbar' %>
     <div id="page-wrapper">
       <%= flash_messages %>
-      <h4>
+
         <ol class="breadcrumb">
            <%= render_breadcrumbs :tag => :li, :separator => '' %>
         </ol>
-      </h4>
+
       <%= yield %>
     </div>
   </div>
@@ -26,5 +27,4 @@
     </div>
   <% end %>
 </body>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </html>

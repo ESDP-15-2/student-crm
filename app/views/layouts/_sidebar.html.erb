@@ -1,7 +1,7 @@
 <ul id="active" class="nav navbar-nav side-nav">
-  <li class="my-avatar">
-    <%= image_tag current_user.photo.url(:thumb), class: 'img-circle' %>
-  </li>
+  <div class="my-avatar">
+    <%= link_to image_tag(current_user.photo.url(:thumb), class: 'img-circle'), authenticated_root_path %>
+  </div>
 
   <li class="nav-header">
     <a href="#" data-toggle="collapse" data-target="#userMenu">

@@ -1,21 +1,13 @@
 # Courses
-ror_course = Course.create!(name: 'ROR',
-                            starts_at: '2016-03-16',
-                            ends_at: '2017-04-16')
-html_course = Course.create!(name: 'HTML',
-                             starts_at: '2016-03-12',
-                             ends_at: '2016-12-12')
+ror_course = Course.create!(name: 'ROR', starts_at: '2016-03-16', ends_at: '2017-04-16')
+html_course = Course.create!(name: 'HTML', starts_at: '2016-03-12', ends_at: '2016-12-12')
 
 # Groups
 groups = []
-groups.push Group.create!(name: 'GR#1',
-                         course: ror_course)
-groups.push Group.create!(name: 'GR#2',
-                         course: ror_course)
-groups.push Group.create!(name: 'GR#1',
-                         course: html_course)
-groups.push Group.create!(name: 'GR#2',
-                         course: html_course)
+groups.push Group.create!(name: 'GR#1', course: ror_course)
+groups.push Group.create!(name: 'GR#2', course: ror_course)
+groups.push Group.create!(name: 'GR#1', course: html_course)
+groups.push Group.create!(name: 'GR#2', course: html_course)
 
 # Roles
 roles = []
@@ -54,9 +46,9 @@ abai = User.create!(name:'Aбай',
                       skype:'aismai'},
                     email:'aismai@gmail.com',
                     password:'password',
-                    photo: File.new(users_path.join('abai.jpg')))
+                    photo: File.new(users_path.join('iknow.png')))
 
-abai.add_role 'Студент'
+abai.add_role 'Администратор'
 
 aliia = User.create!(name:'Алия',
                     surname:'Каюмова',
