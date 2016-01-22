@@ -12,9 +12,10 @@ Rails.application.routes.draw do
   end
 
 
-
   get 'users/:id/profile' => 'users#profile', as: 'user_profile'
   get 'users/students' => 'users#students', as: 'students'
+  get 'users/:id/show' => 'users#show', as: 'show_user'
+
 
   resources :users,
             :contact_lists,
