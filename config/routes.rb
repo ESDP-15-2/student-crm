@@ -23,7 +23,8 @@ Rails.application.routes.draw do
             :sms_service_accounts,
             :senders,
             :course_elements,
-            :courses
+            :courses,
+            :groups
 
   resources :custom_lists do
     collection {post :import}
