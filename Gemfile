@@ -26,6 +26,8 @@ gem 'roo', '~> 2.1.0'
 gem 'dropzonejs-rails'
 gem 'font-awesome-sass'
 gem 'figaro'
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
 
 group :development, :test do
   gem 'byebug'
