@@ -1,4 +1,12 @@
-<ul id="active" class="nav navbar-nav side-nav">
-  <li><%= link_to '<i class="fa fa-desktop fa-lg"></i> Курсы'.html_safe, course_elements_path %></li>
+<ul class="nav navbar-nav side-nav">
+
+	<div class="my-avatar">
+		<%= link_to image_tag(current_user.photo.url(:thumb), class: 'img-circle'), authenticated_root_path %>
+	</div>
+
+	<ul class="nav nav-stacked">
+		<li><%= link_to '<i class="fa fa-calendar fa-lg"></i> Календарь'.html_safe, calendar_path %></li>
+		<li><%= link_to '<i class="fa fa-folder-open fa-lg"></i> Раздатка'.html_safe, course_elements_path %></li>
+	</ul>
 
 </ul>
