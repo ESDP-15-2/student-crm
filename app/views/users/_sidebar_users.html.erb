@@ -1,5 +1,11 @@
-<ul id="active" class="nav navbar-nav side-nav">
-  <li><%= link_to '<i class="fa fa-users fa-lg"></i> Пользователи'.html_safe, users_path %></li>
-  <li><%= link_to '<i class="fa fa-briefcase fa-lg"></i> Курсы' .html_safe, courses_path %></li>
-  <li><%= link_to '<i class="fa fa-circle fa-lg"></i> Группы'.html_safe, groups_path %></li>
+<ul class="nav navbar-nav side-nav">
+	<div class="my-avatar">
+		<%= link_to image_tag(current_user.photo.url(:thumb), class: 'img-circle'), authenticated_root_path %>
+	</div>
+
+	<ul class="nav nav-stacked">
+		<li><%= link_to '<i class="fa fa-users fa-lg"></i> Пользователи'.html_safe, users_path %></li>
+		<li><%= link_to '<i class="fa fa-briefcase fa-lg"></i> Курсы' .html_safe, courses_path %></li>
+		<li><%= link_to '<i class="fa fa-circle fa-lg"></i> Группы'.html_safe, groups_path %></li>
+	</ul>
 </ul>
