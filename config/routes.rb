@@ -36,5 +36,6 @@ Rails.application.routes.draw do
   get 'select_objects/select_students/:id' => 'select_objects#select_students', as: 'select_students'
   get 'sms_deliveries/new_from_contact_list/:id' => 'sms_deliveries#new_from_contact_list', as: 'sms_new_from_contact_list'
   get 'sms_deliveries/resend_message/:id' => 'sms_deliveries#resend_message', as: 'sms_resend'
+	get '/calendar' => 'periods#calendar', as: 'calendar'
 
 end

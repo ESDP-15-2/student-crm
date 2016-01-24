@@ -12,12 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require moment
 //= require fullcalendar
 //= require bootstrap-sprockets
 //= require dropzone
+//= require calendar
 //= require_tree .
+
 
 //this function calls alert close method to close an alert
 function clearFlash() {
