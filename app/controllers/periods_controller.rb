@@ -1,11 +1,6 @@
 class PeriodsController < ApplicationController
 	before_action :set_period, only: [:show, :edit, :update, :destroy]
 
-	def index
-		@periods = Period.all
-		@period = Period.new
-	end
-
 	def show
 	end
 
@@ -21,7 +16,7 @@ class PeriodsController < ApplicationController
 
 		respond_to do |format|
 			if @period.save
-				format.html { redirect_to periods_path, notice: 'Event was successfully created.' }
+				format.html { redirect_to calendar_path, notice: 'Event was successfully created.' }
 				format.json { render :show, status: :created, location: @period }
 			else
 				format.html { render :new }
@@ -52,6 +47,8 @@ class PeriodsController < ApplicationController
 	end
 
 	def calendar
+		@periods = Period.all
+		@period = Period.new
 	end
 
 
@@ -62,7 +59,7 @@ class PeriodsController < ApplicationController
 	end
 
 	def period_params
-		params.require(:period).permit([:course_elements_id, :title, :commence_datetime])
+		params.require(:period).permit(:course_elements_id, :title, :commence_datetime)
 	end
 
 end

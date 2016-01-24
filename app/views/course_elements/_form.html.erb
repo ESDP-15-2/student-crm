@@ -1,6 +1,15 @@
 <%= render 'course_elements/sidebar_course_elements' %>
 <%= form_for @course_element, html: {class: 'form-horizontal'} do |f| %>
 
+	<div class="form-group col-sm-12">
+		<%= f.label :course, value: 'Курс', class: 'col-sm-3 control-label' %>
+
+		<div class="col-sm-6">
+			<%= f.collection_select :course_id, Course.all.order(created_at: :desc), :id, :name, {}, class: 'form-control'  %>
+		</div>
+		<%= render 'shared/field_errors', object: @course_element, field_name: :course %>
+	</div>
+
     <div class="form-group col-sm-12">
       <%= f.label :theme, 'Тема', class: 'col-sm-3 control-label' %>
       <div class="col-sm-6">
@@ -10,15 +19,6 @@
                    field_name: :theme %>
       </div>
     </div>
-
-  <div class="form-group col-sm-12">
-    <%= f.label :course, value: 'Курс', class: 'col-sm-3 control-label' %>
-
-    <div class="col-sm-6">
-      <%= f.collection_select :course_id, Course.all.order(created_at: :desc), :id, :name, {}, class: 'form-control'  %>
-    </div>
-    <%= render 'shared/field_errors', object: @course_element, field_name: :course %>
-  </div>
 
     <div class="form-group col-sm-12">
       <%= f.label :element_type, 'Тип', class: 'col-sm-3 control-label' %>

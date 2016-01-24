@@ -17,6 +17,7 @@
 //= require bootstrap-sprockets
 //= require dropzone
 //= require calendar
+//= require calendar-ru
 //= require_tree .
 
 
