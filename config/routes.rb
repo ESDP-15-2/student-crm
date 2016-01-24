@@ -24,7 +24,8 @@ Rails.application.routes.draw do
             :senders,
             :course_elements,
             :courses,
-            :groups
+            :groups,
+						:periods
 
   resources :custom_lists do
     collection {post :import}
