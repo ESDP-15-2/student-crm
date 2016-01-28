@@ -3,8 +3,18 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+  layout :resolve_layout
 
   private
+
+  def resolve_layout
+    case action_name
+      when 'new'
+        'sign_in'
+      else
+        'application'
+    end
+  end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :surname, :gender, :birthdate,

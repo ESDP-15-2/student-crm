@@ -6,18 +6,12 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<div id="wrapper">
-  <%= render 'layouts/navbar' %>
-  <div id="page-wrapper">
-    <%= flash_messages %>
-
-    <ol class="breadcrumb">
-      <%= render_breadcrumbs :tag => :li, :separator => '' %>
-    </ol>
-
-    <%= yield %>
-  </div>
+<body class="sign-in">
+<h1><%= image_tag 'logo.png' %></h1>
+<h2>Электронная образовательная система</h2>
+<div class="form">
+  <%= flash_messages %>
+  <%= yield %>
 </div>
 </body>
 </html>
