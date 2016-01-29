@@ -28,6 +28,7 @@ gem 'font-awesome-sass'
 gem 'figaro'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug'

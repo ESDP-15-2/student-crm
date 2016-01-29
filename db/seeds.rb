@@ -1,4 +1,5 @@
 # Courses
+
 ror_course = Course.create!(name: 'ROR', starts_at: '2016-03-16', ends_at: '2017-04-16')
 html_course = Course.create!(name: 'HTML', starts_at: '2016-03-12', ends_at: '2016-12-12')
 
@@ -8,6 +9,13 @@ groups.push Group.create!(name: 'GR#1', course: ror_course)
 groups.push Group.create!(name: 'GR#2', course: ror_course)
 groups.push Group.create!(name: 'GR#1', course: html_course)
 groups.push Group.create!(name: 'GR#2', course: html_course)
+
+# Course elements
+8.times do
+	CourseElement.create!(course_id: 1, theme: "#{Faker::App.name} #{Faker::Hacker.ingverb}",
+												element_type: 'lecture')
+end
+
 
 # Roles
 roles = []
