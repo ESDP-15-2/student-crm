@@ -8,8 +8,7 @@ class ApplicationController < ActionController::Base
   private
 
   def resolve_layout
-    case action_name
-      when 'new'
+    if devise_controller? && resource_name == :user && action_name == 'new'
         'sign_in'
       else
         'application'

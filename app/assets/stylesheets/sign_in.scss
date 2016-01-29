@@ -1,10 +1,8 @@
-///////////////////first option в custom.scss файл фона sign_in_background.jpg
-
 .sign-in {
   font-family: 'Comfortaa', cursive;
 }
 
-  #button.btn-default {
+#button.btn-default {
   color: white;
   margin-top: 30px;
   padding-left: 40px;
@@ -16,67 +14,6 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#12262f', endColorstr='#f712262f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-a {
+.sign-in a {
   color: white;
 }
-////////////////////// end of first option
-
-
-
-////////////////////////second option  в custom.scss файл фона home_background6.jpg, в sign_in.html.erb необходимо закомментировать логотип
-//
-//.sign-in {
-//  font-family: 'Comfortaa', cursive;
-//}
-//
-//h2 {
-//  margin-top: 263px;
-//  margin-left: -495px;
-//}
-//
-//.form {
-//  float: left;
-//  padding-top: 15px;
-//}
-//
-//#button.btn-default {
-//  color: white;
-//  margin-top: 30px;
-//  padding-left: 40px;
-//  padding-right: 40px;
-//  font-family: 'Comfortaa', cursive;
-//  background: -webkit-linear-gradient(top, #094f8c 0%,#59a0d9 25%,#72b6e2 61%,#174673 100%); /* Chrome10-25,Safari5.1-6 */
-//  background: linear-gradient(to bottom, #094f8c 0%,#59a0d9 25%,#72b6e2 61%,#174673 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-//  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#094f8c', endColorstr='#174673',GradientType=0 ); /* IE6-9 */
-//}
-//
-//a {
-//  color: white;
-//}
-//////////////////////// end of second option
-
-
-
-///////////////////third option
-
-//.sign-in {
-//  font-family: 'Comfortaa', cursive;
-//}
-//
-//  #button.btn-default {
-//  color: white;
-//  margin-top: 30px;
-//  padding-left: 40px;
-//  padding-right: 40px;
-//  font-family: 'Comfortaa', cursive;
-//    background: rgb(143,143,143); /* Old browsers */
-//    background: -moz-linear-gradient(left, rgba(143,143,143,1) 0%, rgba(85,85,85,1) 33%, rgba(85,85,85,1) 71%, rgba(143,143,143,1) 100%); /* FF3.6-15 */
-//    background: -webkit-linear-gradient(left, rgba(143,143,143,1) 0%,rgba(85,85,85,1) 33%,rgba(85,85,85,1) 71%,rgba(143,143,143,1) 100%); /* Chrome10-25,Safari5.1-6 */
-//    background: linear-gradient(to right, rgba(143,143,143,1) 0%,rgba(85,85,85,1) 33%,rgba(85,85,85,1) 71%,rgba(143,143,143,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-//    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8f8f8f', endColorstr='#8f8f8f',GradientType=1 ); /* IE6-9 */
-//}
-//
-//a {
-//  color: white;
-//}
-////////////////////// end of third option
