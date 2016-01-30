@@ -7,6 +7,8 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+
+		add_breadcrumb @course.name
   end
 
   def new

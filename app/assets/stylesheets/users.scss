@@ -21,6 +21,11 @@
   background-color: #222222;
 }
 
+.panel-title {
+  color: #BDBDBD;
+}
+
+
 .panel .panel-heading span{
   color: #999999;
   margin-right: 10px;
@@ -48,16 +53,16 @@ p.normal label {
 
 #page-wrapper {
   width: 80%;
-  margin-left: 260px;
+  margin-left: 240px;
   padding: 5px 15px;
 }
 
 /* Side Nav */
 
 .side-nav {
-  margin-left: -225px;
-  left: 225px;
-  width: 225px;
+  margin-left: -200px;
+  left: 200px;
+  width: 200px;
   position: fixed;
   top: 50px;
   height: 100%;
@@ -68,7 +73,7 @@ p.normal label {
 }
 
 .side-nav>li>a {
-  width: 225px;
+  width: 200px;
 }
 
 .navbar-inverse .navbar-nav>li>a:hover,
@@ -89,5 +94,5 @@ p.normal label {
 
 .nav .nav-stacked>li>a:hover,
 .nav .nav-stacked>li>a:active{
-  background-color: #080808;
+  background-color: #363636;
 }
