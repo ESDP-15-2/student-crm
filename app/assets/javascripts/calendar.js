@@ -31,4 +31,20 @@ $(document).ready(function() {
         }
     })
 
+    var groups;
+    var courseElements;
+    groups = $('#period_group_id').html();
+    courseElements = $('#periods_course_elements_id');
+    return $('#period_course_id').change(function() {
+        var course, options, course_options;
+        course = $("#period_course_id :selected").text();
+        options = $(groups).filter("optgroup[label = '" + course + "']").html();
+        if (options) {
+            $('#period_group_id').html(options);
+            $('#period_group_id').parent().show;
+        } else {
+            $('#period_group_id').empty();
+        }
+    });
+
 });

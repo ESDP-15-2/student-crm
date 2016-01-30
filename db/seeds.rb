@@ -16,6 +16,10 @@ groups.push Group.create!(name: 'GR#2', course: html_course)
 												element_type: 'lecture')
 end
 
+8.times do
+	CourseElement.create!(course_id: 2, theme: "#{Faker::App.name} #{Faker::Hacker.ingverb}",
+												element_type: 'lecture')
+end
 
 # Roles
 roles = []

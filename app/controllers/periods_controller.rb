@@ -59,7 +59,7 @@ class PeriodsController < ApplicationController
 	end
 
 	def period_params
-		params.require(:period).permit(:course_elements_id, :title, :commence_datetime, :group_id)
+		params.require(:period).permit(:course_elements_id, :title, :commence_datetime, :group_id, :course_id)
 	end
 
 end
