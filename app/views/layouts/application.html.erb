@@ -7,17 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="wrapper">
-  <%= render 'layouts/navbar' %>
-  <div id="page-wrapper">
-    <%= flash_messages %>
+  <div id="wrapper">
+    <%= render 'layouts/navbar' %>
+    <div id="page-wrapper">
+      <%= flash_messages %>
 
-    <ol class="breadcrumb">
-      <%= render_breadcrumbs :tag => :li, :separator => '' %>
-    </ol>
+      <ol class="breadcrumb">
+        <%= render_breadcrumbs :tag => :li, :separator => '' %>
+      </ol>
 
-    <%= yield %>
+      <%= yield %>
+    </div>
   </div>
-</div>
 </body>
 </html>
