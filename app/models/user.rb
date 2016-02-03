@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
   has_one :contact, dependent: :destroy
   accepts_nested_attributes_for :contact
 
+  has_many :homeworks
+
   validates :name, :surname, :passport_data, presence: true
   validates :email, format: { with: /@gmail\.com\z/ }
 
