@@ -41,4 +41,5 @@ Rails.application.routes.draw do
   get 'select_objects/select_students/:id' => 'select_objects#select_students', as: 'select_students'
 
 	get '/calendar' => 'periods#calendar', as: 'calendar'
+	get '/calendar/subjects_by_course' => 'periods#get_subjects_by_course_id', as: 'get_subject_by_course'
 end

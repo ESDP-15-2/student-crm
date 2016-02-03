@@ -49,6 +49,12 @@ class PeriodsController < ApplicationController
 	def calendar
 		@periods = Period.all
 		@period = Period.new
+		add_breadcrumb 'Календарь'
+	end
+
+	def get_subjects_by_course_id
+		@course_elements = CourseElement.where(:course_id => params[:course_id])
+		render :json => @course_elements.to_json(:only => [:id, :theme])
 	end
 
 

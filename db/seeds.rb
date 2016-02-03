@@ -5,10 +5,10 @@ html_course = Course.create!(name: 'HTML', starts_at: '2016-03-12', ends_at: '20
 
 # Groups
 groups = []
-groups.push Group.create!(name: 'GR#1', course: ror_course)
-groups.push Group.create!(name: 'GR#2', course: ror_course)
-groups.push Group.create!(name: 'GR#1', course: html_course)
-groups.push Group.create!(name: 'GR#2', course: html_course)
+groups.push Group.create!(name: 'ROR GR#1', course: ror_course)
+groups.push Group.create!(name: 'ROR GR#2', course: ror_course)
+groups.push Group.create!(name: 'HTML GR#1', course: html_course)
+groups.push Group.create!(name: 'HTML GR#2', course: html_course)
 
 # Course elements
 8.times do
