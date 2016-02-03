@@ -5,6 +5,7 @@ class HomeworksController < ApplicationController
 
   def create
     @homework = Homework.new(homework_params)
+    @homework.user = current_user
 
     if @homework.save
       redirect_to homeworks_url
@@ -42,6 +43,6 @@ class HomeworksController < ApplicationController
   private
 
   def homework_params
-    params.require(:homework).permit( :rating, :review, :hw_archive, :period_id)
+    params.require(:homework).permit( :rating, :review, :hw_archive, :period_id, :user_id)
   end
 end
