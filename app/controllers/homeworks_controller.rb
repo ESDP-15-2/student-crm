@@ -31,9 +31,6 @@ class HomeworksController < ApplicationController
       render 'edit'
     end
   end
-  def show
-    @homework = Homework.find(params[:id])
-  end
 
   def destroy
     @homework = Homework.find(params[:id])
