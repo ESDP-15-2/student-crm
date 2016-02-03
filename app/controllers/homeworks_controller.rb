@@ -41,6 +41,10 @@ class HomeworksController < ApplicationController
     redirect_to homeworks_url
   end
 
+  def rate_homework
+    @homework = Homework.find(params[:id])
+  end
+
   private
 
   def get_course_group_name
