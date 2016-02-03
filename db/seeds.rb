@@ -78,7 +78,7 @@ aliia = User.create!(name:'Алия',
 aliia.add_role 'Студент'
 
 marat = User.create!(name:'Марат',
-                     surname:'Кулбаев',
+                     surname:'Кульбаев',
                      birthdate:'1990-01-12',
                      gender:'мужской',
                      passport_data:'K2-333',
