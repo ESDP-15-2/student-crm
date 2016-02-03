@@ -20,14 +20,14 @@ Rails.application.routes.draw do
   resources :course_elements,
             :courses,
             :groups,
-						:periods
+						:periods,
+            :homeworks
 
   resources :sms_deliveries,
             :contact_lists,
             :sms_service_accounts,
             :senders
 
-  resource :homeworks
 
   get 'sms_deliveries/new_from_contact_list/:id' => 'sms_deliveries#new_from_contact_list', as: 'sms_new_from_contact_list'
   get 'sms_deliveries/resend_message/:id' => 'sms_deliveries#resend_message', as: 'sms_resend'

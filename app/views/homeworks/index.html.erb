@@ -1,0 +1,9 @@
+<% @homeworks.each do |homework| %>
+    <br>
+    <%= homework.hw_archive_file_name %>
+
+    <%= link_to '<i class="fa fa-floppy-o fa-lg"></i>'.html_safe,
+                homework.hw_archive.url(:original, false),
+                class: 'btn btn-default btn-xs' %>
+
+<% end %>
