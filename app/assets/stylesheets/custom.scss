@@ -2,24 +2,9 @@
 body {
   margin-top: 65px;
   background-color: #fff;
+  font-family: 'Comfortaa', cursive;
 }
 
-body.sign-in {
-  background-image: url(sign_in_background.jpg);
-  color: white;
-  text-align: center;
-}
-
-/// for third option
-//body.sign-in {
-//  color: white;
-//  text-align: center;
-//  background: rgb(99,99,99); /* Old browsers */
-//  background: -moz-linear-gradient(top, rgba(99,99,99,1) 1%, rgba(156,156,156,1) 31%, rgba(85,85,85,1) 70%, rgba(99,99,99,1) 100%); /* FF3.6-15 */
-//  background: -webkit-linear-gradient(top, rgba(99,99,99,1) 1%,rgba(156,156,156,1) 31%,rgba(85,85,85,1) 70%,rgba(99,99,99,1) 100%); /* Chrome10-25,Safari5.1-6 */
-//  background: linear-gradient(to bottom, rgba(99,99,99,1) 1%,rgba(156,156,156,1) 31%,rgba(85,85,85,1) 70%,rgba(99,99,99,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-//  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#636363', endColorstr='#636363',GradientType=0 ); /* IE6-9 */
-//}
 
 .form {
   width: 50%;
