@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160129080655) do
+ActiveRecord::Schema.define(version: 20160203081608) do
 
   create_table "attendances", force: :cascade do |t|
     t.integer  "user_id"
@@ -88,6 +88,17 @@ ActiveRecord::Schema.define(version: 20160129080655) do
   end
 
   add_index "groups", ["course_id"], name: "index_groups_on_course_id"
+
+  create_table "homeworks", force: :cascade do |t|
+    t.text     "review"
+    t.decimal  "rating"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "hw_archive_file_name"
+    t.string   "hw_archive_content_type"
+    t.integer  "hw_archive_file_size"
+    t.datetime "hw_archive_updated_at"
+  end
 
   create_table "periods", force: :cascade do |t|
     t.integer  "course_elements_id"

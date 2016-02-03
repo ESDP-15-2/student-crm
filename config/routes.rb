@@ -27,7 +27,7 @@ Rails.application.routes.draw do
             :sms_service_accounts,
             :senders
 
-  resource :homeworks,
+  resource :homeworks
 
   get 'sms_deliveries/new_from_contact_list/:id' => 'sms_deliveries#new_from_contact_list', as: 'sms_new_from_contact_list'
   get 'sms_deliveries/resend_message/:id' => 'sms_deliveries#resend_message', as: 'sms_resend'
