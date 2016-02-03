@@ -42,6 +42,6 @@ class HomeworksController < ApplicationController
   private
 
   def homework_params
-    params.require(:homework).permit( :rating, :review, :hw_archive)
+    params.require(:homework).permit( :rating, :review, :hw_archive, :period_id)
   end
 end
