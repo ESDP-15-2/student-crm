@@ -3,15 +3,15 @@ class UsersController < ApplicationController
 
   before_action :authenticate_user!
 
-  def profile
-    @user = current_user
-    add_breadcrumb 'Мой профиль', :authenticated_root_url
-  end
-
   def show
     @user = User.find(params[:id])
     add_breadcrumb 'Пользователи', :users_url
     add_breadcrumb @user.full_name, :user_url
+  end
+
+  def show_current_user
+    @user = current_user
+    add_breadcrumb 'Мой профиль', :authenticated_root_url
   end
 
   def index
@@ -50,6 +50,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     add_breadcrumb 'Пользователи', :users_url
     add_breadcrumb 'Редактирование данных пользователя - ' + @user.full_name
+  end
+
+  def edit_current_user
+    @user = current_user
+    add_breadcrumb 'Мой профиль', :authenticated_root_url
+    add_breadcrumb 'Редактирование данных', :edit_current_user_url
   end
 
   def update

@@ -1,7 +1,7 @@
 <%= render 'users/sidebar_users' %>
 
-<% if current_user.has_role? 'Администратор' %>
-  <%= form_for @user, html: {class: 'form-horizontal'} do |f| %>
+<%= form_for @user, html: {class: 'form-horizontal'} do |f| %>
+    <h3>Общая информация</h3><hr/>
     <div class="form-group">
       <%= f.label :name, 'Имя*', class: 'col-sm-3 control-label' %>
       <div class="col-sm-6">
@@ -41,15 +41,6 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :photo, 'Фотография', class: 'col-sm-3 control-label' %>
-      <div class="col-sm-6">
-        <%= f.file_field :photo %>
-        <span class="help-block">Разрешенные форматы: jpeg, jpg, gif, png</span>
-        <%= render 'shared/field_errors', object: @user, field_name: :photo %>
-      </div>
-    </div>
-
-    <div class="form-group">
       <%= f.label :passport_data, 'Паспортные данные*', class: 'col-sm-3 control-label' %>
       <div class="col-sm-6">
         <%= f.text_field :passport_data, class: 'form-control' %>
@@ -66,6 +57,27 @@
       </div>
     </div>
 
+    <div class="form-group">
+      <%= f.label :photo, 'Фотография', class: 'col-sm-3 control-label' %>
+      <div class="col-sm-6">
+        <%= f.file_field :photo %>
+        <span class="help-block">Разрешенные форматы: jpeg, jpg, gif, png</span>
+        <%= render 'shared/field_errors', object: @user, field_name: :photo %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :roles, 'Статус*', class: 'col-sm-3 control-label' %>
+      <div class="col-sm-6">
+        <div class="checkbox-inline">
+          <%= f.collection_check_boxes(:role_ids, Role.all, :id, :name) do |r| %>
+              <p class="normal"><%= r.label { r.check_box + ' ' + r.text } %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <h3>Контактные данные</h3><hr/>
     <%= f.fields_for(:contact) do |ff| %>
         <div class="form-group">
           <%= ff.label :phone, 'Номер телефона*', class: 'col-sm-3 control-label' %>
@@ -104,101 +116,8 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :roles, 'Статус*', class: 'col-sm-3 control-label' %>
-      <div class="col-sm-6">
-        <div class="checkbox-inline">
-          <%= f.collection_check_boxes(:role_ids, Role.all, :id, :name) do |r| %>
-            <p class="normal"><%= r.label { r.check_box + ' ' + r.text } %></p>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group">
       <div class="col-sm-offset-3 col-sm-6">
         <%= f.submit 'Сохранить', class: 'btn btn-default' %>
       </div>
     </div>
-  <% end %>
-
-<% else %>
-
-  <%= form_for @user, html: {class: 'form-horizontal'} do |f| %>
-    <div class="form-group">
-      <%= f.label :photo, 'Фотография', class: 'col-sm-3 control-label' %>
-      <div class="col-sm-6">
-        <%= f.file_field :photo %>
-        <span class="help-block">Разрешенные форматы: jpeg, jpg, gif, png</span>
-        <%= render 'shared/field_errors', object: @user, field_name: :photo %>
-      </div>
-    </div>
-
-    <%= f.fields_for(:contact) do |ff| %>
-      <div class="form-group">
-        <%= ff.label :phone, 'Номер телефона*', class: 'col-sm-3 control-label' %>
-        <div class="col-sm-6">
-          <%= ff.text_field :phone, class: 'form-control' %>
-          <span class="help-block">996###xxxxxx, где ### - код моб. оператора/города, xxxxxx - номер телефона</span>
-          <%= render 'shared/field_errors', object: @user.contact, field_name: :phone %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= ff.label :additional_phone, 'Доп. номер телефона', class: 'col-sm-3 control-label' %>
-        <div class="col-sm-6">
-          <%= ff.text_field :additional_phone, class: 'form-control' %>
-          <span class="help-block">996###xxxxxx, где ### - код моб. оператора/города, xxxxxx - номер телефона</span>
-          <%= render 'shared/field_errors', object: @user.contact, field_name: :additional_phone %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= ff.label :skype, 'Skype*', class: 'col-sm-3 control-label' %>
-        <div class="col-sm-6">
-          <%= ff.text_field :skype, class: 'form-control' %>
-          <%= render 'shared/field_errors', object: @user.contact, field_name: :skype %>
-        </div>
-      </div>
-    <% end %>
-
-    <div class="form-group">
-      <%= f.label :email, 'Email*', class: 'col-sm-3 control-label' %>
-      <div class="col-sm-6">
-        <%= f.email_field :email, class: 'form-control' %>
-        <span class="help-block">Только gmail</span>
-        <%= render 'shared/field_errors', object: @user, field_name: :email %>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :password, 'Пароль', class: 'col-sm-3 control-label' %>
-      <div class="col-sm-6">
-        <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
-        <span class="help-block">(оставьте поле пустым, если не хотите менять пароль)</span>
-        <%= render 'shared/field_errors', object: @user, field_name: :password %>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :password_confirmation, 'Подтверждение пароля', class: 'col-sm-3 control-label' %>
-      <div class="col-sm-6">
-        <%= f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control' %>
-        <%= render 'shared/field_errors', object: @user, field_name: :password_confirmation %>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :current_password, 'Текущий пароль', class: 'col-sm-3 control-label' %>
-      <div class="col-sm-6">
-        <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
-        <%= render 'shared/field_errors', object: @user, field_name: :current_password %>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <div class="col-sm-offset-3 col-sm-6">
-        <%= f.submit 'Сохранить', class: 'btn btn-default' %>
-      </div>
-    </div>
-  <% end %>
 <% end %>

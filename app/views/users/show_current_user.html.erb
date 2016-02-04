@@ -2,7 +2,7 @@
 
 <% content_for :links do %>
     <%= link_to '<i class="fa fa-file-text-o fa-lg"></i>'.html_safe, '#', class: 'btn btn-default btn-xs' %>
-    <%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe, edit_user_path(@user),
+    <%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe, edit_current_user_path(@user),
                 class: 'btn btn-default btn-xs' %>
     <%= link_to '<i class="fa fa-remove fa-lg"></i>'.html_safe, user_path(@user),
                 method: :delete, data: {confirm: 'Вы действительно хотите удалить данного пользователя?'},
@@ -10,6 +10,3 @@
 <% end %>
 
 <%= render 'profile' %>
-
-
-

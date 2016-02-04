@@ -2,18 +2,26 @@
   margin: 10px 0 20px 25px;
 }
 
+.profile {
+  margin: 0 auto;
+}
+
 .user-photo {
+  width: 30%;
+  float: left;
+}
+
+.user-photo img {
+  width: 100%;
   margin: 0 auto;
 }
 
 .user-info {
-  margin: 0 auto;
+  width: 68%;
+  float: right;
 }
 
 .panel .panel-body {
-  // background-color: rgb(250, 247, 196);
-  // background-color: rgb(254, 231, 164);
-  //background-color: #99cc66;
   background-color: #F5F5F5;
 }
 
@@ -21,24 +29,18 @@
   background-color: #222222;
 }
 
-.panel-title {
-  color: #BDBDBD;
-}
-
-
 .panel .panel-heading span{
   color: #999999;
   margin-right: 10px;
 }
 
-.my-profile-info .panel .panel-body{
-  height: 480px;
+.panel-title {
+  color: #999999;
 }
 
 .panel .panel-body .table td,
 .panel .panel-body .table th {
   border-top: none;
-  //border-bottom: 1px solid white;
 }
 
 p.normal label {

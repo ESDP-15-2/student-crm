@@ -1,18 +1,20 @@
-<tr>
-  <td class="col-sm-6">Номер телефона</td>
-  <td class="col-sm-6"><%= @user.contact.phone %></td>
-</tr>
-<% unless @user.contact.additional_phone.empty? %>
+<table class="table">
   <tr>
-    <td class="col-sm-6">Доп. номер телефона</td>
-    <td class="col-sm-6"><%= @user.contact.additional_phone %></td>
+    <td class="col-sm-6">Номер телефона</td>
+    <td class="col-sm-6"><%= @user.contact.phone %></td>
   </tr>
-<% end %>
-<tr>
-  <td class="col-sm-6">Skype</td>
-  <td class="col-sm-6"><%= @user.contact.skype %></td>
-</tr>
-<tr>
-  <td class="col-sm-6">Email</td>
-  <td class="col-sm-6"><%= @user.email %></td>
-</tr>
+  <% unless @user.contact.additional_phone.empty? %>
+    <tr>
+      <td class="col-sm-6">Доп. номер телефона</td>
+      <td class="col-sm-6"><%= @user.contact.additional_phone %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td class="col-sm-6">Skype</td>
+    <td class="col-sm-6"><%= @user.contact.skype %></td>
+  </tr>
+  <tr>
+    <td class="col-sm-6">Email</td>
+    <td class="col-sm-6"><%= @user.email %></td>
+  </tr>
+</table>

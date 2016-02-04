@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      root to: 'users#profile', as: :authenticated_root
+      root to: 'users#show_current_user', as: :authenticated_root
     end
 
     unauthenticated do
@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   end
 
   resources :users
-  get 'users/:id/profile' => 'users#profile', as: 'user_profile'
+  get 'users/:id/show_current_user' => 'users#show_current_user', as: 'show_current_user'
+  get 'users/:id/edit_current_user' => 'users#edit_current_user', as: 'edit_current_user'
   get 'users/students' => 'users#students', as: 'students'
   get 'users/:id/show' => 'users#show', as: 'show_user'
 
