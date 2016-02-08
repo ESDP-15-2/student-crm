@@ -7,11 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="sign-in">
-<h1><%= image_tag 'logo.png' %></h1>
-<h2>Электронная образовательная система</h2>
-<div class="form">
-  <%= flash_messages %>
-  <%= yield %>
-</div>
+  <h1><%= image_tag 'logo.png' %></h1>
+  <h2>Электронная образовательная система</h2>
+  <div class="sign-in-form">
+    <%= flash_messages %>
+    <%= yield %>
+  </div>
 </body>
 </html>
+
