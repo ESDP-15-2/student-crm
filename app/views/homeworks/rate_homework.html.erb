@@ -1,24 +1,26 @@
-<%= form_for @homework do |f| %>
+<% provide :page_title, '' %>
 
-    <div class="form-group col-sm-12">
-      <%= f.label :review, value: 'Рецензия *', class: 'col-sm-3 control-label' %>
-      <div class="col-sm-6">
+<%= form_for @homework, html: {class: 'form-horizontal'} do |f| %>
+
+    <div class="form-group">
+      <%= f.label :review, value: 'Рецензия*', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
         <%= f.text_area :review, rows: 10, autofocus: true, class: 'form-control' %>
         <%= render 'shared/field_errors', object: @homework, field_name: :review %>
       </div>
     </div>
 
-    <div class="form-group col-sm-12">
-      <%= f.label :rating, value: 'Оценка*', class: 'col-sm-3 control-label' %>
-      <div class="col-sm-6">
+    <div class="form-group">
+      <%= f.label :rating, value: 'Оценка*', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
         <%= f.number_field :rating, autofocus: true, class: 'form-control' %>
         <%= render 'shared/field_errors', object: @homework, field_name: :rating %>
       </div>
     </div>
 
-    <div class="form-group col-sm-12">
-      <div class="col-sm-offset-3 col-sm-6">
-        <%= f.submit 'Сохранить', class: 'btn btn-default' %>
+    <div class="form-group">
+      <div class="col-md-offset-3 col-sm-offset-3 col-xs-offset-12 col-md-6 col-sm-6 col-xs-12">
+        <%= f.submit 'Сохранить', class: 'btn btn-success' %>
       </div>
     </div>
 <% end %>

@@ -1,4 +1,5 @@
-<%= render 'homeworks/sidebar_homeworks' %>
+<% provide :page_title, 'Домашние задания' %>
+
 <% @homeworks.each do |homework| %>
     <br>
     <%= homework.hw_archive_file_name %>

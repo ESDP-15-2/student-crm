@@ -1,28 +1,25 @@
-<%= render 'homeworks/sidebar_homeworks' %>
-<%= form_for @homework do |f| %>
+<%= form_for @homework, html: {class: 'form-horizontal'} do |f| %>
 
-    <div class="form-group col-sm-12">
-      <%= f.label :period, value: 'Выберите занятие*', class: 'col-sm-3 control-label' %>
-      <div class="col-sm-6">
-        <%= f.collection_select :period_id, Period.all.order(created_at: :desc), :id, :title, {}, class: 'form-control' %>
+    <div class="form-group">
+      <%= f.label :period, value: 'Выберите занятие*', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <%= f.collection_select :period_id, Period.all.order(created_at: :desc), :id, :title, {},
+                                autofocus: true, class: 'form-control' %>
+        <%= render 'shared/field_errors', object: @homework, field_name: :period %>
       </div>
-      <%= render 'shared/field_errors', object: @homework, field_name: :period %>
     </div>
 
-    <div class="form-group col-sm-12">
-      <%= f.label :hw_archive, value: 'Загрузите архив*', class: 'col-sm-3 control-label' %>
-      <div class="col-sm-6">
+    <div class="form-group">
+      <%= f.label :hw_archive, value: 'Загрузите архив*', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
         <%= f.file_field :hw_archive, autofocus: true, class: 'bootstrap-class' %>
-      </div>
-
-      <%= render 'shared/field_errors', object: @homework, field_name: :hw_archive %>
-    </div>
-
-    <div class="form-group col-sm-12">
-      <div class="col-sm-offset-3 col-sm-6">
-        <%= f.submit 'Отправить', class: 'btn btn-default' %>
+        <%= render 'shared/field_errors', object: @homework, field_name: :hw_archive %>
       </div>
     </div>
 
-
+    <div class="form-group">
+      <div class="col-md-offset-3 col-sm-offset-3 col-xs-offset-12 col-md-6 col-sm-6 col-xs-12">
+        <%= f.submit 'Отправить', class: 'btn btn-success' %>
+      </div>
+    </div>
 <% end %>
