@@ -1,36 +1,34 @@
-<%= render 'users/sidebar_users' %>
-
 <%= form_for @user, html: {class: 'form-horizontal'} do |f| %>
-    <h3>Общая информация</h3><hr/>
+    <span class="section"><i class="fa fa-user"></i> Общая информация</span>
     <div class="form-group">
-      <%= f.label :name, 'Имя*', class: 'col-sm-3 control-label' %>
-      <div class="col-sm-6">
+      <%= f.label :name, 'Имя*', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
         <%= f.text_field :name, autofocus: true, class: 'form-control' %>
         <%= render 'shared/field_errors', object: @user, field_name: :name %>
       </div>
     </div>
 
     <div class="form-group">
-      <%= f.label :surname, 'Фамилия*', class: 'col-sm-3 control-label' %>
-      <div class="col-sm-6">
+      <%= f.label :surname, 'Фамилия*', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
         <%= f.text_field :surname, class: 'form-control' %>
         <%= render 'shared/field_errors', object: @user, field_name: :surname %>
       </div>
     </div>
 
     <div class="form-group">
-      <%= f.label :birthdate, 'Дата рождения*', class: 'col-sm-3 control-label' %>
-      <div class="col-sm-6">
+      <%= f.label :birthdate, 'Дата рождения*', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
         <%= f.date_select :birthdate, order: [:day, :month, :year], start_year: 1950,
-                          prompt: { day: 'День', month: 'Месяц', year: 'Год' },
+                          prompt: {day: 'День', month: 'Месяц', year: 'Год'},
                           class: 'form-control' %>
         <%= render 'shared/field_errors', object: @user, field_name: :birthdate %>
       </div>
     </div>
 
     <div class="form-group">
-      <%= f.label :gender, 'Пол*', class: 'col-sm-3 control-label' %>
-      <div class="col-sm-6">
+      <%= f.label :gender, 'Пол*', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="radio-inline">
           <%= f.radio_button :gender, 'мужской', :checked => true %> Мужской
         </div>
@@ -41,16 +39,16 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :passport_data, 'Паспортные данные*', class: 'col-sm-3 control-label' %>
-      <div class="col-sm-6">
+      <%= f.label :passport_data, 'Паспортные данные*', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
         <%= f.text_field :passport_data, class: 'form-control' %>
         <%= render 'shared/field_errors', object: @user, field_name: :passport_data %>
       </div>
     </div>
 
     <div class="form-group">
-      <%= f.label :passport_scan_copy, 'Скан-копия паспорта', class: 'col-sm-3 control-label' %>
-      <div class="col-sm-6">
+      <%= f.label :passport_scan_copy, 'Скан-копия паспорта', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
         <%= f.file_field :passport_scan_copy %>
         <span class="help-block">Разрешенные форматы: jpeg, jpg, gif, png</span>
         <%= render 'shared/field_errors', object: @user, field_name: :passport_scan_copy %>
@@ -58,8 +56,8 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :photo, 'Фотография', class: 'col-sm-3 control-label' %>
-      <div class="col-sm-6">
+      <%= f.label :photo, 'Фотография', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+      <div class="col md-6 col-sm-6 col-xs-12">
         <%= f.file_field :photo %>
         <span class="help-block">Разрешенные форматы: jpeg, jpg, gif, png</span>
         <%= render 'shared/field_errors', object: @user, field_name: :photo %>
@@ -67,8 +65,8 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :roles, 'Статус*', class: 'col-sm-3 control-label' %>
-      <div class="col-sm-6">
+      <%= f.label :roles, 'Статус*', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="checkbox-inline">
           <%= f.collection_check_boxes(:role_ids, Role.all, :id, :name) do |r| %>
               <p class="normal"><%= r.label { r.check_box + ' ' + r.text } %></p>
@@ -77,11 +75,11 @@
       </div>
     </div>
 
-    <h3>Контактные данные</h3><hr/>
+    <span class="section"><i class="fa fa-phone"></i> Контактные данные</span>
     <%= f.fields_for(:contact) do |ff| %>
         <div class="form-group">
-          <%= ff.label :phone, 'Номер телефона*', class: 'col-sm-3 control-label' %>
-          <div class="col-sm-6">
+          <%= ff.label :phone, 'Номер телефона*', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+          <div class="col-md-6 col-sm-6 col-xs-12">
             <%= ff.text_field :phone, class: 'form-control' %>
             <span class="help-block">996###xxxxxx, где ### - код моб. оператора/города, xxxxxx - номер телефона</span>
             <%= render 'shared/field_errors', object: @user.contact, field_name: :phone %>
@@ -89,8 +87,8 @@
         </div>
 
         <div class="form-group">
-          <%= ff.label :additional_phone, 'Доп. номер телефона', class: 'col-sm-3 control-label' %>
-          <div class="col-sm-6">
+          <%= ff.label :additional_phone, 'Доп. номер телефона', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+          <div class="col-md-6 col-sm-6 col-xs-12">
             <%= ff.text_field :additional_phone, class: 'form-control' %>
             <span class="help-block">996###xxxxxx, где ### - код моб. оператора/города, xxxxxx - номер телефона</span>
             <%= render 'shared/field_errors', object: @user.contact, field_name: :additional_phone %>
@@ -98,8 +96,8 @@
         </div>
 
         <div class="form-group">
-          <%= ff.label :skype, 'Skype*', class: 'col-sm-3 control-label' %>
-          <div class="col-sm-6">
+          <%= ff.label :skype, 'Skype*', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+          <div class="col-md-6 col-sm-6 col-xs-12">
             <%= ff.text_field :skype, class: 'form-control' %>
             <%= render 'shared/field_errors', object: @user.contact, field_name: :skype %>
           </div>
@@ -107,17 +105,18 @@
     <% end %>
 
     <div class="form-group">
-      <%= f.label :email, 'Email*', class: 'col-sm-3 control-label' %>
-      <div class="col-sm-6">
+      <%= f.label :email, 'Email*', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
         <%= f.email_field :email, class: 'form-control' %>
         <span class="help-block">Только gmail</span>
         <%= render 'shared/field_errors', object: @user, field_name: :email %>
       </div>
     </div>
 
+    <div class="ln_solid"></div>
     <div class="form-group">
-      <div class="col-sm-offset-3 col-sm-6">
-        <%= f.submit 'Сохранить', class: 'btn btn-default' %>
+      <div class="col-md-offset-3 col-sm-offset-3 col-xs-offset-12 col-md-6 col-sm-6 col-xs-12">
+        <%= f.submit 'Сохранить', class: 'btn btn-success' %>
       </div>
     </div>
 <% end %>

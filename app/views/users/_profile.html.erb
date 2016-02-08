@@ -1,23 +1,28 @@
-<div class="profile">
-  <div class="panel user-photo">
-    <div class="panel-body">
-      <%= image_tag @user.photo.url(:medium), class: 'img-rounded' %>
-    </div>
-  </div>
-  <div class="panel user-info">
-    <div class="panel-heading">
-      <h3 class="panel-title">
-        <span>
-          <%= @user.full_name %> - <%= @user.roles.map { |role| role.name }.join(', ') %>
-        </span>
+<% content_for :x_title do %>
+    <div class="x_title">
+      <h2><%= @user.full_name %>
+        <small><%= @user.roles.map { |role| role.name }.join(', ') %></small>
+      </h2>
+      <ul class="nav navbar-right panel_toolbox">
         <%= yield :links %>
-      </h3>
+      </ul>
+      <div class="clearfix"></div>
     </div>
-    <div class="panel-body">
-      <h4>Общая информация</h4>
-      <%= render 'general_info' %>
-      <h4>Контактные данные</h4>
-      <%= render 'contact_info' %>
-    </div>
+<% end %>
+
+<div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+  <div class="avatar-view">
+    <%= image_tag @user.photo.url(:medium), class: 'img-rounded' %>
   </div>
 </div>
+<div class="col-md-9 col-sm-9 col-xs-12">
+  <div class="profile_title">
+    <h2>Общая информация</h2>
+  </div>
+  <%= render 'general_info' %>
+  <div class="profile_title">
+    <h2>Контактные данные</h2>
+  </div>
+  <%= render 'contact_info' %>
+</div>
+

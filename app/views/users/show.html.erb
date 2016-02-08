@@ -1,4 +1,4 @@
-<%= render 'users/sidebar_users' %>
+<% provide :page_title, 'Просмотр профиля - ' + @user.full_name %>
 
 <% content_for :links do %>
     <%= link_to '<i class="fa fa-file-text-o fa-lg"></i>'.html_safe, '#', class: 'btn btn-default btn-xs' %>
