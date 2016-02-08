@@ -1,9 +1,10 @@
 class SmsDeliveriesController < ApplicationController
 
+  add_breadcrumb '<i class="fa fa-home"></i> Главная'.html_safe, :authenticated_root_url
   add_breadcrumb 'Рассылки', :sms_deliveries_url
 
   def index
-    @sms_deliveries = SmsDelivery.order(created_at: :desc).paginate(page: params[:page], per_page: 8)
+    @sms_deliveries = SmsDelivery.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
   end
 
   def show
@@ -42,7 +43,8 @@ class SmsDeliveriesController < ApplicationController
 
   def edit
     @sms_delivery = SmsDelivery.find(params[:id])
-    add_breadcrumb 'Редактирование рассылки - ' + @sms_delivery.title
+    add_breadcrumb @sms_delivery.title, :sms_delivery_url
+    add_breadcrumb 'Редактирование', :edit_sms_delivery_url
   end
 
   def update

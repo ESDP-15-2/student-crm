@@ -1,6 +1,11 @@
 class HomeworksController < ApplicationController
+
+  add_breadcrumb '<i class="fa fa-home"></i> Главная'.html_safe, :authenticated_root_url
+  add_breadcrumb 'Домашние задания', :homeworks_url
+
   def new
     @homework = Homework.new
+    add_breadcrumb 'Новое домашнее задание', :new_homework_url
   end
 
   def create

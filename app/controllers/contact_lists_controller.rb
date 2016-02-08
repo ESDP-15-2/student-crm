@@ -1,9 +1,10 @@
 class ContactListsController < ApplicationController
 
+  add_breadcrumb '<i class="fa fa-home"></i> Главная'.html_safe, :authenticated_root_url
   add_breadcrumb 'Листы получателей', :contact_lists_url
 
   def index
-    @contact_lists = ContactList.all
+    @contact_lists = ContactList.paginate(page: params[:page], per_page: 10)
   end
 
   def show
@@ -29,7 +30,8 @@ class ContactListsController < ApplicationController
 
   def edit
     @contact_list = ContactList.find(params[:id])
-    add_breadcrumb 'Редактирование листа получателей - ' + @contact_list.title
+    add_breadcrumb @contact_list.title, :contact_list_url
+    add_breadcrumb 'Редактирование', :edit_contact_list_url
   end
 
   def update

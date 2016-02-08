@@ -1,8 +1,10 @@
 class SendersController < ApplicationController
 
+  add_breadcrumb '<i class="fa fa-home"></i> Главная'.html_safe, :authenticated_root_url
+  add_breadcrumb 'Учетные записи', :sms_service_accounts_url
+
   def new
     @sender = Sender.new
-    add_breadcrumb 'Учетные записи', :sms_service_accounts_url
     add_breadcrumb 'Новый отравитель', :new_sender_url
   end
 

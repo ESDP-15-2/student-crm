@@ -1,10 +1,11 @@
 class SmsServiceAccountsController < ApplicationController
   before_action :set_sms_service_account, only: [:show, :edit, :update, :destroy]
 
+  add_breadcrumb '<i class="fa fa-home"></i> Главная'.html_safe, :authenticated_root_url
   add_breadcrumb 'Учетные записи', :sms_service_accounts_url
 
   def index
-    @sms_service_accounts = SmsServiceAccount.all
+    @sms_service_accounts = SmsServiceAccount.paginate(page: params[:page], per_page: 10)
     @senders = Sender.all
   end
 
@@ -31,7 +32,8 @@ class SmsServiceAccountsController < ApplicationController
 
   def edit
     @sms_service_account.senders.build
-    add_breadcrumb 'Редактирование учетной записи - ' + @sms_service_account.login
+    add_breadcrumb @sms_service_account.login, :sms_service_account_url
+    add_breadcrumb 'Редактирование', :edit_sms_service_account_url
   end
 
   def update

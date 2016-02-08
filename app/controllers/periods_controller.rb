@@ -1,6 +1,8 @@
 class PeriodsController < ApplicationController
 	before_action :set_period, only: [:show, :edit, :update, :destroy]
 
+	add_breadcrumb '<i class="fa fa-home"></i> Главная'.html_safe, :authenticated_root_url
+
 	def show
 	end
 

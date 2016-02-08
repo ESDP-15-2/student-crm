@@ -1,14 +1,15 @@
 class CoursesController < ApplicationController
+
+  add_breadcrumb '<i class="fa fa-home"></i> Главная'.html_safe, :authenticated_root_url
   add_breadcrumb 'Курсы', :courses_url
 
   def index
-    @courses = Course.all
+    @courses = Course.paginate(page: params[:page], per_page: 10)
   end
 
   def show
     @course = Course.find(params[:id])
-
-		add_breadcrumb @course.name
+		add_breadcrumb @course.name, :course_url
   end
 
   def new
@@ -29,7 +30,8 @@ class CoursesController < ApplicationController
 
   def edit
     @course = Course.find(params[:id])
-    add_breadcrumb 'Редактирование курса - ' + @course.name
+    add_breadcrumb @course.name, :course_url
+    add_breadcrumb 'Редактирование', :edit_course_url
   end
 
   def update
