@@ -1,0 +1,53 @@
+<div class="col-md-3 left_col">
+  <div class="left_col scroll-view">
+
+    <!-- company logo -->
+    <div class="navbar nav_title" style="border: 0;">
+      <%= image_tag('logo.png', class: 'logo-md') %>
+      <%= image_tag('logo-sm.png', class: 'logo-sm') %>
+    </div>
+    <div class="clearfix"></div>
+
+    <!-- profile quick info -->
+    <div class="profile">
+      <div class="profile_pic">
+        <%= link_to image_tag(current_user.photo.url(:thumb), class: 'img-circle profile_img'), authenticated_root_path %>
+      </div>
+      <div class="profile_info">
+        <span>Добро пожаловать,</span>
+        <h2><%= current_user.full_name %>!</h2>
+      </div>
+    </div>
+
+    <!-- sidebar navigation -->
+    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+      <ul class="nav side-menu">
+
+        <% if current_user.has_role? 'Администратор' %>
+            <li><a><i class="fa fa-envelope"></i> SMS <span class="fa fa-chevron-down"></span></a>
+              <ul class="nav child_menu" style="display: none">
+                <li><%= link_to 'СМС-рассылка', sms_deliveries_path %></li>
+                <li><%= link_to 'Получатели', contact_lists_path %></li>
+                <li><%= link_to 'Учетные записи', sms_service_accounts_path %></li>
+              </ul>
+            </li>
+            <li><a><i class="fa fa-users"></i> Пользователи <span class="fa fa-chevron-down"></span></a>
+              <ul class="nav child_menu" style="display: none">
+                <li><%= link_to 'Все пользователи', users_path %></li>
+                <li><%= link_to 'Преподаватели', '#' %></li>
+                <li><%= link_to 'Студенты', students_path %></li>
+              </ul>
+            </li>
+            <li><a><i class="fa fa-table"></i> Учебные программы <span class="fa fa-chevron-down"></span></a>
+              <ul class="nav child_menu" style="display: none">
+                <li><%= link_to 'Календарь', calendar_path %></li>
+                <li><%= link_to 'Учебный материал', course_elements_path %></li>
+              </ul>
+            </li>
+        <% elsif current_user.has_role? 'Студент' %>
+
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
