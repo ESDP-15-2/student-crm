@@ -22,7 +22,3 @@ When(/^я ввожу в форму значения "([^"]*)" и "([^"]*)"$/) do
     fill_in 'Пароль', with: password
   end
 end
-
-When(/^я вижу на странице "([^"]*)"$/) do |content|
-  assert page.has_content?(content)
-end
