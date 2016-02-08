@@ -45,9 +45,8 @@ ActiveRecord::Schema.define(version: 20160203084419) do
   create_table "course_elements", force: :cascade do |t|
     t.integer  "course_id"
     t.string   "theme"
-    t.string   "element_type"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "course_elements", ["course_id"], name: "index_course_elements_on_course_id"
@@ -108,6 +107,7 @@ ActiveRecord::Schema.define(version: 20160203084419) do
   create_table "periods", force: :cascade do |t|
     t.integer  "course_elements_id"
     t.string   "title"
+    t.string   "event_type"
     t.datetime "commence_datetime"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
