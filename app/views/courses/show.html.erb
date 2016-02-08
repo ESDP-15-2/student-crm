@@ -1,22 +1,32 @@
-<%= render 'users/sidebar_users' %>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Курс: <%= @course.name %></h3>
-  </div>
-  <div class="panel-body">
-		<% @course.course_elements.each do |ce| %>
-		<div>
-			<%= ce.theme %>
-		</div>
-		<% end %>
-		<hr>
-		<p>
-			<b>Начинается:</b><br />
-			<%= @course.starts_at %>
-		</p>
-		<p>
-			<b>Заканчивается:</b><br />
-			<%= @course.starts_at %>
-		</p>
-  </div>
-</div>
+<% provide :page_title, 'Просмотр курса - ' + @course.name %>
+
+<% content_for :x_title do %>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <div class="x_title">
+        <h2><%= @course.name %></h2>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+<% end %>
+
+<dl>
+  <dt>Темы:</dt>
+  <% @course.course_elements.each do |ce| %>
+      <dd>
+        <li style="margin-left: 20px;"><%= ce.theme %></li>
+      </dd>
+  <% end %>
+  <br/>
+  <dt>Начинается:</dt>
+  <dd><%= @course.starts_at %></dd>
+  <br/>
+  <dt>Заканчивается:</dt>
+  <dd><%= @course.ends_at %></dd>
+</dl>
+<p>
+  <%= link_to 'Редактировать', edit_course_path(@course),
+              class: 'btn btn-default' %>
+  <%= link_to 'Удалить', course_path(@course), method: :delete,
+              data: {confirm: 'Вы действительно хотите удалить данное занятие?'},
+              class: 'btn btn-danger' %>
+</p>
