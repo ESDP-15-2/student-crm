@@ -2,21 +2,20 @@ class UsersController < ApplicationController
   #load_and_authorize_resource
 
   before_action :authenticate_user!
-  add_breadcrumb '<i class="fa fa-home"></i> Главная'.html_safe, :authenticated_root_url
 
-   def show
+  def profile
+    @user = current_user
+    add_breadcrumb 'Мой профиль', :authenticated_root_url
+  end
+
+  def show
     @user = User.find(params[:id])
     add_breadcrumb 'Пользователи', :users_url
     add_breadcrumb @user.full_name, :user_url
   end
 
-  def show_current_user
-    @user = current_user
-    #add_breadcrumb 'Мой профиль', :authenticated_root_url
-  end
-
   def index
-    @users = User.paginate(page: params[:page], per_page: 3)
+    @users = User.paginate(page: params[:page], per_page: 10)
     add_breadcrumb 'Пользователи', :users_url
   end
 
@@ -50,14 +49,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     add_breadcrumb 'Пользователи', :users_url
-    add_breadcrumb @user.full_name, :user_url
-    add_breadcrumb 'Редактирование профиля', :edit_user_url
-  end
-
-  def edit_current_user
-    @user = current_user
-    #add_breadcrumb 'Мой профиль', :authenticated_root_url
-    add_breadcrumb 'Редактирование профиля', :edit_current_user_url
+    add_breadcrumb 'Редактирование данных пользователя - ' + @user.full_name
   end
 
   def update
