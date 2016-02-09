@@ -29,6 +29,7 @@ Rails.application.routes.draw do
             :sms_service_accounts,
             :senders
 
+  get 'student_offices/all_periods/' => 'student_offices#all_periods', as: 'all_periods'
   get 'homeworks/rate_homework/:id' => 'homeworks#rate_homework', as: 'rate_homework'
   get 'sms_deliveries/new_from_contact_list/:id' => 'sms_deliveries#new_from_contact_list', as: 'sms_new_from_contact_list'
   get 'sms_deliveries/resend_message/:id' => 'sms_deliveries#resend_message', as: 'sms_resend'
