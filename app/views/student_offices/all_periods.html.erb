@@ -1,7 +1,7 @@
 <div><% @periods.each do |period| %>
       <%= period.title %>
 
-      <%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe, create_hw_with_period_path(period),
+      <%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe, (period),
                   class: 'btn btn-default btn-xs'  %>
   <% end %>
 </div>
