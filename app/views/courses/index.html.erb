@@ -19,11 +19,16 @@
         <td><%= course.starts_at %></td>
         <td><%= course.ends_at %></td>
         <td>
-          <%= link_to '<i class="fa fa-edit fa-lg"></i>'.html_safe, edit_course_path(course),
-                      class: 'btn btn-default btn-xs' %>
-          <%= link_to '<i class="fa fa-remove fa-lg"></i>'.html_safe, course_path(course), method: :delete,
+          <%= link_to '<i class="fa fa-edit fa-lg"></i>'.html_safe,
+                      edit_course_path(course),
+                      class: 'btn btn-default btn-xs',
+                      id: "course_#{course.id}_edit" %>
+          <%= link_to '<i class="fa fa-remove fa-lg"></i>'.html_safe,
+                      course_path(course),
+                      method: :delete,
                       data: {confirm: 'Вы действительно хотите удалить данное занятие?'},
-                      class: 'btn btn-danger btn-xs' %>
+                      class: 'btn btn-danger btn-xs',
+                      id: "course_#{course.id}_delete" %>
         </td>
       </tr>
   <% end %>

@@ -24,10 +24,17 @@
           <%= form_for sms, url: sms_send_message_path(sms), method: :post do |f| %>
               <% unless sms.status %>
                   <%= f.submit 'Отправить', class: 'btn btn-default btn-xs' %>
-                  <%= link_to 'Редактировать', edit_sms_delivery_path(sms), class: 'btn btn-default btn-xs' %>
+                  <%= link_to '<i class="fa fa-edit fa-lg"></i>'.html_safe,
+                              edit_sms_delivery_path(sms),
+                              class: 'btn btn-default btn-xs',
+                              id: "sms_delivery_#{sms.id}_edit" %>
               <% end %>
-              <%= link_to 'Удалить', sms_delivery_path(sms), method: :delete,
-                          data: {confirm: 'Вы действительно хотите удалить эту рассылку?'}, class: 'btn btn-danger btn-xs' %>
+              <%= link_to '<i class="fa fa-remove fa-lg"></i>'.html_safe,
+                          sms_delivery_path(sms),
+                          method: :delete,
+                          data: {confirm: 'Вы действительно хотите удалить эту рассылку?'},
+                          class: 'btn btn-danger btn-xs',
+                          id: "sms_delivery_#{sms.id}_delete" %>
           <% end %>
           <%= link_to 'Переотправить', sms_resend_path(sms), class: 'btn btn-warning btn-xs' %>
         </td>

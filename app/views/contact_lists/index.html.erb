@@ -17,13 +17,19 @@
         <tr>
           <td><%= link_to list.title, contact_list_path(list) %></td>
           <td>
-            <%= link_to '<i class="fa fa-envelope-o fa-lg"></i>'.html_safe, sms_new_from_contact_list_path(list),
-                        class: 'btn btn-default btn-xs' %>
-            <%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe, edit_contact_list_path(list),
-                        class: 'btn btn-default btn-xs' %>
-            <%= link_to '<i class="fa fa-remove fa-lg"></i>'.html_safe, contact_list_path(list),
-                        method: :delete, data: {confirm: 'Вы действительно хотите удалить этот лист получателей?'},
-                        class: 'btn btn-danger btn-xs' %>
+            <%= link_to '<i class="fa fa-envelope-o fa-lg"></i>'.html_safe,
+                        sms_new_from_contact_list_path(list),
+                        class: 'btn btn-default btn-xs'%>
+            <%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe,
+                        edit_contact_list_path(list),
+                        class: 'btn btn-default btn-xs',
+                        id: "contact_list_#{list.id}_edit" %>
+            <%= link_to '<i class="fa fa-remove fa-lg"></i>'.html_safe,
+                        contact_list_path(list),
+                        method: :delete,
+                        data: {confirm: 'Вы действительно хотите удалить этот лист получателей?'},
+                        class: 'btn btn-danger btn-xs',
+                        id: "contact_list_#{list.id}_delete"  %>
           </td>
         </tr>
     <% end %>

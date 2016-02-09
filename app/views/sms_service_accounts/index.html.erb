@@ -24,12 +24,16 @@
           <% end %>
         </td>
         <td>
-          <%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe, edit_sms_service_account_path(account),
-                      class: 'btn btn-default btn-xs' %>
-          <%= link_to '<i class="fa fa-remove fa-lg"></i>'.html_safe, sms_service_account_path(account),
+          <%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe,
+                      edit_sms_service_account_path(account),
+                      class: 'btn btn-default btn-xs',
+                      id: "sms_service_account_#{account.id}_edit" %>
+          <%= link_to '<i class="fa fa-remove fa-lg"></i>'.html_safe,
+                      sms_service_account_path(account),
                       method: :delete,
                       data: {confirm: 'Вы действительно хотите удалить данную учетную запись?'},
-                      class: 'btn btn-danger btn-xs' %>
+                      class: 'btn btn-danger btn-xs',
+                      id: "sms_service_account_#{account.id}_delete" %>
         </td>
       </tr>
   <% end %>

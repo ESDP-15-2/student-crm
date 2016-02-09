@@ -17,9 +17,16 @@
         <td><%= link_to group.name, group_path(group) %></td>
         <td><%= group.course.name %></td>
         <td>
-          <%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe, edit_group_path(group), class: 'btn btn-default btn-xs' %>
-          <%= link_to '<i class="fa fa-remove fa-lg"></i>'.html_safe, group_path(group), method: :delete,
-                      data: {confirm: 'Вы действительно хотите удалить данную группу?'}, class: 'btn btn-danger btn-xs' %>
+          <%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe,
+                      edit_group_path(group),
+                      class: 'btn btn-default btn-xs',
+                      id: "group_#{group.id}_edit" %>
+          <%= link_to '<i class="fa fa-remove fa-lg"></i>'.html_safe,
+                      group_path(group),
+                      method: :delete,
+                      data: {confirm: 'Вы действительно хотите удалить данную группу?'},
+                      class: 'btn btn-danger btn-xs',
+                      id: "group_#{group.id}_delete" %>
         </td>
       </tr>
   <% end %>
