@@ -1,10 +1,15 @@
 class GroupsController < ApplicationController
+
+  add_breadcrumb '<i class="fa fa-home"></i> Главная'.html_safe, :authenticated_root_url
+  add_breadcrumb 'Группы', :groups_url
+
   def index
-    @groups = Group.order(created_at: :desc).paginate(page: params[:page], per_page: 8)
+    @groups = Group.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
   end
 
   def new
     @group = Group.new
+    add_breadcrumb 'Новая группа', :new_group_url
   end
 
   def create
@@ -20,6 +25,8 @@ class GroupsController < ApplicationController
 
   def edit
     @group = Group.find(params[:id])
+    add_breadcrumb @group.name, :group_url
+    add_breadcrumb 'Редактирование', :edit_group_url
   end
 
   def update
@@ -35,6 +42,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    add_breadcrumb @group.name, :group_url
   end
 
   def destroy
