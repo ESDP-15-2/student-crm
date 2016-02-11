@@ -9,7 +9,9 @@ class HomeworksController < ApplicationController
   end
 
   def create
-    @homework = Homework.new(homework_params)
+    #@homework = Homework.new(homework_params)
+    @period = Period.find(params[:period_id])
+    @homework = @period.homeworks.create(homework_params)
     set_homework_name
     @homework.user = current_user
 
@@ -18,6 +20,11 @@ class HomeworksController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def create_hw_with_period
+    @homework = Homework.new
+    @period = Period.find(params[:id])
   end
 
   def index
