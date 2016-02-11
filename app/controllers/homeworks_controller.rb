@@ -16,7 +16,7 @@ class HomeworksController < ApplicationController
     @homework.user = current_user
 
     if @homework.save
-      redirect_to homeworks_url
+      redirect_to all_periods_url
     else
       render 'new'
     end

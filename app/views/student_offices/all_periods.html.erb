@@ -1,8 +1,9 @@
-<div><% @periods.each do |period| %>
+<div>
+  <% @periods.each do |period| %>
       <%= period.title %>
 
       <%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe, create_hw_with_period_path(period),
-                  class: 'btn btn-default btn-xs'  %>
+                  class: 'btn btn-default btn-xs' %>
   <% end %>
 </div>
 
@@ -14,12 +15,14 @@
   </tr>
   <div class="row">
   </div>
-  <% @homeworks.each do |homework| %>
-      <tr>
-        <td><%= link_to homework.hw_archive_file_name, homework_path(homework) %></td>
-        <td><%=  homework.review %></td>
-        <td><%=  homework.rating %></td>
-      </tr>
+  <% unless @user_hws.nil? %>
+      <% @user_hws.each do |homework| %>
+          <tr>
+            <td><%= link_to homework.hw_archive_file_name, homework_path(homework) %></td>
+            <td><%= homework.review %></td>
+            <td><%= homework.rating %></td>
+          </tr>
+      <% end %>
   <% end %>
 </table>
 
