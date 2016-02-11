@@ -1,12 +1,13 @@
-<div>
-  <% @periods.each do |period| %>
+<div class="x_title">  <% @periods.each do |period| %>
       <%= period.title %>
 
       <%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe, create_hw_with_period_path(period),
                   class: 'btn btn-default btn-xs' %>
-  <% end %>
-</div>
+      <br>
 
+<% end %>
+</div>
+<br><br>
 <table class="table table-striped table-hover col-sm-12">
   <tr>
     <th class="col-sm-3">Название ДЗ</th>

@@ -14,8 +14,8 @@ class HomeworksController < ApplicationController
     @homework = @period.homeworks.create(homework_params)
     set_homework_name
     @homework.user = current_user
-
     if @homework.save
+      @homework.period.update_attribute(:hw_status, true)
       redirect_to all_periods_url
     else
       render 'new'

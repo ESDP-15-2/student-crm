@@ -125,6 +125,7 @@ ActiveRecord::Schema.define(version: 20160211101530) do
     t.integer  "academic_unit_id"
   end
 
+
   add_index "periods", ["academic_unit_id"], name: "index_periods_on_academic_unit_id"
   add_index "periods", ["course_elements_id"], name: "index_periods_on_course_elements_id"
   add_index "periods", ["course_id"], name: "index_periods_on_course_id"
