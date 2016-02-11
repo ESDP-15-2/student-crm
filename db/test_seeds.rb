@@ -81,6 +81,9 @@ tony.add_role 'Студент'
 ror_course = Course.create!(name: 'ROR', starts_at: '2016-03-16', ends_at: '2017-04-16')
 html_course = Course.create!(name: 'HTML', starts_at: '2016-03-12', ends_at: '2016-12-12')
 
+# Course Elements
+intro = CourseElement.create!(course: ror_course, theme: 'Intro')
+
 # Groups
 groups = []
 groups.push Group.create!(name: 'Group 1', course: ror_course)

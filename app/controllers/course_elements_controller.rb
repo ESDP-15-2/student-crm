@@ -59,7 +59,7 @@ class CourseElementsController < ApplicationController
   private
 
   def course_elements_params
-    params.require(:course_element).permit(:theme, :element_type, :course_id)
+    params.require(:course_element).permit(:theme, :course_id)
   end
 
 end

@@ -17,12 +17,14 @@
         <td>
           <%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe,
                       edit_course_element_path(course_element),
-                      class: 'btn btn-default btn-xs' %>
+                      class: 'btn btn-default btn-xs',
+                      id: "course_element_#{course_element.id}_edit" %>
           <%= link_to '<i class="fa fa-remove fa-lg"></i>'.html_safe,
                       course_element_path(course_element),
                       method: :delete,
                       data: {confirm: 'Вы действительно хотите удалить данный учебный блок?'},
-                      class: 'btn btn-danger btn-xs' %>
+                      class: 'btn btn-danger btn-xs',
+                      id: "course_element_#{course_element.id}_delete" %>
         </td>
       </tr>
   <% end %>
