@@ -30,7 +30,8 @@ Rails.application.routes.draw do
   resources :sms_deliveries,
             :contact_lists,
             :sms_service_accounts,
-            :senders
+            :senders,
+            :academic_units
 
   get 'student_offices/all_periods/' => 'student_offices#all_periods', as: 'all_periods'
   get 'homeworks/rate_homework/:id' => 'homeworks#rate_homework', as: 'rate_homework'

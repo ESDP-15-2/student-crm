@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160211101039) do
+ActiveRecord::Schema.define(version: 20160211101530) do
+
+  create_table "academic_units", force: :cascade do |t|
+    t.string   "title"
+    t.date     "starts_at"
+    t.date     "ends_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "attendances", force: :cascade do |t|
     t.integer  "user_id"
@@ -114,8 +122,10 @@ ActiveRecord::Schema.define(version: 20160211101039) do
     t.integer  "group_id"
     t.integer  "course_id"
     t.boolean  "hw_status",          default: false
+    t.integer  "academic_unit_id"
   end
 
+  add_index "periods", ["academic_unit_id"], name: "index_periods_on_academic_unit_id"
   add_index "periods", ["course_elements_id"], name: "index_periods_on_course_elements_id"
   add_index "periods", ["course_id"], name: "index_periods_on_course_id"
   add_index "periods", ["group_id"], name: "index_periods_on_group_id"

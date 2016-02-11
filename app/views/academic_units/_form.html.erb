@@ -1,0 +1,50 @@
+<%= form_for @academic_unit, html: {class: 'form-horizontal'} do |f| %>
+
+    <div class="form-group">
+      <%= f.label :title, value: 'Название*', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <%= f.text_field :title, autofocus: true, class: 'form-control' %>
+        <%= render 'shared/field_errors', object: @academic_unit, field_name: :title %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :starts_at, 'Начало блока*', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <%= f.date_select :starts_at, class: 'form-control' %>
+        <%= render 'shared/field_errors',
+                   object: @academic_unit,
+                   field_name: :starts_at %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :ends_at, 'Конец блока*', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <%= f.date_select :ends_at, class: 'form-control' %>
+        <%= render 'shared/field_errors',
+                   object: @academic_unit,
+                   field_name: :ends_at %>
+      </div>
+    </div>
+  <div class="form-group">
+    <%= f.label 'Занятия', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <%= f.collection_check_boxes(:period_ids, Period.all, :id, :title) do |period| %>
+        <ul class="checkbox">
+          <li>
+            <%= period.check_box %>
+            <%= period.label %><br/>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+
+    <div class="form-group">
+      <div class="col-md-offset-3 col-sm-offset-3 col-xs-offset-12 col-md-6 col-sm-6 col-xs-12">
+        <%= f.submit 'Сохранить', class: 'btn btn-success' %>
+      </div>
+    </div>
+
+<% end %>

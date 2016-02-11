@@ -1,0 +1,4 @@
+<%= link_to 'создать', new_academic_unit_path %>
+<% @academic_units.each do |unit| %>
+    <%= unit.title %>
+<% end %>
