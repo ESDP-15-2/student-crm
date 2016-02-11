@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160211101530) do
+ActiveRecord::Schema.define(version: 20160211173143) do
 
   create_table "academic_units", force: :cascade do |t|
     t.string   "title"
@@ -123,8 +123,8 @@ ActiveRecord::Schema.define(version: 20160211101530) do
     t.integer  "course_id"
     t.boolean  "hw_status",          default: false
     t.integer  "academic_unit_id"
+    t.datetime "hw_deadline"
   end
-
 
   add_index "periods", ["academic_unit_id"], name: "index_periods_on_academic_unit_id"
   add_index "periods", ["course_elements_id"], name: "index_periods_on_course_elements_id"
