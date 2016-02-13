@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :users
-  get 'users/students' => 'users#students', as: 'students'
+  get '/students' => 'users#students', as: 'students'
   get 'users/:id/show_current_user' => 'users#show_current_user', as: 'show_current_user'
   get 'users/:id/edit_current_user' => 'users#edit_current_user', as: 'edit_current_user'
   get 'users/:id/show' => 'users#show', as: 'show_user'

@@ -1,5 +1,12 @@
 <% provide :page_title, 'Пользователи' %>
 
+<%= form_tag users_path, :method => :get do %>
+    <p class="search">
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag 'Search', :name => nil %>
+    </p>
+<% end %>
+
 <p class="mg-bottom-20">
   <%= link_to 'Добавить пользователя', new_user_path, class: 'btn btn-success' %>
   <%= link_to 'Студенты', students_path, class: 'btn btn-success' %>
