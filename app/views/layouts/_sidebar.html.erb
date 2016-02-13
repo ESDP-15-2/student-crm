@@ -24,6 +24,11 @@
       <ul class="nav side-menu">
 
         <% if current_user.has_role? 'Администратор' %>
+            <li><a><i class="fa fa-archive"></i> Кабинет <span class="fa fa-chevron-down"></span></a>
+              <ul class="nav child_menu" style="display: none">
+                <li><%= link_to 'Домашние задания', all_periods_path %></li>
+              </ul>
+            </li>
             <li><a><i class="fa fa-envelope"></i> SMS <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu" style="display: none">
                 <li><%= link_to 'СМС-рассылка', sms_deliveries_path %></li>
