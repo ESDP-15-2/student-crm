@@ -30,7 +30,7 @@ ivan = User.create!(name:'Иван',
                     password:'password',
                     photo: File.new(users_path.join('ivan.png')))
 
-ivan.add_role 'Администратор'
+ivan.add_role 'Студент'
 
 katya = User.create!(name: 'Катя',
                      surname: 'Цветаева',
@@ -123,6 +123,13 @@ ce_counter = 0
 
   array_course_elements.push CourseElement.create!(theme: 'Введение №' + "#{ce_counter}", course: courses.sample)
 end
+#group_membership
+
+  GroupMembership.create!(group: groups.first, user: users[2])
+  GroupMembership.create!(group: groups.first, user: users[3], active: true)
+  GroupMembership.create!(group: groups.first, user: users[4], active: true)
+  GroupMembership.create!(group: groups.first, user: users[5], active: true)
+  GroupMembership.create!(group: groups.first, user: users[1], active: true)
 
 #periods
 periods = []
@@ -131,8 +138,8 @@ datatime = Time.now
 
 50.times do
   datatime += 3.days
-  period_counter += 0
-  periods.push Period.create!(title: 'Занятие #', event_type: 'Лекция', commence_datetime: datatime, hw_status: true,
+  period_counter += 1
+  periods.push Period.create!(title: 'Занятие #' + "#{period_counter}", event_type: 'Лекция', commence_datetime: datatime, hw_status: true,
                               group: groups.sample, course: courses.sample, hw_deadline: datatime + 3.days,
                               course_elements_id: array_course_elements.sample.id)
 end
