@@ -105,7 +105,7 @@ boris.add_role 'Студент'
 
 users.push(boris, victor, aismai, katya, ivan, admin)users.push(boris, victor, oleg, katya, ivan, admin)
 
-#sourses
+#сourses
 courses = []
 courses.push Course.create!(name: 'ROR', starts_at: Time.now, ends_at: Time.now + 1.year)
 courses.push Course.create!(name: 'HTML', starts_at: Time.now, ends_at: Time.now + 1.year)
@@ -125,21 +125,34 @@ ce_counter = 0
 end
 #group_membership
 
-  GroupMembership.create!(group: groups.first, user: users[2])
-  GroupMembership.create!(group: groups.first, user: users[3], active: true)
-  GroupMembership.create!(group: groups.first, user: users[4], active: true)
-  GroupMembership.create!(group: groups.first, user: users[5], active: true)
-  GroupMembership.create!(group: groups.first, user: users[1], active: true)
+GroupMembership.create!(group: groups.first, user: users[2])
+GroupMembership.create!(group: groups.first, user: users[3], active: true)
+GroupMembership.create!(group: groups.first, user: users[4], active: true)
+GroupMembership.create!(group: groups.first, user: users[5], active: true)
+GroupMembership.create!(group: groups.first, user: users[1], active: true)
 
 #periods
 periods = []
 period_counter = 0
-datatime = Time.now
 
-50.times do
-  datatime += 3.days
-  period_counter += 1
-  periods.push Period.create!(title: 'Занятие #' + "#{period_counter}", event_type: 'Лекция', commence_datetime: datatime, hw_status: true,
-                              group: groups.sample, course: courses.sample, hw_deadline: datatime + 3.days,
-                              course_elements_id: array_course_elements.sample.id)
+1.times do
+  datatime = Time.now
+  50.times do
+    datatime += 3.days
+    period_counter += 1
+    periods.push Period.create!(title: 'Занятие #' + "#{period_counter}", event_type: 'Лекция', commence_datetime: datatime, hw_status: true,
+                                group: groups.sample, course: courses.sample, hw_deadline: datatime + 3.days,
+                                course_elements_id: array_course_elements.sample.id)
+
+  end
+
+  datatime = Time.now
+  50.times do
+    datatime -= 3.days
+    period_counter += 1
+    periods.push Period.create!(title: 'Занятие c минусом во времени страрта #' + "#{period_counter}", event_type: 'Лекция', commence_datetime: datatime, hw_status: true,
+                                group: groups.sample, course: courses.sample, hw_deadline: datatime - 3.days,
+                                course_elements_id: array_course_elements.sample.id)
+  end
 end
+
