@@ -47,20 +47,20 @@ katya = User.create!(name:'Катя',
 
 katya.add_role 'Студент'
 
-oleg = User.create!(name:'Олег',
-                     surname:'Куликов',
+aismai = User.create!(name:'aismai',
+                     surname:'iamsia',
                      birthdate:'1990-01-12',
                      gender:'мужской',
                      passport_data:'K2-333',
                      contact_attributes: {
-                         phone:'996700000003',
+                         phone:'996550113377',
                          additional_phone:'',
-                         skype:'test3'},
-                     email:'test3@gmail.com',
+                         skype:'aismai'},
+                     email:'aismai@gmail.com',
                      password:'password',
-                     photo: File.new(users_path.join('oleg.png')))
+                     photo: File.new(users_path.join('aismai.png')))
 
-oleg.add_role 'Студент'
+aismai.add_role 'Администратор'
 
 victor = User.create!(name:'Виктор',
                        surname:'Антонов',
@@ -91,4 +91,4 @@ boris = User.create!(name:'Борис',
 
 boris.add_role 'Студент'
 
-users.push(boris, victor, oleg, katya, ivan, admin)
+users.push(boris, victor, aismai, katya, ivan, admin)
