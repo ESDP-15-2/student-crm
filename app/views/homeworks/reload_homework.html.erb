@@ -1,7 +1,8 @@
 <% provide :page_title, '' %>
 
 <%= form_for @homework, html: {class: 'form-horizontal'} do |f| %>
-    <%= @homework.hw_archive_file_name%>
+    <%= @homework.hw_archive_file_name %>
+    <%= @homework.created_at %>
     <div class="form-group">
       <%= f.label :hw_archive, value: 'Загрузите архив*', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
       <div class="col-md-6 col-sm-6 col-xs-12">
