@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'users/:id/edit_current_user' => 'users#edit_current_user', as: 'edit_current_user'
   get 'users/:id/show' => 'users#show', as: 'show_user'
 
+
   resources :periods do
     resources :homeworks
   end
@@ -26,15 +27,19 @@ Rails.application.routes.draw do
             :groups,
 						:periods,
             :homeworks
+  get 'academic_units/get_group_academic_unit/:id' => 'academic_units#get_group_academic_unit', as: 'get_group_academic_unit'
+
+  get 'academic_units/all_courses/' => 'academic_units#all_courses', as: 'all_courses'
 
   resources :sms_deliveries,
             :contact_lists,
             :sms_service_accounts,
-            :senders,
-            :academic_units
+            :senders
+
 
   get 'student_offices/all_periods/' => 'student_offices#all_periods', as: 'all_periods'
   get 'homeworks/rate_homework/:id' => 'homeworks#rate_homework', as: 'rate_homework'
+
   get 'homeworks/reload_homework/:id' => 'homeworks#reload_homework', as: 'reload_homework'
   get 'homeworks/create_hw_with_period/:id' => 'homeworks#create_hw_with_period', as: 'create_hw_with_period'
   get 'sms_deliveries/new_from_contact_list/:id' => 'sms_deliveries#new_from_contact_list', as: 'sms_new_from_contact_list'

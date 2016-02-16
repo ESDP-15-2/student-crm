@@ -1,6 +1,17 @@
 class AcademicUnitsController < ApplicationController
+
+  def all_courses
+    @courses = Course.all
+  end
+
+  def get_group_academic_unit
+    @course = Course.find(params[:id])
+    @groups = Group.where(course: @course)
+  end
+
   def index
-    @academic_units = AcademicUnit.all
+    group = Group.find(params[:id])
+    @academic_units = AcademicUnit.where()
   end
   def new
     @academic_unit = AcademicUnit.new
