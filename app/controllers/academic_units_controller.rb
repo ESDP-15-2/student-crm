@@ -13,6 +13,10 @@ class AcademicUnitsController < ApplicationController
       render new
     end
   end
+  def show
+    @academic_unit = AcademicUnit.find(params[:id])
+  end
+  
 
   private
   def academic_umit_params
