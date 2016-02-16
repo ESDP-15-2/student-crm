@@ -17,7 +17,6 @@ gem 'rake', '>= 10.4.2'
 gem 'bootstrap-sass'
 gem 'will_paginate', '~> 3.0.6'
 gem 'bootstrap-will_paginate'
-gem 'rufus-scheduler', '~> 3.1', '>= 3.1.10'
 gem 'breadcrumbs_on_rails'
 gem 'devise'
 gem 'cancancan', '~> 1.10'
@@ -30,6 +29,7 @@ gem 'figaro'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'faker'
+gem 'whenever', :require => false
 
 
 group :development, :test do
@@ -38,6 +38,7 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
+  gem 'sunspot_solr'
 end
 
 group :test do
