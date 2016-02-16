@@ -1,10 +1,9 @@
 class SmsDeliveriesController < ApplicationController
 
-  add_breadcrumb '<i class="fa fa-home"></i> Главная'.html_safe, :authenticated_root_url
   add_breadcrumb 'Рассылки', :sms_deliveries_url
 
   def index
-    @sms_deliveries = SmsDelivery.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+    @sms_deliveries = SmsDelivery.order(created_at: :desc).paginate(page: params[:page], per_page: 8)
   end
 
   def show
@@ -31,8 +30,9 @@ class SmsDeliveriesController < ApplicationController
 
   def create
     @sms_delivery = SmsDelivery.new(sms_delivery_params)
+    @sms_delivery.delivery_time = Time.now + 3.minutes
+
     if @sms_delivery.save
-      @sms_delivery.update_attribute(:delivery_time, Time.now + 3.minutes)
       flash[:success] = 'СМС рассылка будет отправлена через 3 минуты'
       redirect_to sms_deliveries_url
     else
@@ -43,14 +43,13 @@ class SmsDeliveriesController < ApplicationController
 
   def edit
     @sms_delivery = SmsDelivery.find(params[:id])
-    add_breadcrumb @sms_delivery.title, :sms_delivery_url
-    add_breadcrumb 'Редактирование', :edit_sms_delivery_url
+    add_breadcrumb 'Редактирование рассылки - ' + @sms_delivery.title
   end
 
   def update
     @sms_delivery = SmsDelivery.find(params[:id])
     if @sms_delivery.update(sms_delivery_params)
-      @sms_delivery.updated_at + 3.minutes
+      @sms_delivery.update_attribute(:delivery_time, Time.now + 3.minutes)
       redirect_to sms_deliveries_url
       flash[:success] = 'Сообщение успешно отредактировано'
     else
