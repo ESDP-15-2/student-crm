@@ -14,9 +14,10 @@ class StudentOfficesController < ApplicationController
     array_periods = []
     periods = Period.where(hw_status: true, group_id: get_course_group[0])
     periods.each do |period|
-      if period.commence_datetime < Time.now
+      if (period.commence_datetime < Time.now) && (period.hw_deadline > Time.now)
         array_periods.push period
       end
+
     end
     return array_periods
   end
