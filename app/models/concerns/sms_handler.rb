@@ -8,25 +8,19 @@ module SmsHandler
   end
 
   def build_message
+    phone_numbers = get_phones
+
     Nokogiri::XML::Builder.new do |xml|
       xml.message {
         xml.login(sender.sms_service_account.login)
         xml.pwd(sender.sms_service_account.password)
-        xml.id(id.to_s + 'importecsdm')
+        xml.id(set_message_id(delivery_time))
         xml.sender(sender.name)
         xml.text_ content
         xml.phones {
-
-          if contact_list.custom_lists.any?
-            contact_list.custom_lists.each do |phone|
-              xml.phone(phone.phone)
-            end
-          else
-            contact_list.users.each do |student|
-              xml.phone(student.contact.phone)
-            end
+          phone_numbers.each do |phone|
+            xml.phone(phone)
           end
-
         }
       }
     end
@@ -35,9 +29,9 @@ module SmsHandler
   def build_report
     Nokogiri::XML::Builder.new do |xml|
       xml.dr {
-        xml.login('aisma')
-        xml.pwd('kiminitodoke')
-        xml.id(id.to_s + 'Mesp1502')
+        xml.login(sender.sms_service_account.login)
+        xml.pwd(sender.sms_service_account.password)
+        xml.id(set_message_id(delivery_time))
       }
     end
   end
@@ -52,6 +46,7 @@ module SmsHandler
     end
     hash
   end
+  
 
   private
 
@@ -60,9 +55,36 @@ module SmsHandler
     http.post(url, message.to_xml)
   end
 
+  def set_message_id(time)
+    time = time.to_formatted_s(:number)
+    time.slice!(0..1)
+    time
+  end
+
   def fill_title
     if self.title.blank?
       self.title = self.content[0, 69]
+    end
+  end
+
+  def get_phones
+    phones = []
+    if group_list = Group.find_by(name:contact_list.title)
+      group_list.users.each do |user|
+        phones.push user.contact.phone
+      end
+      return phones
+    elsif contact_list.custom_lists.any?
+      contact_list.custom_lists.each do |phone|
+        phones.push phone.phone
+      end
+      return phones
+    else
+      contact_list.users.each do |student|
+        phones.push student.contact.phone
+        puts student.contact.phone
+      end
+      return phones
     end
   end
 
