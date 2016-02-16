@@ -43,17 +43,6 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
-  # scheduler = Rufus::Scheduler.new
-  #
-  # scheduler.every '10s' do
-  #   SmsDelivery.all.each do |message|
-  #     unless message.status
-  #       if message.delivery_time <= Time.now
-  #         message.send_message
-  #       end
-  #     end
-  #   end
-  # end
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
