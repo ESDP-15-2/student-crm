@@ -117,17 +117,17 @@ ActiveRecord::Schema.define(version: 20160211173143) do
     t.string   "title"
     t.string   "event_type"
     t.datetime "commence_datetime"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.integer  "group_id"
     t.integer  "course_id"
-    t.boolean  "hw_status",          default: false
+    t.boolean  "hw_status",         default: false
     t.integer  "academic_unit_id"
     t.datetime "hw_deadline"
   end
 
   add_index "periods", ["academic_unit_id"], name: "index_periods_on_academic_unit_id"
-  add_index "periods", ["course_element_id"], name: "index_periods_on_course_elements_id"
+  add_index "periods", ["course_element_id"], name: "index_periods_on_course_element_id"
   add_index "periods", ["course_id"], name: "index_periods_on_course_id"
   add_index "periods", ["group_id"], name: "index_periods_on_group_id"
 

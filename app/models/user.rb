@@ -20,9 +20,6 @@ class User < ActiveRecord::Base
 
   has_many :homeworks
 
-  searchable do
-    text :name
-  end
 
   validates :name, :surname, :passport_data, presence: true
   validates :email, format: { with: /@gmail\.com\z/ }

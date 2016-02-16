@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   private
 
   def resolve_layout
-    if devise_controller? && resource_name == :user && action_name == 'new'
+    if devise_controller? && resource_name == :user #&& action_name == 'new' or 'edit'
       'sign_in'
     else
       'application'

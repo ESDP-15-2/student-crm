@@ -30,7 +30,7 @@ gem 'figaro'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'faker'
-gem 'sunspot_rails'
+
 
 group :development, :test do
   gem 'byebug'
@@ -38,7 +38,6 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
-  gem 'sunspot_solr'
 end
 
 group :test do

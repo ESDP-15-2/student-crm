@@ -15,16 +15,8 @@ class UsersController < ApplicationController
     #add_breadcrumb 'Мой профиль', :authenticated_root_url
   end
 
-  # def index
-  #   @users = User.paginate(page: params[:page], per_page: 10)
-  #   add_breadcrumb 'Пользователи', :users_url
-  # end
-
   def index
-    @search = User.search do
-      fulltext params[:search]
-    end
-    @users = @search.results
+    @users = User.paginate(page: params[:page], per_page: 10)
     add_breadcrumb 'Пользователи', :users_url
   end
 
