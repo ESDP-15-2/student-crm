@@ -1,0 +1,18 @@
+<% provide :page_title, '' %>
+
+<%= form_for @homework, html: {class: 'form-horizontal'} do |f| %>
+    <%= @homework.hw_archive_file_name%>
+    <div class="form-group">
+      <%= f.label :hw_archive, value: 'Загрузите архив*', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <%= f.file_field :hw_archive, autofocus: true, class: 'bootstrap-class' %>
+        <%= render 'shared/field_errors', object: @homework, field_name: :hw_archive %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-offset-3 col-sm-offset-3 col-xs-offset-12 col-md-6 col-sm-6 col-xs-12">
+        <%= f.submit 'Сохранить', class: 'btn btn-success' %>
+      </div>
+    </div>
+<% end %>

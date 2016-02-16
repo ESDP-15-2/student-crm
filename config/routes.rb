@@ -35,6 +35,7 @@ Rails.application.routes.draw do
 
   get 'student_offices/all_periods/' => 'student_offices#all_periods', as: 'all_periods'
   get 'homeworks/rate_homework/:id' => 'homeworks#rate_homework', as: 'rate_homework'
+  get 'homeworks/reload_homework/:id' => 'homeworks#reload_homework', as: 'reload_homework'
   get 'homeworks/create_hw_with_period/:id' => 'homeworks#create_hw_with_period', as: 'create_hw_with_period'
   get 'sms_deliveries/new_from_contact_list/:id' => 'sms_deliveries#new_from_contact_list', as: 'sms_new_from_contact_list'
   get 'sms_deliveries/resend_message/:id' => 'sms_deliveries#resend_message', as: 'sms_resend'

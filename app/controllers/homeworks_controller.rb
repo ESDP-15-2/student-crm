@@ -38,7 +38,7 @@ class HomeworksController < ApplicationController
   def update
     @homework = Homework.find(params[:id])
     if @homework.update(homework_params)
-      redirect_to homeworks_url
+      redirect_to all_periods_url
     else
       render 'edit'
     end
@@ -51,6 +51,10 @@ class HomeworksController < ApplicationController
   end
 
   def rate_homework
+    @homework = Homework.find(params[:id])
+  end
+
+  def reload_homework
     @homework = Homework.find(params[:id])
   end
 
