@@ -1,3 +1,25 @@
 <h1>Show one unit</h1>
 
 <%= @academic_unit.title %>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th class="col-sm-3">Название занятия</th>
+    <th class="col-sm-2">Учебный материал</th>
+    <th class="col-sm-2">Тип занятия</th>
+    <th class="col-sm-2">Дата начала</th>
+    <th class="col-sm-2">Домашнее задание</th>
+  </tr>
+  </thead>
+  <tbody>
+      <% @periods.each do |period| %>
+          <tr>
+            <td><%= period.title%></td>
+            <td><%= period.course_element.theme %></td>
+            <td><%= period.event_type%></td>
+            <td><%= period.commence_datetime%></td>
+            <td><%= period.hw_status%></td>
+          </tr>
+  <% end %>
+  </tbody>
+</table>

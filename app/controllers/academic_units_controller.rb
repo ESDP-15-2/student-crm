@@ -16,7 +16,9 @@ class AcademicUnitsController < ApplicationController
 
   def show
     @academic_unit = AcademicUnit.find(params[:id])
+    @periods = Period.where(academic_unit_id: @academic_unit.id)
   end
+
   def edit
     @academic_unit = AcademicUnit.find(params[:id])
   end
