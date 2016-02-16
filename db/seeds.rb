@@ -59,19 +59,6 @@ aismai = User.create!(name:'aismai',
                      email:'aismai@gmail.com',
                      password:'password',
                      photo: File.new(users_path.join('aismai.png')))
-oleg = User.create!(name: 'Олег',
-                    surname: 'Куликов',
-                    birthdate: '1990-01-12',
-                    gender: 'мужской',
-                    passport_data: 'K2-333',
-                    contact_attributes: {
-                        phone: '996700000003',
-                        additional_phone: '',
-                        skype: 'test3'},
-                    email: 'test3@gmail.com',
-                    password: 'password',
-                    photo: File.new(users_path.join('oleg.png')))
-
 aismai.add_role 'Администратор'
 
 victor = User.create!(name: 'Виктор',
@@ -103,7 +90,7 @@ boris = User.create!(name: 'Борис',
 
 boris.add_role 'Студент'
 
-users.push(boris, victor, aismai, katya, ivan, admin)users.push(boris, victor, oleg, katya, ivan, admin)
+users.push(boris, victor, aismai, katya, ivan, admin, aismai)
 
 #сourses
 courses = []
@@ -142,7 +129,7 @@ period_counter = 0
     period_counter += 1
     periods.push Period.create!(title: 'Занятие #' + "#{period_counter}", event_type: 'Лекция', commence_datetime: datatime, hw_status: true,
                                 group: groups.sample, course: courses.sample, hw_deadline: datatime + 3.days,
-                                course_elements_id: array_course_elements.sample.id)
+                                course_element: array_course_elements.sample)
 
   end
 
@@ -152,7 +139,7 @@ period_counter = 0
     period_counter += 1
     periods.push Period.create!(title: 'Занятие c минусом во времени страрта #' + "#{period_counter}", event_type: 'Лекция', commence_datetime: datatime, hw_status: true,
                                 group: groups.sample, course: courses.sample, hw_deadline: datatime - 3.days,
-                                course_elements_id: array_course_elements.sample.id)
+                                course_element: array_course_elements.sample)
   end
 end
 
