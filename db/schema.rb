@@ -113,7 +113,7 @@ ActiveRecord::Schema.define(version: 20160211173143) do
   add_index "homeworks", ["user_id"], name: "index_homeworks_on_user_id"
 
   create_table "periods", force: :cascade do |t|
-    t.integer  "course_elements_id"
+    t.integer  "course_element_id"
     t.string   "title"
     t.string   "event_type"
     t.datetime "commence_datetime"
@@ -127,7 +127,7 @@ ActiveRecord::Schema.define(version: 20160211173143) do
   end
 
   add_index "periods", ["academic_unit_id"], name: "index_periods_on_academic_unit_id"
-  add_index "periods", ["course_elements_id"], name: "index_periods_on_course_elements_id"
+  add_index "periods", ["course_element_id"], name: "index_periods_on_course_elements_id"
   add_index "periods", ["course_id"], name: "index_periods_on_course_id"
   add_index "periods", ["group_id"], name: "index_periods_on_group_id"
 
