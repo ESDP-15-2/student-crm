@@ -23,8 +23,8 @@
             </div>
 
             <div class='form-group'>
-              <%= f.label :course_elements_id, 'Тема:', class: 'control-label' %><br>
-              <%= f.collection_select :course_elements_id, CourseElement.all, :id, :theme, {}, class: 'form-control' %>
+              <%= f.label :course_element_id, 'Тема:', class: 'control-label' %><br>
+              <%= f.collection_select :course_element_id, CourseElement.all, :id, :theme, {}, class: 'form-control' %>
             </div>
 
             <div class='form-group'>

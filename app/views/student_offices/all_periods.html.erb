@@ -12,7 +12,7 @@
         <td><%= period.title %></td>
         <td><%= period.hw_deadline %></td>
         <td><%= link_to '<i class="fa fa-download fa-lg"></i>'.html_safe, create_hw_with_period_path(period),
-                           class: 'btn btn-default btn-xs' %></td>
+                        class: 'btn btn-default btn-xs' %></td>
       </tr>
   <% end %>
 </table>
@@ -29,15 +29,19 @@
   <tbody>
   <% unless @user_hws.nil? %>
 
-  <% @user_hws.each do |homework| %>
-      <tr>
-        <td><%= link_to homework.hw_archive_file_name, homework_path(homework) %></td>
-        <td><%= homework.review %></td>
-        <td><%= homework.rating %></td>
-        <td>    <%= link_to '<i class="fa  fa-repeat fa-lg"></i>'.html_safe, reload_homework_path(homework),
-                            class: 'btn btn-default btn-xs' %></td>
-      </tr>
-  <% end %>
+      <% @user_hws.each do |homework| %>
+          <tr>
+            <td><%= link_to homework.hw_archive_file_name, homework_path(homework) %></td>
+            <td><%= homework.review %></td>
+            <td><%= homework.rating %></td>
+            <% if homework.period.hw_deadline <= Time.now %>
+                <td>    <%= link_to '<i class="fa  fa-repeat fa-lg"></i>'.html_safe, reload_homework_path(homework),
+                                    class: 'btn btn-default btn-xs' %></td>
+                <% else %>
+            <td><i class="fa  fa-clock-o fa-lg"></i></td>
+            <% end %>
+          </tr>
+      <% end %>
   <% end %>
   </tbody>
 </table>
