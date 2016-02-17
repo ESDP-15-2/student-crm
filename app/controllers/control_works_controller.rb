@@ -1,0 +1,2 @@
+class ControlWorksController < ApplicationController
+end
