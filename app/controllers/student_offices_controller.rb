@@ -1,23 +1,20 @@
 class StudentOfficesController < ApplicationController
 
   def get_course_group
-    group = ''
-    course = ''
     current_user.groups.each do |g|
       group = g.id
       course = g.id
+      return course, group
     end
-    return course, group
   end
 
   def array_periods
     array_periods = []
-    periods = Period.where(hw_status: true, group_id: get_course_group[0])
+    periods = Period.where(hw_status: true, group_id: get_course_group[1])
     periods.each do |period|
       if (period.commence_datetime < Time.now) && (period.hw_deadline > Time.now)
         array_periods.push period
       end
-
     end
     return array_periods
   end
