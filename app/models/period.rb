@@ -5,6 +5,7 @@ class Period < ActiveRecord::Base
   belongs_to :group
   has_many :attendances
   has_many :homeworks
+  has_many :control_works
   has_many :students, through: :attendances
 
   TYPES = %w(Занятие Вебинар Лекция)

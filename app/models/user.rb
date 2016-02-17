@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :contact
 
   has_many :homeworks
+  has_many :control_works
 
 
   validates :name, :surname, :passport_data, presence: true
