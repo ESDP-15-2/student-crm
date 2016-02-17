@@ -34,7 +34,7 @@
             <td><%= link_to homework.hw_archive_file_name, homework_path(homework) %></td>
             <td><%= homework.review %></td>
             <td><%= homework.rating %></td>
-            <% if homework.period.hw_deadline <= Time.now %>
+            <% if homework.period.hw_deadline > Time.now %>
                 <td>    <%= link_to '<i class="fa  fa-repeat fa-lg"></i>'.html_safe, reload_homework_path(homework),
                                     class: 'btn btn-default btn-xs' %></td>
                 <% else %>

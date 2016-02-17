@@ -1,14 +1,3 @@
-<% provide :page_title, 'Домашние задания' %>
-
-<% @homeworks.each do |homework| %>
-    <br>
-    <%= homework.hw_archive_file_name %>
-
-    <%= link_to '<i class="fa fa-floppy-o fa-lg"></i>'.html_safe,
-                homework.hw_archive.url(:original, false),
-                class: 'btn btn-default btn-xs' %>
-
-    <%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe, rate_homework_path(homework),
-                class: 'btn btn-default btn-xs'  %>
-
+<% @courses.each do |course| %>
+    <%= link_to course.name, get_group_homework_path(course) %>
 <% end %>

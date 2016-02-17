@@ -48,6 +48,12 @@ Rails.application.routes.draw do
   get 'homeworks/reload_homework/:id' => 'homeworks#reload_homework', as: 'reload_homework'
   get 'homeworks/create_hw_with_period/:id' => 'homeworks#create_hw_with_period', as: 'create_hw_with_period'
   get 'homeworks/all_courses_hw/' => 'homeworks#all_courses_hw', as: 'all_courses_hws'
+  get 'homeworks/get_group_homework/:id' => 'homeworks#get_group_homework', as: 'get_group_homework'
+  get 'homeworks/all_units_for_hw/:id' => 'homeworks#all_units_for_hw', as: 'all_units_for_hw'
+  get 'homeworks/periods_for_group/:id' => 'homeworks#periods_for_group', as: 'periods_for_group'
+  get 'homeworks/hws_for_period/:id' => 'homeworks#hws_for_period', as: 'hws_for_period'
+  put 'homeworks/update_rate_hw/:id' => 'homeworks#update_rate_hw', as: 'update_rate_hw'
+
 
   get 'sms_deliveries/new_from_contact_list/:id' => 'sms_deliveries#new_from_contact_list', as: 'sms_new_from_contact_list'
   get 'sms_deliveries/resend_message/:id' => 'sms_deliveries#resend_message', as: 'sms_resend'

@@ -17,6 +17,7 @@ class AcademicUnitsController < ApplicationController
   def new
     @academic_unit = AcademicUnit.new
   end
+
   def create
     @academic_unit = AcademicUnit.new(academic_unit_params)
     if @academic_unit.save

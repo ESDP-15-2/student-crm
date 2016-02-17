@@ -1,0 +1,35 @@
+<% provide :page_title, 'Домашние задания' %>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th class="col-sm-3">Название ДЗ</th>
+    <th class="col-sm-2">Рецензия</th>
+    <th class="col-sm-2">Оценка</th>
+    <th class="col-sm-2">Крайний срок сдачи</th>
+    <th class="col-sm-2">Оценить</th>
+    <th class="col-sm-2">Скачать</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% unless @homeworks.nil? %>
+      <% @homeworks.each do |homework| %>
+          <tr>
+            <td><%= homework.hw_archive_file_name %></td>
+            <td><%= homework.review %></td>
+            <td><%= homework.rating %></td>
+            <td><%= homework.period.hw_deadline %></td>
+            <% if homework.period.hw_deadline >= Time.now %>
+                <td>    <%= link_to '<i class="fa  fa-repeat fa-lg"></i>'.html_safe, rate_homework_path(homework),
+                                    class: 'btn btn-default btn-xs' %></td>
+            <% else %>
+                <td><i class="fa  fa-clock-o fa-lg"></i></td>
+            <% end %>
+            <td>   <%= link_to '<i class="fa fa-floppy-o fa-lg"></i>'.html_safe,
+                               homework.hw_archive.url(:original, false),
+                               class: 'btn btn-default btn-xs' %></td>
+          </tr>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>
