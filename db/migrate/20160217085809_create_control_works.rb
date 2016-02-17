@@ -1,7 +1,7 @@
 class CreateControlWorks < ActiveRecord::Migration
   def change
     create_table :control_works do |t|
-      t.sting :title
+      t.string :title
       t.decimal :rating
       t.text :review
 

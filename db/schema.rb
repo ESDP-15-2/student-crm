@@ -53,6 +53,14 @@ ActiveRecord::Schema.define(version: 20160216213851) do
 
   add_index "contacts", ["user_id"], name: "index_contacts_on_user_id"
 
+  create_table "control_works", force: :cascade do |t|
+    t.string   "title"
+    t.decimal  "rating"
+    t.text     "review"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "course_elements", force: :cascade do |t|
     t.integer  "course_id"
     t.string   "theme"
@@ -127,10 +135,12 @@ ActiveRecord::Schema.define(version: 20160216213851) do
     t.boolean  "hw_status",         default: false
     t.integer  "academic_unit_id"
     t.datetime "hw_deadline"
+    t.integer  "control_work_id"
     t.integer  "lesson_number"
   end
 
   add_index "periods", ["academic_unit_id"], name: "index_periods_on_academic_unit_id"
+  add_index "periods", ["control_work_id"], name: "index_periods_on_control_work_id"
   add_index "periods", ["course_element_id"], name: "index_periods_on_course_elements_id"
   add_index "periods", ["course_id"], name: "index_periods_on_course_id"
   add_index "periods", ["group_id"], name: "index_periods_on_group_id"
