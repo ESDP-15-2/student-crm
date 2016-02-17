@@ -1,11 +1,19 @@
 <%= form_for @sms_delivery, html: {class: 'form-horizontal'} do |f| %>
 
+
     <div class="form-group">
       <%= f.label :content, value: 'Текст*', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
       <div class="col-md-6 col-sm-6 col-xs-12">
         <span>количество символов: </span><span id="char-num"></span>
         <span>количество сообщений: </span><span id="sms-count"></span>
         <%= f.text_area :content, rows: 10, autofocus: true, class: 'form-control', id: 'text-field' %>
+        <p>для умной расслыки используйте теги:</p>
+        <span class="label label-info">%{курс}</span>
+        <span class="label label-info">%{тип_занятия}</span>
+        <span class="label label-info">%{номер_занятия}</span>
+        <span class="label label-info">%{дата}</span>
+        <span class="label label-info">%{время}</span>
+        <span class="label label-info">%{тема}</span>
         <%= render 'shared/field_errors', object: @sms_delivery, field_name: :content %>
       </div>
     </div>
