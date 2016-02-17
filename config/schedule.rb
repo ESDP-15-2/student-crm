@@ -5,3 +5,6 @@ every 1.minutes do
   rake 'sms:send'
 end
 
+every 1.day, :at => '10:08am' do
+  rake 'sms:smart'
+end

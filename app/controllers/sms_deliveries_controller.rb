@@ -75,7 +75,7 @@ class SmsDeliveriesController < ApplicationController
   private
 
   def sms_delivery_params
-    params.require(:sms_delivery).permit(:title, :content, :contact_list_id, :sender_id)
+    params.require(:sms_delivery).permit(:title, :content, :contact_list_id, :sender_id, :smart_delivery)
   end
 
 end
