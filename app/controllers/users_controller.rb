@@ -20,11 +20,28 @@ class UsersController < ApplicationController
     add_breadcrumb 'Пользователи', :users_url
   end
 
+  def admins
+    @admins = Role.find_by(name: 'Администратор').users.paginate(page: params[:page], per_page: 10)
+    add_breadcrumb 'Пользователи', :users_url
+    add_breadcrumb 'Администраторы', :admins_url
+  end
+
+  def full_authority_users
+    @full_authority_users = Role.find_by(name: 'Пользователь с полным доступом').users.paginate(page: params[:page], per_page: 10)
+    add_breadcrumb 'Пользователи', :users_url
+    add_breadcrumb 'Пользователи с полным доступом', :full_authority_users_url
+  end
+
   def students
-    student = Role.find_by(name: 'Студент')
-    @students = student.users.paginate(page: params[:page], per_page: 10)
+    @students = Role.find_by(name: 'Студент').users.paginate(page: params[:page], per_page: 10)
     add_breadcrumb 'Пользователи', :users_url
     add_breadcrumb 'Студенты', :students_url
+  end
+
+  def instructors
+    @instructors = Role.find_by(name: 'Преподаватель').users.paginate(page: params[:page], per_page: 10)
+    add_breadcrumb 'Пользователи', :users_url
+    add_breadcrumb 'Преподаватели', :instructors_url
   end
 
   def new

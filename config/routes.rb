@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   end
 
   resources :users
+  get '/admins' => 'users#admins', as: 'admins'
+  get '/full_authority_users' => 'users#full_authority_users', as: 'full_authority_users'
+  get '/instructors' => 'users#instructors', as: 'instructors'
   get '/students' => 'users#students', as: 'students'
   get 'users/:id/show_current_user' => 'users#show_current_user', as: 'show_current_user'
   get 'users/:id/edit_current_user' => 'users#edit_current_user', as: 'edit_current_user'
@@ -27,8 +30,6 @@ Rails.application.routes.draw do
             :groups,
             :periods,
             :homeworks
-
-
 
   resources :sms_deliveries,
             :contact_lists,

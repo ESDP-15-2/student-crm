@@ -1,4 +1,10 @@
 # Users
+roles = []
+roles.push Role.create!(name: 'Администратор')
+roles.push Role.create!(name: 'Пользователь с полным доступом')
+roles.push Role.create!(name: 'Преподаватель')
+roles.push Role.create!(name: 'Студент')
+
 users_path = Rails.root.join('app', 'assets', 'images', 'users')
 
 users = []

@@ -1,23 +1,23 @@
-<% provide :page_title, 'Студенты' %>
+<% provide :page_title, 'Администраторы' %>
 
 <!--<p class="mg-bottom-20">
-        <%= link_to 'Добавить студента', new_user_path, class: 'btn btn-success' %>
+        <%= link_to 'Добавить администратора', new_user_path, class: 'btn btn-success' %>
      </p>-->
 <table class="table table-hover">
   <thead>
   <tr>
-    <th>Студент</th>
+    <th>Администратор</th>
     <th>Действия</th>
   </tr>
   </thead>
   <tbody>
-  <% @students.each do |student| %>
+  <% @admins.each do |admin| %>
       <tr>
-        <td><%= link_to student.full_name, user_path(student) %></td>
+        <td><%= link_to admin.full_name, user_path(admin) %></td>
         <td>
-          <%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe, edit_user_path(student),
+          <%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe, edit_user_path(admin),
                       class: 'btn btn-default btn-xs' %>
-          <%= link_to '<i class="fa fa-remove fa-lg"></i>'.html_safe, user_path(student),
+          <%= link_to '<i class="fa fa-remove fa-lg"></i>'.html_safe, user_path(admin),
                       method: :delete, data: {confirm: 'Вы действительно хотите удалить данного пользователя?'},
                       class: 'btn btn-danger btn-xs' %>
         </td>
@@ -27,6 +27,6 @@
 </table>
 <div class="row">
   <div class="col-sm-12">
-    <%= will_paginate @students %>
+    <%= will_paginate @admins %>
   </div>
 </div>

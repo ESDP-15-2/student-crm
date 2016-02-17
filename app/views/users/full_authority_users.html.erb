@@ -1,0 +1,32 @@
+<% provide :page_title, 'Пользователи с полным доступом' %>
+
+<!--<p class="mg-bottom-20">
+        <%= link_to 'Добавить пользователяч с полным доступом', new_user_path, class: 'btn btn-success' %>
+     </p>-->
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Пользователь с полным доступом</th>
+    <th>Действия</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @full_authority_users.each do |full_authority_user| %>
+      <tr>
+        <td><%= link_to full_authority_user.full_name, user_path(full_authority_user) %></td>
+        <td>
+          <%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe, edit_user_path(full_authority_user),
+                      class: 'btn btn-default btn-xs' %>
+          <%= link_to '<i class="fa fa-remove fa-lg"></i>'.html_safe, user_path(full_authority_user),
+                      method: :delete, data: {confirm: 'Вы действительно хотите удалить данного пользователя?'},
+                      class: 'btn btn-danger btn-xs' %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<div class="row">
+  <div class="col-sm-12">
+    <%= will_paginate @full_authority_users %>
+  </div>
+</div>
