@@ -42,8 +42,9 @@ class HomeworksController < ApplicationController
   def create
     #@homework = Homework.new(homework_params)
     @period = Period.find(params[:period_id])
-    @homework = @period.homeworks.create(homework_params)
-    set_homework_name
+    @homework = Homework.new(homework_params)
+    @homework.period = @period
+    set_homework_name @homework
     @homework.user = current_user
     if @homework.save
       @homework.period.update_attribute(:hw_status, true)
@@ -109,13 +110,13 @@ class HomeworksController < ApplicationController
     return course_name, group_name
   end
 
-  def set_homework_name
+  def set_homework_name(hw)
     name = current_user.name.to_s
     surname = current_user.surname.to_s
     course_group_name = get_course_group_name.join('-')
     period_tittle = @homework.period.title.to_s
     hw_archive_name = name + "-#{surname}" + "-#{course_group_name}" + "-#{period_tittle}"
-    @homework.hw_archive_file_name = hw_archive_name
+    hw.hw_archive_file_name = hw_archive_name
   end
 
   def homework_params
