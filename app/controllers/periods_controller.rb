@@ -16,6 +16,7 @@ class PeriodsController < ApplicationController
 	def create
 		@period = Period.new(period_params)
     count_lessons(@period)
+    @period.cw_status = true if @period.event_type == 'Контрольная'
     respond_to do |format|
       if @period.save
         format.html { redirect_to calendar_path, notice: 'Event was successfully created.' }
@@ -87,7 +88,7 @@ class PeriodsController < ApplicationController
 
 	def period_params
 		params.require(:period).permit(:course_element_id, :title, :commence_datetime,
-                                   :group_id, :course_id, :hw_deadline, :event_type)
+                                   :group_id, :course_id, :hw_status, :hw_deadline, :event_type)
 	end
 
 end

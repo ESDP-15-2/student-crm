@@ -45,8 +45,14 @@
               <%= f.datetime_select :commence_datetime, class: 'form-control' %>
             </div>
 
+            <div class="form-group col-sm-12">
+              <%= f.label :hw_status, 'Домашнее задание', class: 'control-label' %>
+              <%= f.check_box :hw_status %>
+
+            </div>
+
             <div class='form-group'>
-              <%= f.label :hw_deadline, 'Дата сдачи ДЗ:', class: 'control-label' %><br>
+              <%= f.label :hw_deadline, 'Дата сдачи Работы:', class: 'control-label' %><br>
               <%= f.datetime_select :hw_deadline, class: 'form-control' %>
             </div>
 

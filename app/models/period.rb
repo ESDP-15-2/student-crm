@@ -8,5 +8,5 @@ class Period < ActiveRecord::Base
   has_many :control_works
   has_many :students, through: :attendances
 
-  TYPES = %w(Занятие Вебинар Лекция)
+  TYPES = %w(Лекция Вебинар Контрольная Лабораторная Другое)
 end
