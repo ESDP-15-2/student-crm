@@ -70,18 +70,24 @@ class PeriodsController < ApplicationController
   def count_lessons(period)
     i = 1
     case period.event_type
-      when 'занятие'
-        Period.where(event_type: 'занятие').each do |lesson|
+      when 'Лекция'
+        Period.where(event_type: 'Лекция').each do |lesson|
           i += 1
         end
-      when 'вебинар'
-        Period.where(event_type: 'вебинар').each do |lesson|
+      when 'Вебинар'
+        Period.where(event_type: 'Вебинар').each do |lesson|
           i += 1
         end
       when 'контрольная'
-        Period.where(event_type: 'вебинар').each do |lesson|
+        Period.where(event_type: 'Контрольная').each do |lesson|
           i += 1
         end
+      when 'контрольная'
+        Period.where(event_type: 'Лабораторная').each do |lesson|
+          i += 1
+        end
+      else
+        return period
     end
     period.update(lesson_number: i)
   end

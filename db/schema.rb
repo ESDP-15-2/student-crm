@@ -141,6 +141,7 @@ ActiveRecord::Schema.define(version: 20160217105231) do
     t.datetime "updated_at",                        null: false
     t.integer  "group_id"
     t.integer  "course_id"
+    t.integer  "lesson_number"
     t.boolean  "hw_status",         default: false
     t.integer  "academic_unit_id"
     t.datetime "hw_deadline"
