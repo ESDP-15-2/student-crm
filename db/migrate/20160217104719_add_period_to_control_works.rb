@@ -1,4 +1,4 @@
-class AddPeriodToControlWork < ActiveRecord::Migration
+class AddPeriodToControlWorks < ActiveRecord::Migration
   def change
     add_reference :control_works, :period, index: true, foreign_key: true
   end

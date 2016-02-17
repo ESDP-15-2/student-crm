@@ -9,9 +9,9 @@ class StudentOfficesController < ApplicationController
     end
   end
 
-  def array_periods
+  def array_periods(status)
     array_periods = []
-    periods = Period.where(hw_status: true, group_id: get_course_group[1])
+    periods = Period.where("#{status}": true, group_id: get_course_group[1])
     periods.each do |period|
       if (period.commence_datetime < Time.now) && (period.hw_deadline > Time.now)
         array_periods.push period
@@ -20,9 +20,9 @@ class StudentOfficesController < ApplicationController
     return array_periods
   end
 
-  def user_home_periods
+  def user_home_periods(i)
     user_home_periods = []
-    @user_hws = Homework.where(user_id: current_user.id)
+    @user_hws = i.where(user_id: current_user.id)
     @user_hws.each do |hw|
       user_home_periods.push hw.period
     end
@@ -31,7 +31,12 @@ class StudentOfficesController < ApplicationController
 
   def all_periods
     add_breadcrumb 'Домашние задания', :all_periods_url
-    @periods = array_periods - user_home_periods
+    @periods = array_periods('hw_status') - user_home_periods(Homework)
+  end
+
+  def all_cws
+    @periods = array_periods('cw_status') - user_home_periods(ControlWork)
+    @user_cws = ControlWork.where(user_id: current_user.id)
   end
 
   def show_one_period

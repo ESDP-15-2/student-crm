@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160217091841) do
+ActiveRecord::Schema.define(version: 20160217105231) do
 
   create_table "academic_units", force: :cascade do |t|
     t.string   "title"
@@ -57,9 +57,18 @@ ActiveRecord::Schema.define(version: 20160217091841) do
     t.string   "title"
     t.decimal  "rating"
     t.text     "review"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "cw_archive_file_name"
+    t.string   "cw_archive_content_type"
+    t.integer  "cw_archive_file_size"
+    t.datetime "cw_archive_updated_at"
+    t.integer  "period_id"
+    t.integer  "user_id"
   end
+
+  add_index "control_works", ["period_id"], name: "index_control_works_on_period_id"
+  add_index "control_works", ["user_id"], name: "index_control_works_on_user_id"
 
   create_table "course_elements", force: :cascade do |t|
     t.integer  "course_id"
@@ -135,11 +144,11 @@ ActiveRecord::Schema.define(version: 20160217091841) do
     t.boolean  "hw_status",         default: false
     t.integer  "academic_unit_id"
     t.datetime "hw_deadline"
-    t.integer  "control_work_id"
+    t.boolean  "cw_status",         default: false
+    t.datetime "cw_deadline"
   end
 
   add_index "periods", ["academic_unit_id"], name: "index_periods_on_academic_unit_id"
-  add_index "periods", ["control_work_id"], name: "index_periods_on_control_work_id"
   add_index "periods", ["course_element_id"], name: "index_periods_on_course_element_id"
   add_index "periods", ["course_id"], name: "index_periods_on_course_id"
   add_index "periods", ["group_id"], name: "index_periods_on_group_id"
@@ -183,6 +192,7 @@ ActiveRecord::Schema.define(version: 20160217091841) do
     t.integer  "contact_list_id"
     t.boolean  "status",          default: false
     t.datetime "delivery_time"
+    t.boolean  "smart_delivery",  default: false
   end
 
   add_index "sms_deliveries", ["contact_list_id"], name: "index_sms_deliveries_on_contact_list_id"

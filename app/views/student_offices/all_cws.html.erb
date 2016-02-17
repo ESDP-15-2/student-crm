@@ -1,0 +1,48 @@
+<table class="table table-striped table-hover col-sm-12">
+  <span>Домашние задания не отправленные</span>
+  <tr>
+    <th class="col-sm-3">Занятие</th>
+    <th class="col-sm-2">Дата сдачи ДЗ</th>
+    <th class="col-sm-2">Залить дз</th>
+  </tr>
+  <div class="row">
+  </div>
+  <% @periods.each do |period| %>
+      <tr>
+        <td><%= period.title %></td>
+        <td><%= period.hw_deadline %></td>
+        <td><%= link_to '<i class="fa fa-download fa-lg"></i>'.html_safe, create_cw_with_period_path(period),
+                        class: 'btn btn-default btn-xs' %></td>
+      </tr>
+  <% end %>
+</table>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th class="col-sm-3">Название ДЗ</th>
+    <th class="col-sm-2">Рецензия</th>
+    <th class="col-sm-2">Оценка</th>
+    <th class="col-sm-2">Перезалить ДЗ</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% unless @user_cws.nil? %>
+
+      <% @user_cws.each do |cw| %>
+          <tr>
+            <td><%= link_to cw.cw_archive_file_name, control_work_path(cw) %></td>
+            <td><%= cw.review %></td>
+            <td><%= cw.rating %></td>
+            <% if cw.period.hw_deadline > Time.now %>
+                <td>    <%= link_to '<i class="fa  fa-repeat fa-lg"></i>'.html_safe,
+                                    class: 'btn btn-default btn-xs' %></td>
+            <% else %>
+                <td><i class="fa  fa-clock-o fa-lg"></i></td>
+
+            <% end %>
+          </tr>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>

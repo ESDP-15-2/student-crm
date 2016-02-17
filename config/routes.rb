@@ -25,11 +25,17 @@ Rails.application.routes.draw do
     resources :homeworks
   end
 
+  resources :periods do
+    resources :control_works
+  end
+
   resources :course_elements,
             :courses,
             :groups,
             :periods,
-            :homeworks
+            :homeworks,
+            :control_works
+
 
   resources :sms_deliveries,
             :contact_lists,
@@ -38,16 +44,17 @@ Rails.application.routes.draw do
 
   resources :academic_units do
     get :all_courses
-
   end
   get 'academic_units/all_units/:id' => 'academic_units#all_units', as: 'all_units'
   get 'academic_units/get_group_academic_unit/:id' => 'academic_units#get_group_academic_unit', as: 'get_group_academic_unit'
 
 
   get 'student_offices/all_periods/' => 'student_offices#all_periods', as: 'all_periods'
+  get 'student_offices/all_cws/' => 'student_offices#all_cws', as: 'all_cws'
   get 'homeworks/rate_homework/:id' => 'homeworks#rate_homework', as: 'rate_homework'
   get 'homeworks/reload_homework/:id' => 'homeworks#reload_homework', as: 'reload_homework'
   get 'homeworks/create_hw_with_period/:id' => 'homeworks#create_hw_with_period', as: 'create_hw_with_period'
+  get 'control_works/create_cw_with_period/:id' => 'control_works#create_cw_with_period', as: 'create_cw_with_period'
   get 'homeworks/all_courses_hw/' => 'homeworks#all_courses_hw', as: 'all_courses_hws'
   get 'homeworks/get_group_homework/:id' => 'homeworks#get_group_homework', as: 'get_group_homework'
   get 'homeworks/all_units_for_hw/:id' => 'homeworks#all_units_for_hw', as: 'all_units_for_hw'
