@@ -130,7 +130,7 @@ ActiveRecord::Schema.define(version: 20160216213851) do
   end
 
   add_index "periods", ["academic_unit_id"], name: "index_periods_on_academic_unit_id"
-  add_index "periods", ["course_element_id"], name: "index_periods_on_course_element_id"
+  add_index "periods", ["course_element_id"], name: "index_periods_on_course_elements_id"
   add_index "periods", ["course_id"], name: "index_periods_on_course_id"
   add_index "periods", ["group_id"], name: "index_periods_on_group_id"
 
@@ -173,6 +173,7 @@ ActiveRecord::Schema.define(version: 20160216213851) do
     t.integer  "contact_list_id"
     t.boolean  "status",          default: false
     t.datetime "delivery_time"
+    t.boolean  "smart_delivery",  default: false
   end
 
   add_index "sms_deliveries", ["contact_list_id"], name: "index_sms_deliveries_on_contact_list_id"

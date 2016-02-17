@@ -38,7 +38,6 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
-  gem 'sunspot_solr'
 end
 
 group :test do
