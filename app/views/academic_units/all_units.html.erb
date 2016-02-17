@@ -1,0 +1,21 @@
+<table class="table table-striped table-hover col-sm-12">
+  <span>Домашние задания не отправленные</span>
+  <tr>
+    <th class="col-sm-3">Название модуля</th>
+    <th class="col-sm-3">Дата начала</th>
+    <th class="col-sm-3">Дата конца</th>
+    <th class="col-sm-3">Действия</th>
+  </tr>
+  <div class="row">
+  </div>
+  <% @academic_units.each do |unit| %>
+      <tr>
+        <td><%= link_to unit.title, academic_unit_path(unit) %></td>
+        <td><%= link_to unit.starts_at %></td>
+        <td><%= link_to unit.ends_at %></td>
+        <td> <%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe,
+                         edit_academic_unit_path(unit),
+                         class: 'btn btn-default btn-xs' %></td>
+      </tr>
+  <% end %>
+</table>

@@ -1,6 +1,6 @@
 class AcademicUnitsController < ApplicationController
 
-  def all_courses
+  def index
     @courses = Course.all
   end
 
@@ -9,10 +9,11 @@ class AcademicUnitsController < ApplicationController
     @groups = Group.where(course: @course)
   end
 
-  def index
+  def all_units
     group = Group.find(params[:id])
-    @academic_units = AcademicUnit.where()
+    @academic_units = AcademicUnit.where(group: group)
   end
+
   def new
     @academic_unit = AcademicUnit.new
   end
@@ -35,7 +36,6 @@ class AcademicUnitsController < ApplicationController
   end
 
   def update
-    def update
       @academic_unit = AcademicUnit.find(params[:id])
 
       if @academic_unit.update(academic_unit_params)
@@ -45,11 +45,10 @@ class AcademicUnitsController < ApplicationController
         flash[:danger] = 'Вы ввели некорректные данные, проверьте и попробуйте снова'
         render 'edit'
       end
-    end
   end
 
   private
   def academic_unit_params
-    params.require(:academic_unit).permit(:title, :starts_at, :ends_at,  period_ids: [])
+    params.require(:academic_unit).permit(:title, :starts_at, :ends_at, :group_id, period_ids: [])
   end
 end

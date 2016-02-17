@@ -1,6 +1,14 @@
 <%= form_for @academic_unit, html: {class: 'form-horizontal'} do |f| %>
 
     <div class="form-group">
+      <%= f.label :group, value: 'Группа*', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <%= f.collection_select :group_id, Group.all.order(created_at: :desc), :id, :name, {}, class: 'form-control' %>
+        <%= render 'shared/field_errors', object: @academic_unit, field_name: :group %>
+      </div>
+    </div>
+
+    <div class="form-group">
       <%= f.label :title, value: 'Название*', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
       <div class="col-md-6 col-sm-6 col-xs-12">
         <%= f.text_field :title, autofocus: true, class: 'form-control' %>

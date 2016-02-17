@@ -25,34 +25,41 @@ Rails.application.routes.draw do
   resources :course_elements,
             :courses,
             :groups,
-						:periods,
+            :periods,
             :homeworks
-  get 'academic_units/get_group_academic_unit/:id' => 'academic_units#get_group_academic_unit', as: 'get_group_academic_unit'
 
-  get 'academic_units/all_courses/' => 'academic_units#all_courses', as: 'all_courses'
+
 
   resources :sms_deliveries,
             :contact_lists,
             :sms_service_accounts,
             :senders
 
+  resources :academic_units do
+    get :all_courses
+
+  end
+  get 'academic_units/all_units/:id' => 'academic_units#all_units', as: 'all_units'
+  get 'academic_units/get_group_academic_unit/:id' => 'academic_units#get_group_academic_unit', as: 'get_group_academic_unit'
+
 
   get 'student_offices/all_periods/' => 'student_offices#all_periods', as: 'all_periods'
   get 'homeworks/rate_homework/:id' => 'homeworks#rate_homework', as: 'rate_homework'
-
   get 'homeworks/reload_homework/:id' => 'homeworks#reload_homework', as: 'reload_homework'
   get 'homeworks/create_hw_with_period/:id' => 'homeworks#create_hw_with_period', as: 'create_hw_with_period'
+  get 'homeworks/all_courses_hw/' => 'homeworks#all_courses_hw', as: 'all_courses_hws'
+
   get 'sms_deliveries/new_from_contact_list/:id' => 'sms_deliveries#new_from_contact_list', as: 'sms_new_from_contact_list'
   get 'sms_deliveries/resend_message/:id' => 'sms_deliveries#resend_message', as: 'sms_resend'
   post 'sms_deliveries/:id/send' => 'sms_deliveries#send_message', as: 'sms_send_message'
 
   resources :custom_lists do
-    collection {post :import}
+    collection { post :import }
   end
 
   get 'select_objects/select_group/:id' => 'select_objects#select_group', as: 'select_groups'
   get 'select_objects/select_students/:id' => 'select_objects#select_students', as: 'select_students'
+  get '/calendar' => 'periods#calendar', as: 'calendar'
+  get '/calendar/subjects_by_course' => 'periods#get_subjects_by_course_id', as: 'get_subject_by_course'
 
-	get '/calendar' => 'periods#calendar', as: 'calendar'
-	get '/calendar/subjects_by_course' => 'periods#get_subjects_by_course_id', as: 'get_subject_by_course'
 end

@@ -3,6 +3,10 @@ class HomeworksController < ApplicationController
   add_breadcrumb '<i class="fa fa-home"></i> Главная'.html_safe, :authenticated_root_url
   add_breadcrumb 'Домашние задания', :homeworks_url
 
+  def all_courses_hws
+    @courses = Course.all
+  end
+
   def new
     @homework = Homework.new
     add_breadcrumb 'Новое домашнее задание', :new_homework_url
@@ -29,6 +33,7 @@ class HomeworksController < ApplicationController
 
   def index
     @homeworks = Homework.all
+
   end
 
   def edit
