@@ -24,7 +24,12 @@ namespace :sms do
 
       if today == period.commence_datetime.strftime('%B %d, %Y')
         puts 'i made it to IF, i am good'
-        new_message.content = smart_message.content % {course: period.course.name,  group: period.group.name}
+        new_message.content = smart_message.content % {курс: period.course.name,
+                                     тип_занятия: period.event_type.capitalize,
+                                     номер_занятия: period.lesson_number,
+                                     дата: period.commence_datetime.strftime('%Y-%m-%d'),
+                                     время: period.commence_datetime.strftime('%H:%M'),
+                                     тема: period.course_element.theme}
         new_message.send_message
       end
       puts 'I am not working.'

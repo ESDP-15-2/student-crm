@@ -15,12 +15,11 @@ class PeriodsController < ApplicationController
 
 	def create
 		@period = Period.new(period_params)
-    @period.event_type.downcase!
-
-		respond_to do |format|
-			if @period.save
-				format.html { redirect_to calendar_path, notice: 'Event was successfully created.' }
-				format.json { render :show, status: :created, location: @period }
+    count_lessons(@period)
+    respond_to do |format|
+      if @period.save
+        format.html { redirect_to calendar_path, notice: 'Event was successfully created.' }
+        format.json { render :show, status: :created, location: @period }
 			else
 				format.html { render :new }
 				format.json { render json: @period.errors, status: :unprocessable_entity }
@@ -67,17 +66,23 @@ class PeriodsController < ApplicationController
 		@period = Period.find(params[:id])
   end
 
-  def set_period_type
+  def count_lessons(period)
     i = 1
-    case @period.event_type
+    case period.event_type
       when 'занятие'
-        Period.where(event_type: 'занятие').each do |period|
+        Period.where(event_type: 'занятие').each do |lesson|
           i += 1
-          period.update(lesson: "##{i}")
         end
       when 'вебинар'
+        Period.where(event_type: 'вебинар').each do |lesson|
+          i += 1
+        end
       when 'контрольная'
+        Period.where(event_type: 'вебинар').each do |lesson|
+          i += 1
+        end
     end
+    period.update(lesson_number: i)
   end
 
 	def period_params

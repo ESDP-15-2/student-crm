@@ -31,7 +31,7 @@ class SmsDeliveriesController < ApplicationController
   def create
     @sms_delivery = SmsDelivery.new(sms_delivery_params)
     @sms_delivery.delivery_time = Time.now + 3.minutes
-
+    @sms_delivery.title = 'Умная Рассылка' if @sms_delivery.smart_delivery
     if @sms_delivery.save
       flash[:success] = 'СМС рассылка будет отправлена через 3 минуты'
       redirect_to sms_deliveries_url

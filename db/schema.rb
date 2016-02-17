@@ -127,6 +127,7 @@ ActiveRecord::Schema.define(version: 20160216213851) do
     t.boolean  "hw_status",         default: false
     t.integer  "academic_unit_id"
     t.datetime "hw_deadline"
+    t.integer  "lesson_number"
   end
 
   add_index "periods", ["academic_unit_id"], name: "index_periods_on_academic_unit_id"

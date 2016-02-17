@@ -15,6 +15,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     if @group.save
+      ContactList.create(title: @group.name)
       flash[:success] = 'Группа успешно создана'
       redirect_to groups_url
     else
@@ -31,7 +32,9 @@ class GroupsController < ApplicationController
 
   def update
     @group = Group.find(params[:id])
+    contact_list = ContactList.find_by(title:@group.name)
     if @group.update(group_params)
+      contact_list.update(title: @group.name)
       redirect_to groups_url
       flash[:success] = 'Группа успешно отредактирована'
     else
@@ -47,7 +50,9 @@ class GroupsController < ApplicationController
 
   def destroy
     @group = Group.find(params[:id])
+    contact_list = ContactList.find_by(title:@group.name)
     @group.destroy
+    contact_list.destroy
     flash[:success] = 'Группа успешно удалена'
     redirect_to groups_url
   end

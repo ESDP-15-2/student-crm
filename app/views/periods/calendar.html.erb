@@ -34,7 +34,7 @@
 
             <div class='form-group'>
               <%= f.label :event_type, 'Тип ивента:', class: 'control-label' %><br>
-              <%= f.text_field :event_type, class: 'form-control' %>
+              <%= f.select :event_type, Period::TYPES, {}, class: 'form-control' %>
             </div>
 
 
