@@ -14,7 +14,7 @@ module SmsHandler
       xml.message {
         xml.login(sender.sms_service_account.login)
         xml.pwd(sender.sms_service_account.password)
-        xml.id(set_message_id(delivery_time))
+        xml.id(set_message_id(Time.now))
         xml.sender(sender.name)
         xml.text_ content
         xml.phones {

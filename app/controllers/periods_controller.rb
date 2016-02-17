@@ -15,6 +15,7 @@ class PeriodsController < ApplicationController
 
 	def create
 		@period = Period.new(period_params)
+    @period.event_type.downcase!
 
 		respond_to do |format|
 			if @period.save
@@ -64,10 +65,24 @@ class PeriodsController < ApplicationController
 
 	def set_period
 		@period = Period.find(params[:id])
-	end
+  end
+
+  def set_period_type
+    i = 1
+    case @period.event_type
+      when 'занятие'
+        Period.where(event_type: 'занятие').each do |period|
+          i += 1
+          period.update(lesson: "##{i}")
+        end
+      when 'вебинар'
+      when 'контрольная'
+    end
+  end
 
 	def period_params
-		params.require(:period).permit(:course_element_id, :title, :commence_datetime, :group_id, :course_id, :hw_deadline)
+		params.require(:period).permit(:course_element_id, :title, :commence_datetime,
+                                   :group_id, :course_id, :hw_deadline, :event_type)
 	end
 
 end
