@@ -1,3 +1,5 @@
+<% provide :page_title, 'Загрузка домашнего задания: выбор группы' %>
+
 <% @groups.each do |group| %>
-    <%= link_to group.name, all_units_for_hw_path(group) %>
+    <%= link_to group.name, all_units_for_hw_path(group), class: 'btn btn-success' %>
 <% end %>

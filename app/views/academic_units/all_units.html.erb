@@ -1,13 +1,19 @@
-<table class="table table-striped table-hover col-sm-12">
-  <span>Домашние задания не отправленные</span>
+<% provide :page_title, 'Учебные модули' %>
+
+<p class="mg-bottom-20">
+  <%= link_to 'Добавить учебный модуль', new_academic_unit_path, class: 'btn btn-success' %>
+</p>
+
+<table class="table table-hover col-sm-12">
+  <thead>
   <tr>
     <th class="col-sm-3">Название модуля</th>
     <th class="col-sm-3">Дата начала</th>
     <th class="col-sm-3">Дата конца</th>
     <th class="col-sm-3">Действия</th>
   </tr>
-  <div class="row">
-  </div>
+  </thead>
+  <tbody>
   <% @academic_units.each do |unit| %>
       <tr>
         <td><%= link_to unit.title, academic_unit_path(unit) %></td>
@@ -18,4 +24,5 @@
                          class: 'btn btn-default btn-xs' %></td>
       </tr>
   <% end %>
+  </tbody>
 </table>

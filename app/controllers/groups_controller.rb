@@ -9,6 +9,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    @students = Role.find_by(name: 'Студент').users
     add_breadcrumb 'Новая группа', :new_group_url
   end
 
@@ -26,6 +27,7 @@ class GroupsController < ApplicationController
 
   def edit
     @group = Group.find(params[:id])
+    @students = Role.find_by(name: 'Студент').users
     add_breadcrumb @group.name, :group_url
     add_breadcrumb 'Редактирование', :edit_group_url
   end

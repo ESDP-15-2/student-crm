@@ -1,3 +1,5 @@
+<% provide :page_title, 'Учебные модули: выбор группы' %>
+
 <% @groups.each do |group| %>
-    <%= link_to group.name, all_units_path(group) %>
+    <%= link_to group.name, all_units_path(group), class: 'btn btn-success' %>
 <% end %>

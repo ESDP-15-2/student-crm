@@ -1,3 +1,5 @@
+<% provide :page_title, 'Учебные модули: выбор курса' %>
+
 <% @courses.each do |course| %>
-    <%= link_to course.name, get_group_academic_unit_path(course) %>
+    <%= link_to course.name, get_group_academic_unit_path(course), class: 'btn btn-success' %>
 <% end %>

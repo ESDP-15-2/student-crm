@@ -1,4 +1,5 @@
 class StudentOfficesController < ApplicationController
+  add_breadcrumb '<i class="fa fa-home"></i> Главная'.html_safe, :authenticated_root_url
 
   def get_course_group
     current_user.groups.each do |g|
@@ -29,6 +30,7 @@ class StudentOfficesController < ApplicationController
   end
 
   def all_periods
+    add_breadcrumb 'Домашние задания', :all_periods_url
     @periods = array_periods - user_home_periods
   end
 

@@ -1,7 +1,9 @@
-<div>
-  <%= @period.title %>
-</div>
-<h2>Add homework</h2>
+<% provide :page_title, 'Загрузка домашнего задания' %>
+
+<h3>
+  Тема занятия: <%= @period.title %>
+</h3>
+
 <div>
   <%= form_for [@period, @homework] do |f| %>
 
@@ -16,7 +18,7 @@
 
       <div class="form-group col-sm-12">
         <div class="col-sm-offset-3 col-sm-6">
-          <%= f.submit 'Отправить', class: 'btn btn-default' %>
+          <%= f.submit 'Отправить', class: 'btn btn-success' %>
         </div>
       </div>
 

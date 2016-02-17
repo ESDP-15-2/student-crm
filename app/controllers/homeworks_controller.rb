@@ -1,18 +1,21 @@
 class HomeworksController < ApplicationController
 
   add_breadcrumb '<i class="fa fa-home"></i> Главная'.html_safe, :authenticated_root_url
-  add_breadcrumb 'Домашние задания', :homeworks_url
 
   def index
+    add_breadcrumb 'Домашние задания: Курс', :homeworks_url
     @courses = Course.all
   end
 
   def get_group_homework
+    add_breadcrumb 'Домашние задания: Курс', :homeworks_url
+    add_breadcrumb 'Группа', :get_group_homework_url
     @course = Course.find(params[:id])
     @groups = Group.where(course: @course)
   end
 
   def all_units_for_hw
+    add_breadcrumb 'Модули', :all_units_for_hw_url
     group = Group.find(params[:id])
     @academic_units = AcademicUnit.where(group: group)
   end
@@ -51,6 +54,8 @@ class HomeworksController < ApplicationController
   end
 
   def create_hw_with_period
+    add_breadcrumb 'Домашние задания', :all_periods_url
+    add_breadcrumb 'Загрузка', :create_hw_with_period_url
     @homework = Homework.new
     @period = Period.find(params[:id])
   end

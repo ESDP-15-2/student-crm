@@ -1,3 +1,5 @@
+<% provide :page_title, 'Загрузка домашнего задания: выбор курса' %>
+
 <% @courses.each do |course| %>
-    <%= link_to course.name, get_group_homework_path(course) %>
+    <%= link_to course.name, get_group_homework_path(course), class: 'btn btn-success' %>
 <% end %>

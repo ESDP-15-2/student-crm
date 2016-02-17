@@ -18,7 +18,7 @@
   <div class="form-group">
     <%= f.label 'Студенты', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
     <div class="col-md-6 col-sm-6 col-xs-12">
-      <%= f.collection_check_boxes(:user_ids, User.all, :id, :name) do |student| %>
+      <%= f.collection_check_boxes(:user_ids, @students, :id, :name) do |student| %>
         <ul class="checkbox">
           <li>
             <%= student.check_box %>
